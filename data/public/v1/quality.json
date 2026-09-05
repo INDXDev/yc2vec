@@ -1,13 +1,13 @@
 {
   "active_tags": 1018,
-  "assignments": 54,
-  "assignments_per_company": 0.01,
+  "assignments": 117,
+  "assignments_per_company": 0.02,
   "candidate_tags": 821,
   "companies": 6200,
   "decision_mix": {
-    "no": 98,
-    "uncertain": 31,
-    "yes": 54
+    "no": 196,
+    "uncertain": 77,
+    "yes": 117
   },
   "duplicate_tag_groups": {},
   "duplicate_tag_rate": 0.0,
@@ -28,16 +28,16 @@
     "technology": 88,
     "workflow": 257
   },
-  "hard_negative_acceptance_rate": 0.2,
-  "hard_negatives_judged": 20,
+  "hard_negative_acceptance_rate": 0.25,
+  "hard_negatives_judged": 44,
   "inter_run_stability": {
     "decision_agreement": null,
     "mean_confidence_delta": null,
     "repeated_pairs": 0
   },
-  "judgments": 183,
+  "judgments": 390,
   "merged_tags": 225,
-  "orphan_tag_rate": 0.9499,
+  "orphan_tag_rate": 0.9028,
   "orphan_tags": [
     "abstracts-complex-integration",
     "administrative-automation",
@@ -70,20 +70,56 @@
   "tag_prevalence_median": 0.0,
   "tag_prevalence_top": [
     {
-      "companies": 3,
+      "companies": 8,
       "tag_id": "early-stage-startup"
+    },
+    {
+      "companies": 2,
+      "tag_id": "financial-data-or-fintech"
+    },
+    {
+      "companies": 2,
+      "tag_id": "operates-fintech-transactions"
     },
     {
       "companies": 2,
       "tag_id": "internal-tool-for-non-technical-users"
     },
     {
-      "companies": 1,
-      "tag_id": "content-creation-tool"
+      "companies": 2,
+      "tag_id": "replaces-manual-administrative-work"
+    },
+    {
+      "companies": 2,
+      "tag_id": "delivers-outcomes-via-managed-service"
+    },
+    {
+      "companies": 2,
+      "tag_id": "enterprise-b2b-customer"
+    },
+    {
+      "companies": 2,
+      "tag_id": "operational-efficiency-optimization"
+    },
+    {
+      "companies": 2,
+      "tag_id": "serves-retail-and-food-service-operators"
+    },
+    {
+      "companies": 2,
+      "tag_id": "operates-on-video-content"
+    },
+    {
+      "companies": 2,
+      "tag_id": "physical-hardware-manufacturing"
+    },
+    {
+      "companies": 2,
+      "tag_id": "local-physical-service"
     },
     {
       "companies": 1,
-      "tag_id": "financial-data-or-fintech"
+      "tag_id": "content-creation-tool"
     },
     {
       "companies": 1,
@@ -92,43 +128,7 @@
     {
       "companies": 1,
       "tag_id": "regulatory-compliance-data-access"
-    },
-    {
-      "companies": 1,
-      "tag_id": "unstructured-data-structuring"
-    },
-    {
-      "companies": 1,
-      "tag_id": "consumer-b2c-customer"
-    },
-    {
-      "companies": 1,
-      "tag_id": "financial-instrument-abstraction"
-    },
-    {
-      "companies": 1,
-      "tag_id": "financial-instrument-management"
-    },
-    {
-      "companies": 1,
-      "tag_id": "financial-investment-management"
-    },
-    {
-      "companies": 1,
-      "tag_id": "financial-risk-management"
-    },
-    {
-      "companies": 1,
-      "tag_id": "financial-risk-management-domain"
-    },
-    {
-      "companies": 1,
-      "tag_id": "financial-risk-mitigation"
-    },
-    {
-      "companies": 1,
-      "tag_id": "focuses-on-financial-risk-or-compliance"
     }
   ],
-  "uncertain_rate": 0.1694
+  "uncertain_rate": 0.1974
 }

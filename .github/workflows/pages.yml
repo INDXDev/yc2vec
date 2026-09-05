@@ -37,12 +37,18 @@ jobs:
       - name: Install pipeline
         run: uv sync --all-extras
 
-      # The published dataset is validated before it ships. A failing gate
-      # blocks the deploy rather than degrading the live site.
-      - name: Validate published dataset
+      # The bundle is validated before it ships: a failing gate blocks the
+      # deploy rather than degrading the live site.
+      #
+      # --published-only is the right mode here. A deploy job has only what is
+      # committed -- data/public/ -- not the intermediate tables, so the full
+      # referential-integrity gates would fail for lack of inputs rather than
+      # for anything wrong with the release. These gates check exactly what a
+      # browser will download.
+      - name: Validate the published release
         run: |
           if [ -d data/public ]; then
-            uv run yc2vec validate || exit 1
+            uv run yc2vec validate --published-only || exit 1
           else
             echo "No generated dataset committed; the fixture release will be published."
           fi

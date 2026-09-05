@@ -53,6 +53,13 @@ jobs:
       - name: Release gates
         run: uv run yc2vec validate --profile fixture --data-dir "$RUNNER_TEMP/fixture-data"
 
+      # The same gates the deploy job runs, against the committed release.
+      - name: Published-release gates
+        run: |
+          if [ -d data/public ]; then
+            uv run yc2vec validate --published-only
+          fi
+
       - name: Schema generation is up to date
         run: |
           uv run yc2vec schemas --out "$RUNNER_TEMP/schemas"

@@ -665,10 +665,27 @@ def publish_data(
 def validate(
     profile: ProfileOpt = None,
     data_dir: DataDirOpt = None,
+    published_only: Annotated[
+        bool,
+        typer.Option(
+            "--published-only",
+            help="Check only the published artifacts. Use where the intermediate tables are not available, such as a deploy job.",
+        ),
+    ] = False,
     verbose: VerboseOpt = False,
 ) -> None:
     """Run every release gate. Exits non-zero on any failure."""
     config, store = _ctx(profile, data_dir, verbose=verbose)
+
+    if published_only:
+        from pipeline.quality.published import run_published_gates
+
+        results = run_published_gates(config.public_dir)
+        _print_gates(results)
+        if any(not r.passed for r in results):
+            raise typer.Exit(1)
+        return
+
     from pipeline.orchestrate import load_artifacts
     from pipeline.quality.gates import run_release_gates
 
@@ -682,6 +699,12 @@ def validate(
         points=a["points"],
         public_dir=config.public_dir,
     )
+    _print_gates(results)
+    if any(not r.passed for r in results):
+        raise typer.Exit(1)
+
+
+def _print_gates(results: list[Any]) -> None:
     table = Table(title="release gates")
     table.add_column("gate")
     table.add_column("result")
@@ -693,8 +716,6 @@ def validate(
             r.detail + (f" e.g. {', '.join(r.samples[:3])}" if r.samples else ""),
         )
     console.print(table)
-    if any(not r.passed for r in results):
-        raise typer.Exit(1)
 
 
 @app.command("migrate-ontology")

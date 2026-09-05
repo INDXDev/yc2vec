@@ -251,6 +251,9 @@ export function CompanyView() {
                     <Link to={`/company/${encodeURIComponent(n.id)}?space=${space}`}>{n.name}</Link>
                     <span className="mono faint">{n.score.toFixed(3)}</span>
                   </div>
+                  {/* 84 company names are shared by more than one YC company,
+                      so the batch is what makes a neighbour identifiable. */}
+                  {n.batch && <p className="company__neighborBatch faint">{n.batch}</p>}
                   {n.one_liner && <p className="company__neighborLine">{n.one_liner}</p>}
                   {n.shared_tags && n.shared_tags.length > 0 && (
                     <p className="company__why">

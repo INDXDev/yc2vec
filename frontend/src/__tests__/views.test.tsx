@@ -221,6 +221,13 @@ describe('company detail', () => {
     expect(await screen.findByText(/could not decide/)).toBeInTheDocument()
   })
 
+  it('shows a neighbour batch, since company names are not unique', async () => {
+    renderAt('/company/c:1', <CompanyView />, '/company/:companyId')
+    await screen.findByRole('heading', { name: 'Stripe' })
+    const card = screen.getByText('Airbnb').closest('.company__neighbor') as HTMLElement
+    expect(within(card).getByText('Winter 2009')).toBeInTheDocument()
+  })
+
   it('switches similarity mode and explains what it is showing', async () => {
     const user = userEvent.setup()
     renderAt('/company/c:1', <CompanyView />, '/company/:companyId')

@@ -513,3 +513,73 @@ def test_active_tags_without_assignments_are_still_published(tmp_path, sample_ra
     assert by_id["never-assigned"]["prevalence"] == 0
     # Most-used first, so the useful tags surface even in a large ontology.
     assert rows[0]["tag_id"] == "assigned"
+
+
+def test_ubiquitous_metadata_is_not_offered_as_an_explanation(tmp_path, sample_raws):
+    """A fact shared by most of the corpus explains nothing about a match.
+
+    Every YC company is "status: Active" and many are "region: Remote". Listing
+    those as the reason two companies are neighbours is noise at best and an
+    invented causal story at worst; the explanation should surface what
+    actually distinguishes the pair.
+    """
+    from pipeline.normalize.companies import normalize_companies
+
+    companies = normalize_companies(sample_raws)[:20]
+    # Force one fact to be universal and another to be rare.
+    for c in companies:
+        c.status = "Active"
+        c.regions = ["Remote"]
+    companies[0].subindustry = companies[1].subindustry = "Fintech -> Payments"
+
+    ids = [c.company_id for c in companies]
+    manifest = ReleaseManifest(
+        dataset_version="t",
+        schema_version="1",
+        public_artifact_version=PUBLIC_ARTIFACT_VERSION,
+        pipeline_version="1",
+        ontology_version="1",
+        embedding_space_version="v1",
+        projection_version="p1",
+        generated_at=NOW,
+        source_url="https://example.com",
+    )
+    publish_browser_artifacts(
+        tmp_path,
+        companies=companies,
+        tags=[],
+        features=[],
+        judgments=[],
+        neighbors=[
+            Neighbor(
+                company_id=ids[0],
+                neighbor_company_id=ids[1],
+                space="metadata",
+                rank=0,
+                similarity=0.9,
+                embedding_space_version="v1",
+            )
+        ],
+        points=[
+            UmapPoint(
+                company_id=c.company_id,
+                x=0.0,
+                y=0.0,
+                cluster_id=0,
+                projection_version="p1",
+                embedding_space_version="v1",
+            )
+            for c in companies
+        ],
+        clusters=[],
+        terms=[],
+        mappings=[],
+        manifest=manifest,
+    )
+    root = tmp_path / f"v{PUBLIC_ARTIFACT_VERSION}"
+    record = json.loads((root / "detail" / f"{shard_for(ids[0])}.json").read_text())[ids[0]]
+    shared = record["neighbors"]["metadata"][0].get("shared_metadata", [])
+
+    assert "status: Active" not in shared  # true of all 20
+    assert "region: Remote" not in shared  # true of all 20
+    assert "subindustry: Fintech -> Payments" in shared  # true of 2

@@ -118,12 +118,27 @@ jobs:
         env:
           VITE_BASE_PATH: /${{ github.event.repository.name }}/
 
-      - name: Check bundle size
+      # The application bundle and the dataset are different concerns with very
+      # different budgets: the bundle is what every visitor downloads before
+      # anything renders, while the dataset is fetched progressively and mostly
+      # on demand. Measuring them together would let a growing corpus hide a
+      # bundle regression, and would fail the build for a reason that is not a
+      # problem.
+      - name: Check bundle and dataset size
         run: |
+          app=$(du -sk dist/assets dist/index.html 2>/dev/null | awk '{s+=$1} END {print s}')
+          data=$(du -sk dist/data 2>/dev/null | cut -f1 || echo 0)
           total=$(du -sk dist | cut -f1)
-          echo "dist is ${total} KiB"
-          if [ "$total" -gt 25000 ]; then
-            echo "::error::dist exceeded 25 MiB; GitHub Pages artifacts should stay small"
+          echo "application bundle: ${app} KiB"
+          echo "dataset:            ${data} KiB"
+          echo "total artifact:     ${total} KiB"
+          if [ "$app" -gt 4000 ]; then
+            echo "::error::the application bundle exceeded 4 MiB — this is what every visitor downloads first"
+            exit 1
+          fi
+          # GitHub Pages allows a 1 GB site; stay well clear of it.
+          if [ "$total" -gt 700000 ]; then
+            echo "::error::the Pages artifact exceeded 700 MiB"
             exit 1
           fi
 

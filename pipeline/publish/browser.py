@@ -23,7 +23,7 @@ per-company index); the mapping is documented in ``manifest.json`` under
 
 from __future__ import annotations
 
-from collections import defaultdict
+from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
 
@@ -48,6 +48,10 @@ LOG = log(__name__)
 #: hundred companies in each shard, so opening one company fetches about 1/64th
 #: of the detail data instead of all of it.
 DETAIL_SHARDS = 64
+
+#: A metadata fact shared by more than this share of the corpus is treated as
+#: uninformative for explaining a match. Roughly: it must distinguish something.
+UNINFORMATIVE_FACT_SHARE = 0.15
 
 #: Neighbours published per similarity space. The pipeline computes and exports
 #: more (see EmbeddingConfig.top_k_neighbors); the browser only ever shows the
@@ -371,6 +375,14 @@ def publish_browser_artifacts(
     # corpus size that is hundreds of thousands of comparisons, so build each
     # company's set once rather than per pair.
     fact_sets: dict[str, set[str]] = {c.company_id: _metadata_facts(c) for c in published}
+
+    # A shared fact only explains a match if it is not shared by everyone.
+    # "status: Active" and "region: Remote" are true of thousands of companies
+    # and say nothing about why two of them are neighbours, whereas a shared
+    # sub-industry or batch does. Rank by rarity and drop the ubiquitous ones --
+    # the same idea as the information weight on tags.
+    fact_counts: Counter[str] = Counter(f for facts in fact_sets.values() for f in facts)
+    fact_cutoff = max(2, int(len(published) * UNINFORMATIVE_FACT_SHARE))
     shards: dict[int, dict[str, Any]] = defaultdict(dict)
     for c in published:
         shards[shard_for(c.company_id)][c.company_id] = _detail_record(
@@ -384,6 +396,8 @@ def publish_browser_artifacts(
             points_by_company,
             tag_sets,
             fact_sets,
+            fact_counts,
+            fact_cutoff,
         )
     for shard_id in range(DETAIL_SHARDS):
         write_json(root / "detail" / f"{shard_id}.json", shards.get(shard_id, {}))
@@ -432,6 +446,8 @@ def _detail_record(
     points_by_company: dict[str, UmapPoint],
     neighbor_tags: dict[str, set[str]],
     neighbor_facts: dict[str, set[str]],
+    fact_frequency: dict[str, int],
+    fact_cutoff: int,
 ) -> dict[str, Any]:
     by_tag = {j.tag_id: j for j in judgments if j.decision == "yes"}
     tag_rows = []
@@ -498,9 +514,16 @@ def _detail_record(
                     tags_by_id[t].canonical_name for t in shared_tags[:6] if t in tags_by_id
                 ]
         if n.space in ("combined", "metadata"):
-            shared_meta = sorted(my_meta & neighbor_facts.get(n.neighbor_company_id, set()))
+            shared_meta = sorted(
+                (
+                    f
+                    for f in my_meta & neighbor_facts.get(n.neighbor_company_id, set())
+                    if fact_frequency.get(f, 0) <= fact_cutoff
+                ),
+                key=lambda f: (fact_frequency.get(f, 0), f),
+            )
             if shared_meta:
-                entry["shared_metadata"] = shared_meta[:5]
+                entry["shared_metadata"] = shared_meta[:4]
         nb[n.space].append(entry)
 
     point = points_by_company.get(c.company_id)

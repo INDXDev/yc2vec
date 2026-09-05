@@ -355,6 +355,10 @@ def publish_browser_artifacts(
     tag_sets: dict[str, set[str]] = {
         cid: {f.tag_id for f in feats} for cid, feats in by_company_features.items()
     }
+    # Metadata facts are compared for every (company, neighbour) pair. At full
+    # corpus size that is hundreds of thousands of comparisons, so build each
+    # company's set once rather than per pair.
+    fact_sets: dict[str, set[str]] = {c.company_id: _metadata_facts(c) for c in published}
     shards: dict[int, dict[str, Any]] = defaultdict(dict)
     for c in published:
         shards[shard_for(c.company_id)][c.company_id] = _detail_record(
@@ -367,6 +371,7 @@ def publish_browser_artifacts(
             published,
             points_by_company,
             tag_sets,
+            fact_sets,
         )
     for shard_id in range(DETAIL_SHARDS):
         write_json(root / "detail" / f"{shard_id}.json", shards.get(shard_id, {}))
@@ -414,6 +419,7 @@ def _detail_record(
     published: list[CompanyNormalized],
     points_by_company: dict[str, UmapPoint],
     neighbor_tags: dict[str, set[str]],
+    neighbor_facts: dict[str, set[str]],
 ) -> dict[str, Any]:
     by_tag = {j.tag_id: j for j in judgments if j.decision == "yes"}
     tag_rows = []
@@ -452,7 +458,7 @@ def _detail_record(
     # vector proximity alone.
     nb: dict[str, list[dict[str, Any]]] = defaultdict(list)
     my_tags = {f.tag_id for f in features}
-    my_meta = _metadata_facts(c)
+    my_meta = neighbor_facts.get(c.company_id, set())
     for n in sorted(neighbors, key=lambda n: (n.space, n.rank)):
         idx = order.get(n.neighbor_company_id)
         if idx is None:
@@ -472,7 +478,7 @@ def _detail_record(
             entry["shared_tags"] = [
                 tags_by_id[t].canonical_name for t in shared_tags[:6] if t in tags_by_id
             ]
-        shared_meta = sorted(my_meta & _metadata_facts(other))
+        shared_meta = sorted(my_meta & neighbor_facts.get(other.company_id, set()))
         if shared_meta:
             entry["shared_metadata"] = shared_meta[:6]
         nb[n.space].append(entry)

@@ -117,10 +117,18 @@ hashed into a `projection_version`, and a new projection is aligned to the
 previous release with an orthogonal Procrustes fit over the companies present in
 both. That removes the arbitrary rotation without distorting relative positions.
 
-Clusters are KMeans over the 2D coordinates, labelled by tag **lift** — the
+Clusters are KMeans over the 2D coordinates, labelled by **lift** — the
 in-cluster rate divided by the global rate — rather than raw frequency, which
-would label every cluster with the most common tag in the corpus. They are
-algorithmic groupings and the UI says so.
+would label every cluster with the most common attribute in the corpus. They
+are algorithmic groupings and the UI says so.
+
+Semantic tags are the preferred labelling signal, but early in a corpus's life
+assignment has not reached enough companies to characterise a group of several
+hundred, and a legend reading "Cluster 12" is honest and useless. Where that is
+the case the label falls back to over-represented *source* taxonomy terms,
+which exist for every company. Each cluster records which signal named it and
+the legend states it, because presenting YC's own categories as inferred
+semantic structure would undercut the point of the project.
 
 ## Source taxonomy versus inferred ontology
 

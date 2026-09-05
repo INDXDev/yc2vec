@@ -439,3 +439,59 @@ def test_finalize_is_idempotent(tmp_path, sample_raws):
     second = _finalize_judgments(config, store, n_companies=10)
     assert first == second
     assert store.path("inferred", "company_tag_features.jsonl").read_bytes() == payload
+
+
+# -- inter-run stability ---------------------------------------------------------
+
+
+def test_stability_reports_nothing_when_no_pair_was_rejudged():
+    from pipeline.quality.evaluation import inter_run_stability
+
+    result = inter_run_stability([judgment("c1", "alpha"), judgment("c1", "beta")])
+    assert result["repeated_pairs"] == 0
+    # Never report a perfect score for a measurement that did not happen.
+    assert result["decision_agreement"] is None
+
+
+def test_stability_measures_agreement_between_repeat_judgments():
+    from datetime import timedelta
+
+    from pipeline.quality.evaluation import inter_run_stability
+
+    def rejudged(company, tag, first, second, c1=0.9, c2=0.9):
+        a = judgment(company, tag, )
+        a.decision, a.confidence, a.created_at = first, c1, NOW
+        b = judgment(company, tag)
+        b.decision, b.confidence, b.created_at = second, c2, NOW + timedelta(hours=1)
+        b.judgment_id = a.judgment_id + "-2"
+        return [a, b]
+
+    judgments = [
+        *rejudged("c1", "alpha", "yes", "yes", 0.90, 0.80),   # agrees
+        *rejudged("c2", "alpha", "yes", "no", 0.70, 0.60),    # disagrees
+        judgment("c3", "beta"),                                # judged once
+    ]
+    result = inter_run_stability(judgments)
+    assert result["repeated_pairs"] == 2
+    assert result["decision_agreement"] == pytest.approx(0.5)
+    assert result["mean_confidence_delta"] == pytest.approx(0.1, abs=1e-6)
+
+
+def test_evaluation_prefers_the_checkpoint_for_stability(world):
+    """The consolidated table has already collapsed duplicates, so stability must
+    be measured on the raw checkpoint or it is always trivially perfect."""
+    from datetime import timedelta
+
+    from pipeline.quality.evaluation import evaluate_dataset
+
+    ids = [c.company_id for c in world["companies"]]
+    a = judgment(ids[0], "alpha")
+    b = judgment(ids[0], "alpha")
+    b.decision, b.judgment_id, b.created_at = "no", "j2", NOW + timedelta(hours=1)
+
+    metrics = evaluate_dataset(
+        companies_count=6, tags=world["tags"], features=world["features"],
+        judgments=world["judgments"], checkpoint_judgments=[a, b],
+    )
+    assert metrics["inter_run_stability"]["repeated_pairs"] == 1
+    assert metrics["inter_run_stability"]["decision_agreement"] == 0.0

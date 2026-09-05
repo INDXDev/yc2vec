@@ -17,6 +17,43 @@ from pipeline.util import log, normalize_name, read_json
 LOG = log(__name__)
 
 
+def inter_run_stability(judgments: list[CompanyTagJudgment]) -> dict[str, Any]:
+    """How often a re-judged pair gets the same answer.
+
+    The checkpoint is append-only, so a company judged again -- after a prompt
+    edit, an ontology change, or simply a rerun -- leaves both records behind.
+    Comparing them is a free measurement of how reproducible the classifier
+    actually is, which matters because a zero-temperature model is *not*
+    deterministic across runs in practice.
+
+    Only pairs that were genuinely judged more than once contribute; when
+    nothing has been re-judged the metric reports that rather than a
+    meaningless 1.0.
+    """
+    by_pair: dict[tuple[str, str], list[CompanyTagJudgment]] = defaultdict(list)
+    for j in judgments:
+        by_pair[(j.company_id, j.tag_id)].append(j)
+
+    repeated = [v for v in by_pair.values() if len(v) > 1]
+    if not repeated:
+        return {"repeated_pairs": 0, "decision_agreement": None, "mean_confidence_delta": None}
+
+    agree = 0
+    deltas: list[float] = []
+    for group in repeated:
+        group = sorted(group, key=lambda j: j.created_at)
+        decisions = {j.decision for j in group}
+        agree += len(decisions) == 1
+        confidences = [j.confidence for j in group]
+        deltas.append(max(confidences) - min(confidences))
+
+    return {
+        "repeated_pairs": len(repeated),
+        "decision_agreement": round(agree / len(repeated), 4),
+        "mean_confidence_delta": round(sum(deltas) / len(deltas), 4),
+    }
+
+
 def evaluate_dataset(
     *,
     companies_count: int,
@@ -24,6 +61,7 @@ def evaluate_dataset(
     features: list[CompanyTagFeature],
     judgments: list[CompanyTagJudgment],
     gold_path: Path | None = None,
+    checkpoint_judgments: list[CompanyTagJudgment] | None = None,
 ) -> dict[str, Any]:
     active = [t for t in tags if t.state == "active"]
     prevalence = Counter(f.tag_id for f in features)
@@ -72,6 +110,10 @@ def evaluate_dataset(
         "tag_prevalence_median": _median([prevalence.get(t.tag_id, 0) for t in active]),
         "facet_distribution": dict(Counter(t.facet for t in active).most_common()),
     }
+
+    # Stability is measured on the raw checkpoint, which still holds duplicates;
+    # the consolidated table has already collapsed them.
+    metrics["inter_run_stability"] = inter_run_stability(checkpoint_judgments or judgments)
 
     gold = _load_gold(gold_path)
     if gold:

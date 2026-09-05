@@ -21,6 +21,23 @@ That is the same vertical slice CI runs. If it passes locally it will pass there
 make check            # lint, type-check, all tests, fixture pipeline, release gates
 ```
 
+For frontend changes, also run the browser checks against a real build. They
+cover what unit tests cannot see: accessibility basics, deep-link routing under
+the GitHub Pages subpath, runtime errors in the WebGL map, and both themes.
+
+```bash
+cd frontend
+npm run build && npm run preview &
+npm run check:browser                          # or: ... -- https://indxdev.github.io/yc2vec/
+```
+
+If you have a local Ollama with the configured models, the live-model tests are
+worth running before touching a prompt:
+
+```bash
+uv run pytest -m ollama
+```
+
 ## How the pieces fit
 
 | Area | Where | What to know |

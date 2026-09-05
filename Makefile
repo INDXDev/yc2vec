@@ -101,9 +101,17 @@ fmt: ## Auto-format
 	uv run ruff check --fix pipeline tests
 
 .PHONY: test
-test: ## Run all tests
+test: ## Run all tests (excluding live-model tests)
 	uv run pytest -q
 	cd frontend && npm run test
+
+.PHONY: test-ollama
+test-ollama: ## Run the live-model integration tests (needs Ollama + models)
+	uv run pytest -m ollama
+
+.PHONY: check-browser
+check-browser: build ## Accessibility, routing and runtime checks against a real build
+	cd frontend && (npm run preview & sleep 4; npm run check:browser; kill %1)
 
 .PHONY: schemas
 schemas: ## Regenerate JSON Schema from the typed models

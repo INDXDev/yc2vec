@@ -104,12 +104,14 @@ jobs:
             exit 1
           fi
 
-      - name: Subpath routing smoke test
+      - name: Install a browser for the QA checks
+        run: npx playwright install --with-deps chromium
+
+      # Accessibility, deep-link routing under the Pages subpath, runtime
+      # errors in the WebGL map, and both themes -- none of which a unit test
+      # can see.
+      - name: Browser checks
         run: |
-          npx --yes http-server dist -p 8080 --silent &
-          sleep 3
-          # The app must serve from the subpath and survive a direct refresh at depth.
-          curl -sf http://127.0.0.1:8080/index.html > /dev/null
-          curl -sf http://127.0.0.1:8080/data/v1/manifest.json > /dev/null
-          curl -sf http://127.0.0.1:8080/data/v1/points.json > /dev/null
-          echo "subpath assets served"
+          npx --yes http-server dist -p 4173 --silent &
+          for i in $(seq 1 20); do curl -sf http://127.0.0.1:4173/ >/dev/null && break; sleep 1; done
+          npm run check:browser -- http://127.0.0.1:4173/

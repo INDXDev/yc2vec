@@ -627,11 +627,19 @@ def publish_data(
         )
         _ = load_embeddings
 
+    from pipeline.models import CompanyTagJudgment
+    from pipeline.util import read_jsonl
+
+    checkpoint = [
+        CompanyTagJudgment(**r)
+        for r in read_jsonl(store.path("inferred", "company_tag_judgments.partial.jsonl"))
+    ]
     metrics = evaluate_dataset(
         companies_count=len(a["companies"]),
         tags=a["tags"],
         features=a["features"],
         judgments=a["judgments"],
+        checkpoint_judgments=checkpoint or None,
         gold_path=Path(__file__).resolve().parent.parent
         / "tests"
         / "fixtures"

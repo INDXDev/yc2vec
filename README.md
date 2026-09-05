@@ -382,3 +382,13 @@ and [tag review](.github/ISSUE_TEMPLATE/tag-review.yml).
 
 See [DATA_LICENSE.md](DATA_LICENSE.md) for the full source review, redistribution
 policy and opt-out process. Security policy: [SECURITY.md](SECURITY.md).
+
+---
+
+## Acknowledgements
+
+Company data comes from the [yc-oss/api](https://github.com/yc-oss/api) project.
+The models are Alibaba's Qwen family, run locally through [Ollama](https://ollama.com).
+The map is rendered with [regl-scatterplot](https://github.com/flekschas/regl-scatterplot),
+the projection is [UMAP](https://umap-learn.readthedocs.io/), and in-browser search
+is [MiniSearch](https://github.com/lucaong/minisearch).

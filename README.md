@@ -291,6 +291,8 @@ docs/            architecture notes
 
 [docs/architecture.md](docs/architecture.md) explains why the stages are split the
 way they are and what would be easy to get wrong.
+[docs/methodology.md](docs/methodology.md) is the long form of the About page:
+what the numbers measure and what they do not support.
 
 ---
 

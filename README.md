@@ -93,16 +93,38 @@ cp .env.example .env      # every default is sensible; no secrets required
 make doctor
 ```
 
-**Throughput matters more than you would guess.** Ollama serialises concurrent
-requests unless you tell it otherwise, which makes the pipeline's concurrency
-settings do nothing. Start the server with parallel decoding enabled:
+**Throughput is the binding constraint, and it is worth understanding before you
+start.** Ollama serialises concurrent requests unless told otherwise, which makes
+the pipeline's concurrency settings do nothing at all. Start the server with
+parallel decoding enabled:
 
 ```bash
 OLLAMA_NUM_PARALLEL=8 OLLAMA_KEEP_ALIVE=4h ollama serve
 ```
 
-Generation throughput is the binding constraint on a full run: the assignment stage
-is dominated by output tokens, so aggregate tokens/second is the number to watch.
+Every stage except assignment is cheap. Measured on a 128 GB unified-memory
+machine with `qwen3.8:27b` (Q4, ~18 GB resident):
+
+| Stage | Cost | Notes |
+| --- | --- | --- |
+| `fetch` | seconds | Pure HTTP and normalisation |
+| `discover-tags` | ~1 h for 220 batches | Produced 3,106 proposals → 2,064 candidates |
+| `review-tags` | ~30 min | Embeds every tag, then 400 bounded adjudications |
+| `map-taxonomy` | ~30 s | Embeddings only |
+| `embed` | ~15 min for 6,200 companies | ~24 embeddings/second |
+| `project` | ~2 min | UMAP + KMeans |
+| **`assign-tags`** | **~6 min per 100 pairs** | Dominated by output tokens |
+
+Assignment is the one that hurts. A 27B model at 4-bit is memory-bandwidth bound
+at roughly 18-25 tokens/second *aggregate*, and concurrency does not raise that
+ceiling — it only stops the GPU idling between requests. Judging all 6,200
+companies against a 1,000-tag ontology is therefore a multi-day job on a single
+machine, which is why the stage checkpoints after every company and why
+`--sample` exists.
+
+Practical advice: run `discover-tags` and `review-tags` once to build the
+ontology, then let `assign-tags` accumulate over successive runs. Every run
+resumes, and `--finalize` publishes whatever has accumulated so far.
 
 ### The pipeline
 
@@ -130,10 +152,16 @@ Useful selectors:
 
 ```bash
 uv run yc2vec assign-tags --companies ycoss:5,ycoss:86   # specific companies
+uv run yc2vec assign-tags --sample 500                   # a representative subset
+uv run yc2vec assign-tags --finalize                     # publish what has accumulated
 uv run yc2vec run --force-stage embed,project            # force a rerun
 uv run yc2vec run --skip discover-tags                   # skip a stage
 uv run yc2vec discover-tags --max-batches 50 --concurrency 6
 ```
+
+`--sample N` draws a reproducible subset stratified across industry and batch
+year, so a partial assignment run still describes the whole corpus rather than
+whichever companies the source happens to list first.
 
 ### Website enrichment (optional, off by default)
 
@@ -295,6 +323,23 @@ way they are and what would be easy to get wrong.
 what the numbers measure and what they do not support.
 
 ---
+
+## What the published dataset currently contains
+
+The pipeline is complete and every stage has been run against the real corpus.
+The dataset published on the site reflects how far the expensive stage has got:
+
+| Layer | Coverage | Status |
+| --- | --- | --- |
+| Company records, YC taxonomy | 6,200 companies, 612 source terms | Complete |
+| Semantic ontology | 3,106 proposals → 2,064 candidates → **1,018 active tags** | Complete |
+| Source-taxonomy ↔ tag mapping | 412 relationships | Complete |
+| Embeddings, neighbours, UMAP, clusters | All 6,200 companies | Complete |
+| Semantic tag assignments | Accumulating | Incremental — see the throughput table above |
+
+Companies without tags yet are still on the map, still searchable, and still have
+description- and metadata-based neighbours; they simply have no inferred tags.
+The site says so rather than implying the company is uninteresting.
 
 ## Limitations
 

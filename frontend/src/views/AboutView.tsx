@@ -95,6 +95,12 @@ export function AboutView() {
             uncertain.
           </p>
           <p>
+            Each quote is labelled with where it came from. A tag justified from the metadata
+            document was inferred from structured fields — industry, batch, region — rather than
+            from anything the company wrote about itself, and the company page says so rather than
+            presenting the two as equivalent.
+          </p>
+          <p>
             The published feature value is{' '}
             <code>calibrated_confidence × information_weight</code>, where the information weight
             damps tags that apply to almost everything. Binary presence and raw confidence are

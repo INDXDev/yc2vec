@@ -5,6 +5,22 @@ import { loadCompanyDetail } from '../lib/data'
 import { SIMILARITY_SPACES, type CompanyDetail, type SimilaritySpace } from '../lib/types'
 import '../styles/company.css'
 
+/**
+ * Where an evidence quote came from, in words.
+ *
+ * This matters more than it looks: a tag justified from the metadata document
+ * was inferred from structured fields (industry, batch, region), not from
+ * anything the company wrote about itself. A reader should be able to tell
+ * those apart at a glance, so the source is named rather than shown as a raw
+ * document id.
+ */
+const EVIDENCE_SOURCES: Record<string, string> = {
+  yc_one_liner: 'from the YC one-liner',
+  yc_long_description: 'from the YC description',
+  website_main_text: 'from the company website',
+  metadata_document: 'from structured metadata, not the company’s own text',
+}
+
 export function CompanyView() {
   const { companyId } = useParams<{ companyId: string }>()
   const { dataset } = useDataset()
@@ -173,7 +189,9 @@ export function CompanyView() {
                         <ul className="company__evidence">
                           {t.evidence.map((e, i) => (
                             <li key={i}>
-                              <span className="mono faint">{e.doc.split('#')[1] ?? e.doc}</span>
+                              <span className="faint company__evidenceSource">
+                                {EVIDENCE_SOURCES[e.doc.split('#')[1]] ?? e.doc}
+                              </span>
                               <q>{e.quote}</q>
                             </li>
                           ))}

@@ -296,3 +296,8 @@
   margin: 2px 0 0;
   font-size: 11px;
 }
+
+.company__evidenceSource {
+  font-size: 10.5px;
+  letter-spacing: 0.02em;
+}

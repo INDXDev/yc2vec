@@ -216,6 +216,12 @@ describe('company detail', () => {
     expect(quote).toHaveTextContent('economic infrastructure for the internet')
   })
 
+  it('names where an evidence quote came from', async () => {
+    renderAt('/company/c:1', <CompanyView />, '/company/:companyId')
+    await screen.findByRole('heading', { name: 'Stripe' })
+    expect(screen.getByText('from the YC description')).toBeInTheDocument()
+  })
+
   it('shows undecided attributes rather than hiding them', async () => {
     renderAt('/company/c:1', <CompanyView />, '/company/:companyId')
     expect(await screen.findByText(/could not decide/)).toBeInTheDocument()

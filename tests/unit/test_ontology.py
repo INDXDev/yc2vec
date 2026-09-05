@@ -214,3 +214,57 @@ def test_diverse_batches_mix_industries(sample_raws):
     # Batches should not be single-industry blocks.
     multi = [b for b in batches if len({c.industry for c in b}) > 1]
     assert len(multi) >= len(batches) // 2
+
+
+# -- migrations -----------------------------------------------------------------
+
+
+def test_display_name_migration_keeps_ids_and_preserves_lookups(registry):
+    """The whole point of frozen ids: a rename must break nothing downstream."""
+    from pipeline.ontology.migrations import normalize_display_names
+
+    tag = registry.create_tag(
+        name="Ai Agent Automation",
+        facet="technology",
+        definition="The product uses autonomous agents to carry out multi-step work.",
+        support_company_ids=("a", "b"),
+        created_at=NOW,
+    )
+    original_id = tag.tag_id
+
+    result = normalize_display_names(registry)
+    assert result.changed == 1
+    assert registry.tags[original_id].tag_id == original_id      # id frozen
+    assert registry.tags[original_id].canonical_name == "AI Agent Automation"
+    # The previous spelling still resolves, so old references keep working.
+    assert registry.resolve("Ai Agent Automation").tag_id == original_id
+    assert registry.resolve("AI Agent Automation").tag_id == original_id
+
+
+def test_display_name_migration_is_idempotent(registry):
+    from pipeline.ontology.migrations import normalize_display_names
+
+    registry.create_tag(
+        name="b2b_software_saas",
+        facet="business_model",
+        definition="Software sold to businesses on a recurring subscription.",
+        created_at=NOW,
+    )
+    first = normalize_display_names(registry)
+    second = normalize_display_names(registry)
+    assert first.changed == 1
+    assert second.changed == 0
+
+
+def test_display_name_migration_dry_run_changes_nothing(registry):
+    from pipeline.ontology.migrations import normalize_display_names
+
+    tag = registry.create_tag(
+        name="Ai Core",
+        facet="technology",
+        definition="Learned models are central to how the product works.",
+        created_at=NOW,
+    )
+    result = normalize_display_names(registry, dry_run=True)
+    assert result.changed == 1
+    assert registry.tags[tag.tag_id].canonical_name == "Ai Core"  # untouched

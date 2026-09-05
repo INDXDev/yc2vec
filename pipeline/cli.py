@@ -697,6 +697,45 @@ def validate(
         raise typer.Exit(1)
 
 
+@app.command("migrate-ontology")
+def migrate_ontology(
+    migration: Annotated[
+        str, typer.Argument(help="Migration to run. Use 'list' to see what is available.")
+    ] = "list",
+    profile: ProfileOpt = None,
+    data_dir: DataDirOpt = None,
+    dry_run: DryRunOpt = False,
+    verbose: VerboseOpt = False,
+) -> None:
+    """Apply an ontology migration. Tag ids are never changed."""
+    config, store = _ctx(profile, data_dir, verbose=verbose)
+    from pipeline.ontology.migrations import MIGRATIONS
+    from pipeline.ontology.registry import OntologyRegistry
+
+    if migration == "list" or migration not in MIGRATIONS:
+        if migration != "list":
+            console.print(f"[red]unknown migration {migration!r}[/red]")
+        console.print("available migrations:")
+        for name, fn in MIGRATIONS.items():
+            summary = (fn.__doc__ or "").strip().splitlines()[0]
+            console.print(f"  {name}  —  {summary}")
+        raise typer.Exit(0 if migration == "list" else 2)
+
+    registry = OntologyRegistry(store.path("inferred", "ontology"))
+    result = MIGRATIONS[migration](registry, dry_run=dry_run)
+    if not dry_run and result.changed:
+        registry.save()
+    console.print(
+        {
+            "migration": result.name,
+            "changed": result.changed,
+            "applied": not dry_run,
+            "examples": result.examples,
+        }
+    )
+    _ = config
+
+
 @app.command()
 def schemas(
     out: Annotated[Path, typer.Option("--out", help="Where to write JSON Schema files.")] = Path(

@@ -1,13 +1,13 @@
 {
   "active_tags": 1018,
-  "assignments": 173,
+  "assignments": 187,
   "assignments_per_company": 0.03,
   "candidate_tags": 821,
   "companies": 6200,
   "decision_mix": {
-    "no": 297,
-    "uncertain": 96,
-    "yes": 173
+    "no": 348,
+    "uncertain": 104,
+    "yes": 188
   },
   "duplicate_tag_groups": {},
   "duplicate_tag_rate": 0.0,
@@ -28,22 +28,21 @@
     "technology": 88,
     "workflow": 257
   },
-  "hard_negative_acceptance_rate": 0.2462,
-  "hard_negatives_judged": 65,
+  "hard_negative_acceptance_rate": 0.2297,
+  "hard_negatives_judged": 74,
   "inter_run_stability": {
     "decision_agreement": null,
     "mean_confidence_delta": null,
     "repeated_pairs": 0
   },
-  "judgments": 566,
+  "judgments": 640,
   "merged_tags": 225,
-  "orphan_tag_rate": 0.8694,
+  "orphan_tag_rate": 0.8615,
   "orphan_tags": [
     "abstracts-complex-integration",
     "administrative-automation",
     "advertising-and-marketing-optimization",
     "advertising-marketing",
-    "aerospace-defense",
     "agentic-automation",
     "ai-agent-automation",
     "ai-agent-evaluation",
@@ -58,7 +57,8 @@
     "ai-augmented-workflow",
     "ai-automated-execution",
     "ai-automated-service-delivery",
-    "ai-automated-workflow-execution"
+    "ai-automated-workflow-execution",
+    "ai-automation-agents"
   ],
   "reviewed_sample": {
     "f1": 0.0,
@@ -74,12 +74,20 @@
       "tag_id": "early-stage-startup"
     },
     {
-      "companies": 4,
+      "companies": 5,
       "tag_id": "consumer-or-prosumer-self-service"
     },
     {
-      "companies": 3,
+      "companies": 4,
       "tag_id": "self-serve-digital-onboarding"
+    },
+    {
+      "companies": 3,
+      "tag_id": "enterprise-b2b-customer"
+    },
+    {
+      "companies": 3,
+      "tag_id": "delivers-as-consumer-app"
     },
     {
       "companies": 3,
@@ -95,6 +103,14 @@
     },
     {
       "companies": 2,
+      "tag_id": "digital-health-and-wellness"
+    },
+    {
+      "companies": 2,
+      "tag_id": "healthcare-wellness-domain"
+    },
+    {
+      "companies": 2,
       "tag_id": "internal-tool-for-non-technical-users"
     },
     {
@@ -107,28 +123,12 @@
     },
     {
       "companies": 2,
-      "tag_id": "enterprise-b2b-customer"
-    },
-    {
-      "companies": 2,
       "tag_id": "operational-efficiency-optimization"
     },
     {
       "companies": 2,
       "tag_id": "serves-retail-and-food-service-operators"
-    },
-    {
-      "companies": 2,
-      "tag_id": "operates-on-video-content"
-    },
-    {
-      "companies": 2,
-      "tag_id": "operates-on-physical-sensor-data"
-    },
-    {
-      "companies": 2,
-      "tag_id": "operates-on-sensor-or-telemetry-data"
     }
   ],
-  "uncertain_rate": 0.1696
+  "uncertain_rate": 0.1625
 }

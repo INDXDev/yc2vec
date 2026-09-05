@@ -481,7 +481,7 @@
 {"cluster_id":14,"company_id":"ycoss:495","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.5231,"y":-0.2714}
 {"cluster_id":23,"company_id":"ycoss:496","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.6566,"y":0.4705}
 {"cluster_id":15,"company_id":"ycoss:497","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.6744,"y":-0.082}
-{"cluster_id":4,"company_id":"ycoss:498","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.2451,"y":-0.4499}
+{"cluster_id":4,"company_id":"ycoss:498","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.245,"y":-0.4499}
 {"cluster_id":5,"company_id":"ycoss:499","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.9893,"y":0.292}
 {"cluster_id":21,"company_id":"ycoss:500","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.5767,"y":0.3351}
 {"cluster_id":23,"company_id":"ycoss:501","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.47,"y":0.4092}
@@ -835,7 +835,7 @@
 {"cluster_id":3,"company_id":"ycoss:882","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.3656,"y":-0.176}
 {"cluster_id":10,"company_id":"ycoss:884","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.7887,"y":-0.274}
 {"cluster_id":22,"company_id":"ycoss:885","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.521,"y":-0.7686}
-{"cluster_id":5,"company_id":"ycoss:886","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.8208,"y":0.2999}
+{"cluster_id":5,"company_id":"ycoss:886","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.8208,"y":0.3}
 {"cluster_id":5,"company_id":"ycoss:887","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.8268,"y":0.3061}
 {"cluster_id":23,"company_id":"ycoss:888","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.6107,"y":0.3138}
 {"cluster_id":2,"company_id":"ycoss:889","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.2999,"y":-0.1723}
@@ -1219,7 +1219,7 @@
 {"cluster_id":20,"company_id":"ycoss:1516","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.2716,"y":-0.1688}
 {"cluster_id":13,"company_id":"ycoss:1517","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.1028,"y":0.4564}
 {"cluster_id":12,"company_id":"ycoss:1518","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.0799,"y":-0.5215}
-{"cluster_id":16,"company_id":"ycoss:1519","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.3023,"y":0.3089}
+{"cluster_id":16,"company_id":"ycoss:1519","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.3024,"y":0.3089}
 {"cluster_id":5,"company_id":"ycoss:1520","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.938,"y":0.2983}
 {"cluster_id":12,"company_id":"ycoss:1521","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.0621,"y":-0.6497}
 {"cluster_id":6,"company_id":"ycoss:1522","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.3582,"y":0.7473}
@@ -1246,7 +1246,7 @@
 {"cluster_id":23,"company_id":"ycoss:1548","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.5093,"y":0.4386}
 {"cluster_id":8,"company_id":"ycoss:1549","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.6688,"y":0.3038}
 {"cluster_id":4,"company_id":"ycoss:1550","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.168,"y":-0.4073}
-{"cluster_id":15,"company_id":"ycoss:1551","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":1.052,"y":-0.1085}
+{"cluster_id":15,"company_id":"ycoss:1551","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":1.052,"y":-0.1084}
 {"cluster_id":13,"company_id":"ycoss:1552","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.0099,"y":0.5419}
 {"cluster_id":13,"company_id":"ycoss:1553","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.0408,"y":0.6272}
 {"cluster_id":5,"company_id":"ycoss:1554","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.878,"y":0.3586}
@@ -1618,10 +1618,10 @@
 {"cluster_id":10,"company_id":"ycoss:1973","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.7564,"y":-0.2633}
 {"cluster_id":12,"company_id":"ycoss:1975","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.0061,"y":-0.5326}
 {"cluster_id":5,"company_id":"ycoss:1976","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.9385,"y":0.2497}
-{"cluster_id":5,"company_id":"ycoss:1977","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.9168,"y":0.3488}
+{"cluster_id":5,"company_id":"ycoss:1977","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.9167,"y":0.3488}
 {"cluster_id":5,"company_id":"ycoss:1978","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.7008,"y":0.3623}
 {"cluster_id":12,"company_id":"ycoss:1979","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.0729,"y":-0.3706}
-{"cluster_id":15,"company_id":"ycoss:1981","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":1.0135,"y":-0.0255}
+{"cluster_id":15,"company_id":"ycoss:1981","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":1.0135,"y":-0.0254}
 {"cluster_id":15,"company_id":"ycoss:1984","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.9202,"y":-0.3308}
 {"cluster_id":16,"company_id":"ycoss:1988","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.0195,"y":0.3597}
 {"cluster_id":8,"company_id":"ycoss:1989","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.7789,"y":0.4031}
@@ -1835,7 +1835,7 @@
 {"cluster_id":1,"company_id":"ycoss:12267","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.6809,"y":-0.6085}
 {"cluster_id":17,"company_id":"ycoss:12271","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.7581,"y":0.0451}
 {"cluster_id":19,"company_id":"ycoss:12272","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.0537,"y":0.2216}
-{"cluster_id":13,"company_id":"ycoss:12273","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.1192,"y":0.6958}
+{"cluster_id":13,"company_id":"ycoss:12273","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.1193,"y":0.6958}
 {"cluster_id":5,"company_id":"ycoss:12274","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":1.0184,"y":0.1739}
 {"cluster_id":20,"company_id":"ycoss:12275","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.1399,"y":-0.2813}
 {"cluster_id":0,"company_id":"ycoss:12276","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.1917,"y":-0.0399}
@@ -1904,7 +1904,7 @@
 {"cluster_id":4,"company_id":"ycoss:12565","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.2513,"y":-0.4067}
 {"cluster_id":3,"company_id":"ycoss:12570","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.3822,"y":-0.1118}
 {"cluster_id":19,"company_id":"ycoss:12571","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.1573,"y":0.1824}
-{"cluster_id":14,"company_id":"ycoss:12572","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.6453,"y":-0.3082}
+{"cluster_id":14,"company_id":"ycoss:12572","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.6453,"y":-0.3083}
 {"cluster_id":9,"company_id":"ycoss:12573","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.0654,"y":-0.1745}
 {"cluster_id":8,"company_id":"ycoss:12574","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.7753,"y":0.2776}
 {"cluster_id":13,"company_id":"ycoss:12575","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.0547,"y":0.6082}
@@ -2300,7 +2300,7 @@
 {"cluster_id":16,"company_id":"ycoss:21784","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.0842,"y":0.3187}
 {"cluster_id":17,"company_id":"ycoss:21787","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.5396,"y":0.0487}
 {"cluster_id":11,"company_id":"ycoss:21788","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.3994,"y":-0.3638}
-{"cluster_id":3,"company_id":"ycoss:21789","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.4158,"y":-0.1628}
+{"cluster_id":3,"company_id":"ycoss:21789","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.4158,"y":-0.1629}
 {"cluster_id":8,"company_id":"ycoss:21790","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.7402,"y":0.3543}
 {"cluster_id":6,"company_id":"ycoss:21791","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.361,"y":0.5942}
 {"cluster_id":5,"company_id":"ycoss:21792","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.9594,"y":0.2954}
@@ -2471,8 +2471,8 @@
 {"cluster_id":14,"company_id":"ycoss:22327","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.5096,"y":-0.2857}
 {"cluster_id":15,"company_id":"ycoss:22334","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.9847,"y":-0.095}
 {"cluster_id":0,"company_id":"ycoss:22353","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.2121,"y":-0.0799}
-{"cluster_id":7,"company_id":"ycoss:22470","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.341,"y":0.719}
-{"cluster_id":4,"company_id":"ycoss:22533","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.3373,"y":-0.5541}
+{"cluster_id":7,"company_id":"ycoss:22470","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.341,"y":0.7191}
+{"cluster_id":4,"company_id":"ycoss:22533","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.3373,"y":-0.5542}
 {"cluster_id":23,"company_id":"ycoss:22565","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.5837,"y":0.4175}
 {"cluster_id":17,"company_id":"ycoss:22566","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.6484,"y":0.1504}
 {"cluster_id":10,"company_id":"ycoss:22571","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.612,"y":-0.1645}
@@ -2871,7 +2871,7 @@
 {"cluster_id":15,"company_id":"ycoss:24008","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":1.041,"y":-0.1697}
 {"cluster_id":16,"company_id":"ycoss:24024","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.2457,"y":0.4371}
 {"cluster_id":0,"company_id":"ycoss:24025","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.321,"y":-0.0321}
-{"cluster_id":16,"company_id":"ycoss:24026","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.2775,"y":0.3654}
+{"cluster_id":16,"company_id":"ycoss:24026","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.2775,"y":0.3653}
 {"cluster_id":5,"company_id":"ycoss:24034","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.9616,"y":0.1122}
 {"cluster_id":6,"company_id":"ycoss:24037","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.2037,"y":0.7167}
 {"cluster_id":13,"company_id":"ycoss:24038","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.1503,"y":0.6802}
@@ -3124,7 +3124,7 @@
 {"cluster_id":5,"company_id":"ycoss:24638","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.9566,"y":0.1925}
 {"cluster_id":6,"company_id":"ycoss:24640","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.3642,"y":0.6604}
 {"cluster_id":11,"company_id":"ycoss:24649","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.4086,"y":-0.3383}
-{"cluster_id":7,"company_id":"ycoss:24653","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.324,"y":0.6998}
+{"cluster_id":7,"company_id":"ycoss:24653","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.3239,"y":0.6998}
 {"cluster_id":6,"company_id":"ycoss:24666","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.2465,"y":0.6689}
 {"cluster_id":4,"company_id":"ycoss:24668","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.2332,"y":-0.5241}
 {"cluster_id":5,"company_id":"ycoss:24669","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.9728,"y":0.2421}
@@ -3272,7 +3272,7 @@
 {"cluster_id":19,"company_id":"ycoss:25348","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.0117,"y":0.0325}
 {"cluster_id":15,"company_id":"ycoss:25349","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.9181,"y":-0.3416}
 {"cluster_id":15,"company_id":"ycoss:25350","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":1.0033,"y":-0.0263}
-{"cluster_id":1,"company_id":"ycoss:25351","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.5305,"y":-0.409}
+{"cluster_id":1,"company_id":"ycoss:25351","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.5305,"y":-0.4089}
 {"cluster_id":9,"company_id":"ycoss:25353","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.0993,"y":-0.2541}
 {"cluster_id":0,"company_id":"ycoss:25354","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.2841,"y":0.0249}
 {"cluster_id":10,"company_id":"ycoss:25355","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.6686,"y":-0.2215}
@@ -3357,7 +3357,7 @@
 {"cluster_id":2,"company_id":"ycoss:25583","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.2595,"y":-0.024}
 {"cluster_id":13,"company_id":"ycoss:25584","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.1633,"y":0.6179}
 {"cluster_id":21,"company_id":"ycoss:25585","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.4559,"y":0.2788}
-{"cluster_id":13,"company_id":"ycoss:25586","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.1217,"y":0.5916}
+{"cluster_id":13,"company_id":"ycoss:25586","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.1218,"y":0.5916}
 {"cluster_id":12,"company_id":"ycoss:25587","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.1159,"y":-0.3898}
 {"cluster_id":16,"company_id":"ycoss:25588","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.2116,"y":0.1854}
 {"cluster_id":2,"company_id":"ycoss:25589","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.2886,"y":-0.144}
@@ -3879,7 +3879,7 @@
 {"cluster_id":0,"company_id":"ycoss:27704","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.226,"y":0.1237}
 {"cluster_id":0,"company_id":"ycoss:27705","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.0281,"y":0.0311}
 {"cluster_id":23,"company_id":"ycoss:27707","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.6121,"y":0.5267}
-{"cluster_id":10,"company_id":"ycoss:27708","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.719,"y":-0.1929}
+{"cluster_id":10,"company_id":"ycoss:27708","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.719,"y":-0.193}
 {"cluster_id":18,"company_id":"ycoss:27710","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.1052,"y":0.5176}
 {"cluster_id":4,"company_id":"ycoss:27712","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.2579,"y":-0.4854}
 {"cluster_id":12,"company_id":"ycoss:27713","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.0011,"y":-0.3655}
@@ -4114,7 +4114,7 @@
 {"cluster_id":4,"company_id":"ycoss:28659","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.2037,"y":-0.7172}
 {"cluster_id":4,"company_id":"ycoss:28660","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.3176,"y":-0.5167}
 {"cluster_id":9,"company_id":"ycoss:28663","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.071,"y":-0.1475}
-{"cluster_id":14,"company_id":"ycoss:28707","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.5955,"y":-0.4678}
+{"cluster_id":14,"company_id":"ycoss:28707","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.5954,"y":-0.4678}
 {"cluster_id":11,"company_id":"ycoss:28743","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.3979,"y":-0.3453}
 {"cluster_id":20,"company_id":"ycoss:28744","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.1199,"y":-0.2412}
 {"cluster_id":11,"company_id":"ycoss:28745","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.4246,"y":-0.3043}
@@ -4319,7 +4319,7 @@
 {"cluster_id":9,"company_id":"ycoss:29134","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.0733,"y":-0.0607}
 {"cluster_id":9,"company_id":"ycoss:29136","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.0715,"y":-0.1967}
 {"cluster_id":12,"company_id":"ycoss:29137","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.0024,"y":-0.4605}
-{"cluster_id":22,"company_id":"ycoss:29146","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.5564,"y":-0.7672}
+{"cluster_id":22,"company_id":"ycoss:29146","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.5564,"y":-0.7671}
 {"cluster_id":4,"company_id":"ycoss:29150","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.3853,"y":-0.4724}
 {"cluster_id":19,"company_id":"ycoss:29152","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.2249,"y":0.1835}
 {"cluster_id":6,"company_id":"ycoss:29153","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.2628,"y":0.7759}
@@ -5296,7 +5296,7 @@
 {"cluster_id":19,"company_id":"ycoss:30653","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.0776,"y":0.0273}
 {"cluster_id":7,"company_id":"ycoss:30655","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.3924,"y":0.7504}
 {"cluster_id":9,"company_id":"ycoss:30656","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.1124,"y":-0.2773}
-{"cluster_id":5,"company_id":"ycoss:30657","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.7931,"y":0.122}
+{"cluster_id":5,"company_id":"ycoss:30657","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.7931,"y":0.1221}
 {"cluster_id":12,"company_id":"ycoss:30659","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.0574,"y":-0.3807}
 {"cluster_id":12,"company_id":"ycoss:30660","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.0759,"y":-0.5217}
 {"cluster_id":8,"company_id":"ycoss:30661","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.6428,"y":0.3143}
@@ -5731,10 +5731,10 @@
 {"cluster_id":0,"company_id":"ycoss:31233","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.1612,"y":-0.0549}
 {"cluster_id":9,"company_id":"ycoss:31234","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.1288,"y":-0.2567}
 {"cluster_id":16,"company_id":"ycoss:31236","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.1269,"y":0.4051}
-{"cluster_id":21,"company_id":"ycoss:31239","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.4734,"y":0.0495}
+{"cluster_id":21,"company_id":"ycoss:31239","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.4733,"y":0.0495}
 {"cluster_id":19,"company_id":"ycoss:31240","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.2581,"y":0.1921}
 {"cluster_id":12,"company_id":"ycoss:31241","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.0137,"y":-0.367}
-{"cluster_id":23,"company_id":"ycoss:31242","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.3704,"y":0.3222}
+{"cluster_id":23,"company_id":"ycoss:31242","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.3705,"y":0.3222}
 {"cluster_id":19,"company_id":"ycoss:31243","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.0749,"y":0.1016}
 {"cluster_id":20,"company_id":"ycoss:31244","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":-0.1463,"y":-0.2365}
 {"cluster_id":11,"company_id":"ycoss:31245","embedding_space_version":"emb-8e1f51a73870","projection_version":"umap-ee00a5d75326","x":0.3265,"y":-0.3677}

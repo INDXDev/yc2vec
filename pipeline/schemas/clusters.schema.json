@@ -14,8 +14,18 @@
       "type": "integer"
     },
     "label": {
-      "description": "Algorithmic label from over-represented tags.",
+      "description": "Algorithmic label from over-represented tags or source terms.",
       "title": "Label",
+      "type": "string"
+    },
+    "label_source": {
+      "default": "none",
+      "enum": [
+        "semantic_tags",
+        "source_taxonomy",
+        "none"
+      ],
+      "title": "Label Source",
       "type": "string"
     },
     "projection_version": {
@@ -25,6 +35,13 @@
     "size": {
       "title": "Size",
       "type": "integer"
+    },
+    "top_source_terms": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Top Source Terms",
+      "type": "array"
     },
     "top_tag_ids": {
       "items": {

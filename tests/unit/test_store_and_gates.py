@@ -509,29 +509,19 @@ def test_evaluation_prefers_the_checkpoint_for_stability(world):
 # -- cluster labelling -----------------------------------------------------------
 
 
-def _points(n_a: int, n_b: int):
-    from pipeline.models import UmapPoint as _P
-
+def _points(n_a: int, n_b: int) -> list[UmapPoint]:
+    """Two clusters of the given sizes, at fixed coordinates."""
     return [
-        _P(
-            company_id=f"a{i}",
-            x=0.0,
-            y=0.0,
-            cluster_id=0,
+        UmapPoint(
+            company_id=f"{prefix}{i}",
+            x=x,
+            y=x,
+            cluster_id=cluster_id,
             projection_version="p",
             embedding_space_version="v",
         )
-        for i in range(n_a)
-    ] + [
-        _P(
-            company_id=f"b{i}",
-            x=1.0,
-            y=1.0,
-            cluster_id=1,
-            projection_version="p",
-            embedding_space_version="v",
-        )
-        for i in range(n_b)
+        for prefix, cluster_id, x, n in (("a", 0, 0.0, n_a), ("b", 1, 1.0, n_b))
+        for i in range(n)
     ]
 
 

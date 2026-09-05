@@ -1,0 +1,293 @@
+.company {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.company--message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 40px;
+}
+
+.company__inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 24px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.company__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.company__identity {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.company__logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  object-fit: contain;
+  background: var(--bg-sunken);
+  border: 1px solid var(--border);
+  padding: 3px;
+  flex-shrink: 0;
+}
+
+.company__name {
+  font-size: 26px;
+  letter-spacing: -0.02em;
+}
+
+.company__line {
+  margin: 4px 0 0;
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+.company__former {
+  margin: 3px 0 0;
+  font-size: 12px;
+}
+
+.company__links {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.company__meta {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.company__facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px 20px;
+  margin: 0;
+}
+
+.company__fact {
+  min-width: 0;
+}
+
+.company__factLabel {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-faint);
+}
+
+.company__factValue {
+  margin: 2px 0 0;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.company__sourceTags {
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+}
+
+.company__pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 5px;
+}
+
+.company__section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.company__sectionTitle {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+.company__sectionTitle .faint {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 12px;
+}
+
+.company__body {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 72ch;
+}
+
+.company__note,
+.company__provenance,
+.company__spaceBlurb {
+  margin: 0;
+  font-size: 12px;
+}
+
+.company__facet {
+  margin-top: 8px;
+}
+
+.company__facetTitle {
+  font-size: 11.5px;
+  color: var(--accent);
+  text-transform: capitalize;
+  margin-bottom: 6px;
+}
+
+.company__tagList,
+.company__neighbors {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 7px;
+}
+
+.company__neighbors {
+  grid-template-columns: repeat(auto-fill, minmax(258px, 1fr));
+  counter-reset: neighbor;
+}
+
+.company__tag,
+.company__neighbor {
+  padding: 10px 12px;
+}
+
+.company__tagHead,
+.company__neighborHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.company__tagName {
+  font-weight: 600;
+  font-size: 13.5px;
+}
+
+.company__rationale {
+  margin: 6px 0 0;
+  font-size: 12.5px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.company__evidence {
+  list-style: none;
+  margin: 7px 0 0;
+  padding: 0 0 0 10px;
+  border-left: 2px solid var(--border-strong);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.company__evidence li {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.company__evidence q {
+  color: var(--text-muted);
+  font-style: italic;
+  line-height: 1.45;
+}
+
+.company__neighborLine {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.company__why {
+  margin: 5px 0 0;
+  font-size: 11.5px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.company__spaces {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.company__uncertain,
+.company__metadataDoc {
+  margin-top: 10px;
+  font-size: 12.5px;
+}
+
+.company__uncertain summary,
+.company__metadataDoc summary {
+  cursor: pointer;
+  color: var(--text-muted);
+}
+
+.company__uncertain p {
+  margin: 6px 0;
+  font-size: 12px;
+  max-width: 66ch;
+}
+
+.company__metadataDoc .company__body {
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.company__technical {
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+}
+
+.confbar {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.confbar__track {
+  display: inline-block;
+  width: 52px;
+  height: 4px;
+  border-radius: 3px;
+  background: var(--bg-sunken);
+  box-shadow: inset 0 0 0 1px var(--border);
+  overflow: hidden;
+}
+
+.confbar__fill {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+}

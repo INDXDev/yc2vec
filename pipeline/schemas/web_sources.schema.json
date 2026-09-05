@@ -1,0 +1,92 @@
+{
+  "additionalProperties": false,
+  "description": "One fetched page. Bodies stay in the local cache, never in git.",
+  "properties": {
+    "byte_size": {
+      "default": 0,
+      "title": "Byte Size",
+      "type": "integer"
+    },
+    "company_id": {
+      "title": "Company Id",
+      "type": "string"
+    },
+    "content_hash": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Content Hash"
+    },
+    "content_type": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Content Type"
+    },
+    "error": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Error"
+    },
+    "extraction_version": {
+      "title": "Extraction Version",
+      "type": "string"
+    },
+    "fetched_at": {
+      "format": "date-time",
+      "title": "Fetched At",
+      "type": "string"
+    },
+    "final_url": {
+      "title": "Final Url",
+      "type": "string"
+    },
+    "ok": {
+      "default": false,
+      "title": "Ok",
+      "type": "boolean"
+    },
+    "robots_allowed": {
+      "default": true,
+      "title": "Robots Allowed",
+      "type": "boolean"
+    },
+    "status": {
+      "title": "Status",
+      "type": "integer"
+    },
+    "url": {
+      "title": "Url",
+      "type": "string"
+    }
+  },
+  "required": [
+    "company_id",
+    "url",
+    "final_url",
+    "fetched_at",
+    "status",
+    "extraction_version"
+  ],
+  "title": "WebSource",
+  "type": "object"
+}

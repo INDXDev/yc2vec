@@ -1,0 +1,40 @@
+# Optional convenience for running Ollama in a container.
+#
+# You do not need this: if Ollama is already running on the host, YC2Vec talks
+# to it at http://localhost:11434 with no further setup. Use this profile only
+# if you would rather not install Ollama directly.
+#
+#   docker compose --profile ollama up -d
+#   docker compose exec ollama ollama pull qwen3.8:27b
+#   docker compose exec ollama ollama pull qwen3-embedding:8b
+#
+# The port is bound to the loopback interface on purpose. Do not expose an
+# Ollama endpoint publicly; it has no authentication.
+
+services:
+  ollama:
+    profiles: [ollama]
+    image: ollama/ollama:latest
+    container_name: yc2vec-ollama
+    ports:
+      - '127.0.0.1:11434:11434'
+    volumes:
+      - ollama-models:/root/.ollama
+    environment:
+      # Concurrent requests share one batched decode step, which is what makes
+      # the assignment stage's concurrency setting worth anything.
+      OLLAMA_NUM_PARALLEL: '4'
+      OLLAMA_KEEP_ALIVE: '2h'
+    # Remove this block on a machine without an NVIDIA GPU; Ollama will fall
+    # back to CPU inference, which works but is far slower.
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    restart: unless-stopped
+
+volumes:
+  ollama-models:

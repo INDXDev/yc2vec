@@ -1,0 +1,293 @@
+{
+  "additionalProperties": false,
+  "description": "Cleaned, typed metadata used for exact filtering and for embedding.",
+  "properties": {
+    "all_locations": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "All Locations"
+    },
+    "batch": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Batch"
+    },
+    "batch_season": {
+      "default": "Unspecified",
+      "enum": [
+        "Winter",
+        "Summer",
+        "Spring",
+        "Fall",
+        "Unspecified"
+      ],
+      "title": "Batch Season",
+      "type": "string"
+    },
+    "batch_slug": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Batch Slug"
+    },
+    "batch_year": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Batch Year"
+    },
+    "company_id": {
+      "title": "Company Id",
+      "type": "string"
+    },
+    "content_hash": {
+      "title": "Content Hash",
+      "type": "string"
+    },
+    "former_names": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Former Names",
+      "type": "array"
+    },
+    "industries": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Industries",
+      "type": "array"
+    },
+    "industry": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Industry"
+    },
+    "is_hiring": {
+      "default": false,
+      "title": "Is Hiring",
+      "type": "boolean"
+    },
+    "launched_at": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Launched At"
+    },
+    "logo_url": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Logo Url"
+    },
+    "long_description": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Long Description"
+    },
+    "metadata_document": {
+      "description": "Deterministic NL serialisation of the fields above.",
+      "title": "Metadata Document",
+      "type": "string"
+    },
+    "metadata_template_version": {
+      "title": "Metadata Template Version",
+      "type": "string"
+    },
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "nonprofit": {
+      "default": false,
+      "title": "Nonprofit",
+      "type": "boolean"
+    },
+    "normalize_version": {
+      "title": "Normalize Version",
+      "type": "string"
+    },
+    "one_liner": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "One Liner"
+    },
+    "regions": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Regions",
+      "type": "array"
+    },
+    "slug": {
+      "title": "Slug",
+      "type": "string"
+    },
+    "source_tags": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Source Tags",
+      "type": "array"
+    },
+    "source_taxonomy_term_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Source Taxonomy Term Ids",
+      "type": "array"
+    },
+    "stage": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Stage"
+    },
+    "status": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Status"
+    },
+    "subindustry": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Subindustry"
+    },
+    "team_size": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Team Size"
+    },
+    "top_company": {
+      "default": false,
+      "title": "Top Company",
+      "type": "boolean"
+    },
+    "updated_at": {
+      "format": "date-time",
+      "title": "Updated At",
+      "type": "string"
+    },
+    "website": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Website"
+    },
+    "yc_id": {
+      "title": "Yc Id",
+      "type": "integer"
+    },
+    "yc_url": {
+      "title": "Yc Url",
+      "type": "string"
+    }
+  },
+  "required": [
+    "company_id",
+    "yc_id",
+    "slug",
+    "name",
+    "yc_url",
+    "metadata_document",
+    "metadata_template_version",
+    "normalize_version",
+    "content_hash",
+    "updated_at"
+  ],
+  "title": "CompanyNormalized",
+  "type": "object"
+}

@@ -1,0 +1,50 @@
+name: Data correction
+description: Report incorrect company metadata or a wrong semantic tag assignment
+title: '[data] '
+labels: [data-correction]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping keep YC2Vec accurate. Company metadata comes from the
+        public source records; semantic tags are inferred by a local model and
+        are the more likely thing to be wrong.
+  - type: input
+    id: company
+    attributes:
+      label: Company
+      description: Name, or the YC2Vec id shown under "Technical details".
+      placeholder: 'Acme, or ycoss:1234'
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What is wrong?
+      options:
+        - A semantic tag that should not be assigned
+        - A semantic tag that is missing
+        - Company metadata (batch, industry, status, location…)
+        - Similar-companies results
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: detail
+    attributes:
+      label: What should it say instead?
+      description: |
+        For a metadata problem, note that YC2Vec reproduces its source exactly —
+        if the source record is wrong, the fix belongs upstream at yc-oss/api.
+    validations:
+      required: true
+  - type: input
+    id: evidence
+    attributes:
+      label: Supporting public link
+      description: A public page that shows the correct information.
+  - type: input
+    id: release
+    attributes:
+      label: Dataset version
+      description: From the About page, under "Release manifest".

@@ -1,0 +1,90 @@
+name: Semantic enrichment
+
+# Runs the model-dependent stages on a labelled self-hosted runner that has
+# Ollama and the configured models installed. It is manual by design: these
+# stages are expensive, and their output is model inference that a human should
+# review before it reaches the default branch.
+on:
+  workflow_dispatch:
+    inputs:
+      profile:
+        description: 'Hardware profile'
+        type: choice
+        options: [balanced, flagship]
+        default: balanced
+      stages:
+        description: 'Comma-separated stages to force rerun (blank = incremental)'
+        required: false
+      limit:
+        description: 'Limit companies (blank for all)'
+        required: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: enrichment
+  cancel-in-progress: false
+
+jobs:
+  enrich:
+    # The runner must be labelled `ollama`. Its Ollama port stays bound to
+    # localhost and is never exposed publicly.
+    runs-on: [self-hosted, ollama]
+    timeout-minutes: 1440
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --all-extras
+
+      - name: Doctor
+        run: uv run yc2vec doctor --profile ${{ inputs.profile }}
+
+      - name: Run the incremental pipeline
+        # Every stage checkpoints continuously, so a cancelled or timed-out run
+        # resumes from where it stopped on the next trigger.
+        run: |
+          uv run yc2vec run \
+            --profile ${{ inputs.profile }} \
+            --incremental \
+            ${{ inputs.stages && format('--force-stage {0}', inputs.stages) || '' }} \
+            ${{ inputs.limit && format('--limit {0}', inputs.limit) || '' }} \
+            --verbose
+
+      - name: Release gates
+        run: uv run yc2vec validate --profile ${{ inputs.profile }}
+
+      - name: Upload logs and quality report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: enrichment-run
+          path: |
+            data/runs/
+            data/quality.json
+            data/manifest.json
+          retention-days: 30
+
+      - name: Open an enrichment pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: data/semantic-enrichment
+          title: 'data: semantic enrichment run'
+          commit-message: 'data: semantic enrichment (tags, embeddings, projection)'
+          labels: data-update, needs-review
+          body: |
+            Semantic enrichment produced by a local model on a self-hosted runner.
+
+            **This PR contains model inference and must be reviewed before merging.**
+            Check in particular:
+
+            - the merge review queue (`data/inferred/ontology/merge_proposals.jsonl`)
+              for proposals that were adjudicated as `unclear`;
+            - `data/quality.json`, especially `hard_negative_acceptance_rate` (the
+              false-positive proxy), `evidence_coverage` and `duplicate_tag_rate`;
+            - a sample of new positive assignments and their evidence spans.
+
+            Ontology merges and low-confidence assignments are never auto-committed
+            to the default branch.

@@ -1,0 +1,38 @@
+# --- generated data --------------------------------------------------------
+# Raw source payloads, the model-response cache and extracted website text are
+# regenerable and, in the crawler's case, third-party content we must not
+# redistribute. The published release under data/public/ IS committed, because
+# that is what the site serves.
+data/cache/
+data/raw/
+data/runs/
+data/normalized/
+data/inferred/*.npz
+data/*.tmp*
+
+# --- python ----------------------------------------------------------------
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+
+# --- node ------------------------------------------------------------------
+node_modules/
+frontend/dist/
+frontend/.vite/
+
+# --- local -----------------------------------------------------------------
+.env
+.DS_Store
+*.log
+
+# The generated ontology and derived tables are produced by an enrichment run
+# and land via the enrichment workflow's pull request, not by hand.
+data/inferred/

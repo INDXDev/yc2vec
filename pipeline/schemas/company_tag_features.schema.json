@@ -1,0 +1,62 @@
+{
+  "additionalProperties": false,
+  "description": "A published positive assignment: the sparse company x tag vector, long form.",
+  "properties": {
+    "calibrated_confidence": {
+      "title": "Calibrated Confidence",
+      "type": "number"
+    },
+    "company_id": {
+      "title": "Company Id",
+      "type": "string"
+    },
+    "feature_value": {
+      "description": "calibrated_confidence * information_weight",
+      "title": "Feature Value",
+      "type": "number"
+    },
+    "information_weight": {
+      "title": "Information Weight",
+      "type": "number"
+    },
+    "judgment_id": {
+      "title": "Judgment Id",
+      "type": "string"
+    },
+    "ontology_version": {
+      "title": "Ontology Version",
+      "type": "string"
+    },
+    "present": {
+      "description": "Binary presence, unweighted.",
+      "title": "Present",
+      "type": "integer"
+    },
+    "raw_confidence": {
+      "title": "Raw Confidence",
+      "type": "number"
+    },
+    "run_id": {
+      "title": "Run Id",
+      "type": "string"
+    },
+    "tag_id": {
+      "title": "Tag Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "company_id",
+    "tag_id",
+    "present",
+    "raw_confidence",
+    "calibrated_confidence",
+    "information_weight",
+    "feature_value",
+    "judgment_id",
+    "ontology_version",
+    "run_id"
+  ],
+  "title": "CompanyTagFeature",
+  "type": "object"
+}

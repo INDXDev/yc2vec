@@ -1,0 +1,75 @@
+{
+  "additionalProperties": false,
+  "description": "An exact YC/yc-oss classification, never renamed or merged by us.",
+  "properties": {
+    "company_count": {
+      "default": 0,
+      "title": "Company Count",
+      "type": "integer"
+    },
+    "kind": {
+      "enum": [
+        "industry",
+        "subindustry",
+        "tag",
+        "batch",
+        "region",
+        "stage",
+        "status"
+      ],
+      "title": "Kind",
+      "type": "string"
+    },
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "parent_term_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Parent Term Id"
+    },
+    "retrieved_at": {
+      "format": "date-time",
+      "title": "Retrieved At",
+      "type": "string"
+    },
+    "slug": {
+      "title": "Slug",
+      "type": "string"
+    },
+    "source_path": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Source Path"
+    },
+    "term_id": {
+      "description": "'{kind}:{slug}', e.g. 'industry:analytics'.",
+      "title": "Term Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "term_id",
+    "kind",
+    "slug",
+    "name",
+    "retrieved_at"
+  ],
+  "title": "SourceTaxonomyTerm",
+  "type": "object"
+}

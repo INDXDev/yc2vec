@@ -1,0 +1,103 @@
+{
+  "description": "Human-reviewed company/tag decisions used to measure assignment precision and recall. These are deliberately unambiguous cases from the committed fixture corpus: the goal is to catch a regression that flips an obvious decision, not to estimate accuracy from a large sample. Tag ids refer to the fixture ontology in pipeline/fixture_model.py; for a real run, reviewed pairs should be added against real tag ids.",
+  "reviewed_by": "project maintainers",
+  "reviewed_at": "2026-09-05",
+  "judgments": [
+    {
+      "company_id": "ycoss:5",
+      "tag_id": "physical-operations",
+      "decision": "yes",
+      "note": "CircuitHub runs a robotic electronics factory; delivery is unambiguously physical."
+    },
+    {
+      "company_id": "ycoss:5",
+      "tag_id": "consumer-facing",
+      "decision": "no",
+      "note": "Named customers are Tesla, NASA and Zipline. The buyer is an organisation."
+    },
+    {
+      "company_id": "ycoss:86",
+      "tag_id": "consumer-facing",
+      "decision": "yes",
+      "note": "Codecademy's learner is an individual acting for themselves."
+    },
+    {
+      "company_id": "ycoss:86",
+      "tag_id": "physical-operations",
+      "decision": "no",
+      "note": "An online learning platform requires no field operations or hardware."
+    },
+    {
+      "company_id": "ycoss:246",
+      "tag_id": "developer-tooling",
+      "decision": "yes",
+      "note": "RethinkDB is a database; its direct user is a software engineer."
+    },
+    {
+      "company_id": "ycoss:239",
+      "tag_id": "marketplace-model",
+      "decision": "yes",
+      "note": "Listia connects two sides of a trade in used goods."
+    },
+    {
+      "company_id": "ycoss:239",
+      "tag_id": "developer-tooling",
+      "decision": "no",
+      "note": "A consumer trading app is not sold to engineers."
+    },
+    {
+      "company_id": "ycoss:16",
+      "tag_id": "regulated-domain",
+      "decision": "yes",
+      "note": "Medigram states HIPAA compliance; the domain carries legal obligations."
+    },
+    {
+      "company_id": "ycoss:16",
+      "tag_id": "healthcare-sector",
+      "decision": "yes",
+      "note": "The stated users are doctors."
+    },
+    {
+      "company_id": "ycoss:487",
+      "tag_id": "healthcare-sector",
+      "decision": "yes",
+      "note": "Medisas builds software for hospitals."
+    },
+    {
+      "company_id": "ycoss:487",
+      "tag_id": "workflow-automation",
+      "decision": "yes",
+      "note": "Described explicitly as workflow and collaboration software."
+    },
+    {
+      "company_id": "ycoss:186",
+      "tag_id": "consumer-facing",
+      "decision": "yes",
+      "note": "PadMapper's user is a person looking for an apartment."
+    },
+    {
+      "company_id": "ycoss:186",
+      "tag_id": "regulated-domain",
+      "decision": "no",
+      "note": "Apartment search itself carries no sector-specific legal obligation."
+    },
+    {
+      "company_id": "ycoss:346",
+      "tag_id": "structured-data",
+      "decision": "yes",
+      "note": "Octopart searches electronic component catalogues, which are record-shaped."
+    },
+    {
+      "company_id": "ycoss:70",
+      "tag_id": "structured-data",
+      "decision": "yes",
+      "note": "An analytics product operates on tabular event and metric data."
+    },
+    {
+      "company_id": "ycoss:70",
+      "tag_id": "physical-operations",
+      "decision": "no",
+      "note": "Analytics software requires no facilities or field work."
+    }
+  ]
+}

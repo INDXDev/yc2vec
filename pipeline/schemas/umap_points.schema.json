@@ -1,0 +1,39 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "cluster_id": {
+      "title": "Cluster Id",
+      "type": "integer"
+    },
+    "company_id": {
+      "title": "Company Id",
+      "type": "string"
+    },
+    "embedding_space_version": {
+      "title": "Embedding Space Version",
+      "type": "string"
+    },
+    "projection_version": {
+      "title": "Projection Version",
+      "type": "string"
+    },
+    "x": {
+      "title": "X",
+      "type": "number"
+    },
+    "y": {
+      "title": "Y",
+      "type": "number"
+    }
+  },
+  "required": [
+    "company_id",
+    "x",
+    "y",
+    "cluster_id",
+    "projection_version",
+    "embedding_space_version"
+  ],
+  "title": "UmapPoint",
+  "type": "object"
+}

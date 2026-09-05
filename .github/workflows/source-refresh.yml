@@ -1,0 +1,68 @@
+name: Source refresh
+
+# Pulls fresh public company records and opens a data-update PR. This runs on a
+# standard hosted runner and deliberately never needs a local model: it only
+# touches the structured source layer.
+on:
+  schedule:
+    - cron: '17 5 * * 1'
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: 'Limit companies (blank for all)'
+        required: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: source-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync --all-extras
+
+      - name: Fetch and normalise
+        run: |
+          uv run yc2vec fetch ${{ github.event.inputs.limit && format('--limit {0}', github.event.inputs.limit) || '' }}
+
+      - name: Summarise the change
+        id: diff
+        run: |
+          changed=$(git status --porcelain data/ | wc -l)
+          echo "changed=$changed" >> "$GITHUB_OUTPUT"
+          {
+            echo 'summary<<EOF'
+            uv run yc2vec stats || true
+            echo EOF
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Open a data-update pull request
+        if: steps.diff.outputs.changed != '0'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: data/source-refresh
+          title: 'data: refresh public company records'
+          commit-message: 'data: refresh public company records from yc-oss/api'
+          labels: data-update
+          body: |
+            Automated refresh of the structured source layer from `yc-oss/api`.
+
+            Only `companies_raw`, `source_taxonomy_terms` and `companies_normalized`
+            are touched. Semantic enrichment (tags, embeddings, projection) is a
+            separate, manually triggered workflow that runs on a self-hosted runner
+            with Ollama.
+
+            ```
+            ${{ steps.diff.outputs.summary }}
+            ```
+
+            Review the diff before merging. New or changed companies will be picked
+            up incrementally by the next enrichment run.

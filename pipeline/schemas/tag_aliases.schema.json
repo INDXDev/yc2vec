@@ -1,0 +1,45 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "alias": {
+      "title": "Alias",
+      "type": "string"
+    },
+    "alias_id": {
+      "title": "Alias Id",
+      "type": "string"
+    },
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "normalized_alias": {
+      "title": "Normalized Alias",
+      "type": "string"
+    },
+    "origin": {
+      "enum": [
+        "llm",
+        "merge",
+        "manual"
+      ],
+      "title": "Origin",
+      "type": "string"
+    },
+    "tag_id": {
+      "title": "Tag Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "alias_id",
+    "tag_id",
+    "alias",
+    "normalized_alias",
+    "origin",
+    "created_at"
+  ],
+  "title": "TagAlias",
+  "type": "object"
+}

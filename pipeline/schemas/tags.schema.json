@@ -1,0 +1,177 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "aliases": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Aliases",
+      "type": "array"
+    },
+    "canonical_name": {
+      "title": "Canonical Name",
+      "type": "string"
+    },
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "definition": {
+      "title": "Definition",
+      "type": "string"
+    },
+    "deprecation_reason": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Deprecation Reason"
+    },
+    "discovery_run_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Discovery Run Id"
+    },
+    "facet": {
+      "title": "Facet",
+      "type": "string"
+    },
+    "merged_into": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Merged Into"
+    },
+    "model": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Model"
+    },
+    "negative_examples": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Negative Examples",
+      "type": "array"
+    },
+    "normalized_aliases": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Normalized Aliases",
+      "type": "array"
+    },
+    "ontology_version": {
+      "title": "Ontology Version",
+      "type": "string"
+    },
+    "parent_tag_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Parent Tag Ids",
+      "type": "array"
+    },
+    "positive_examples": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Positive Examples",
+      "type": "array"
+    },
+    "prompt_version": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Prompt Version"
+    },
+    "proposer": {
+      "default": "llm",
+      "title": "Proposer",
+      "type": "string"
+    },
+    "related_tag_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Related Tag Ids",
+      "type": "array"
+    },
+    "source_company_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Source Company Ids",
+      "type": "array"
+    },
+    "state": {
+      "default": "candidate",
+      "enum": [
+        "candidate",
+        "active",
+        "merged",
+        "deprecated"
+      ],
+      "title": "State",
+      "type": "string"
+    },
+    "support_count": {
+      "default": 0,
+      "title": "Support Count",
+      "type": "integer"
+    },
+    "tag_id": {
+      "description": "Stable slug, independent of display name.",
+      "title": "Tag Id",
+      "type": "string"
+    },
+    "updated_at": {
+      "format": "date-time",
+      "title": "Updated At",
+      "type": "string"
+    }
+  },
+  "required": [
+    "tag_id",
+    "canonical_name",
+    "definition",
+    "facet",
+    "ontology_version",
+    "created_at",
+    "updated_at"
+  ],
+  "title": "Tag",
+  "type": "object"
+}

@@ -1,0 +1,92 @@
+{
+  "additionalProperties": false,
+  "description": "An ambiguous merge waiting for review. Merges never happen silently.",
+  "properties": {
+    "adjudication": {
+      "anyOf": [
+        {
+          "enum": [
+            "merge",
+            "distinct",
+            "unclear"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Adjudication"
+    },
+    "applied": {
+      "default": false,
+      "title": "Applied",
+      "type": "boolean"
+    },
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "model": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Model"
+    },
+    "proposal_id": {
+      "title": "Proposal Id",
+      "type": "string"
+    },
+    "rationale": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Rationale"
+    },
+    "similarity": {
+      "title": "Similarity",
+      "type": "number"
+    },
+    "source_tag_id": {
+      "title": "Source Tag Id",
+      "type": "string"
+    },
+    "target_tag_id": {
+      "title": "Target Tag Id",
+      "type": "string"
+    },
+    "verdict": {
+      "enum": [
+        "auto_merge",
+        "review",
+        "distinct"
+      ],
+      "title": "Verdict",
+      "type": "string"
+    }
+  },
+  "required": [
+    "proposal_id",
+    "source_tag_id",
+    "target_tag_id",
+    "similarity",
+    "verdict",
+    "created_at"
+  ],
+  "title": "MergeProposal",
+  "type": "object"
+}

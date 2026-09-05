@@ -1,0 +1,47 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "centroid_x": {
+      "title": "Centroid X",
+      "type": "number"
+    },
+    "centroid_y": {
+      "title": "Centroid Y",
+      "type": "number"
+    },
+    "cluster_id": {
+      "title": "Cluster Id",
+      "type": "integer"
+    },
+    "label": {
+      "description": "Algorithmic label from over-represented tags.",
+      "title": "Label",
+      "type": "string"
+    },
+    "projection_version": {
+      "title": "Projection Version",
+      "type": "string"
+    },
+    "size": {
+      "title": "Size",
+      "type": "integer"
+    },
+    "top_tag_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Top Tag Ids",
+      "type": "array"
+    }
+  },
+  "required": [
+    "cluster_id",
+    "label",
+    "size",
+    "centroid_x",
+    "centroid_y",
+    "projection_version"
+  ],
+  "title": "Cluster",
+  "type": "object"
+}

@@ -1,0 +1,22 @@
+# Profile for a 24-48 GB workstation. This matches the `balanced` defaults and
+# is what the published dataset was built with.
+[models]
+chat_model = "qwen3.8:27b"
+embedding_model = "qwen3-embedding:8b"
+num_ctx = 8192
+
+[ontology]
+discovery_batch_size = 12
+max_candidates_per_batch = 14
+min_support = 3
+
+[tagging]
+shortlist_size = 24
+hard_negatives = 4
+pairs_per_call = 8
+concurrency = 6
+
+[embeddings]
+batch_size = 16
+concurrency = 4
+top_k_neighbors = 24

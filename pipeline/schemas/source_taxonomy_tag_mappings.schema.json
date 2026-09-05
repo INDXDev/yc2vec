@@ -1,0 +1,63 @@
+{
+  "additionalProperties": false,
+  "description": "How a YC/yc-oss term relates to a YC2Vec tag. Reviewed, never implicit.",
+  "properties": {
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "mapping_id": {
+      "title": "Mapping Id",
+      "type": "string"
+    },
+    "method": {
+      "enum": [
+        "embedding",
+        "llm",
+        "manual"
+      ],
+      "title": "Method",
+      "type": "string"
+    },
+    "relation": {
+      "enum": [
+        "equivalent",
+        "broader",
+        "narrower",
+        "overlaps",
+        "related"
+      ],
+      "title": "Relation",
+      "type": "string"
+    },
+    "reviewed": {
+      "default": false,
+      "title": "Reviewed",
+      "type": "boolean"
+    },
+    "similarity": {
+      "title": "Similarity",
+      "type": "number"
+    },
+    "tag_id": {
+      "title": "Tag Id",
+      "type": "string"
+    },
+    "term_id": {
+      "title": "Term Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "mapping_id",
+    "term_id",
+    "tag_id",
+    "relation",
+    "similarity",
+    "method",
+    "created_at"
+  ],
+  "title": "SourceTaxonomyTagMapping",
+  "type": "object"
+}

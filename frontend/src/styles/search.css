@@ -1,0 +1,131 @@
+.searchview {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.searchview--message {
+  padding: 40px;
+  text-align: center;
+}
+
+.searchview__inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 20px 20px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.searchview__header {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.searchview__title {
+  font-size: 20px;
+  letter-spacing: -0.02em;
+}
+
+.searchview__summary {
+  margin: 0;
+  font-size: 13px;
+}
+
+.searchview__table {
+  table-layout: fixed;
+}
+
+.searchview__table th:nth-child(1) {
+  width: 38%;
+}
+.searchview__table th:nth-child(2) {
+  width: 11%;
+}
+.searchview__table th:nth-child(3) {
+  width: 16%;
+}
+.searchview__table th:nth-child(4) {
+  width: 25%;
+}
+.searchview__table th:nth-child(5) {
+  width: 10%;
+}
+
+.searchview__table tr.is-cursor {
+  background: var(--bg-hover);
+  box-shadow: inset 2px 0 0 var(--accent);
+}
+
+.searchview__name {
+  font-weight: 600;
+  font-size: 13.5px;
+}
+
+.searchview__snippet {
+  margin: 3px 0 0;
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.searchview__matched {
+  margin: 3px 0 0;
+  font-size: 11px;
+}
+
+.searchview__cell {
+  font-size: 12.5px;
+}
+
+.searchview__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  align-items: center;
+}
+
+.searchview__links {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 12px;
+}
+
+.searchview__empty {
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.searchview__empty h2 {
+  font-size: 16px;
+}
+
+.searchview__empty ul {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 13px;
+  line-height: 1.6;
+  max-width: 64ch;
+}
+
+.searchview__more {
+  align-self: center;
+}
+
+@media (max-width: 860px) {
+  .searchview__table th:nth-child(3),
+  .searchview__table td:nth-child(3),
+  .searchview__table th:nth-child(4),
+  .searchview__table td:nth-child(4) {
+    display: none;
+  }
+  .searchview__table th:nth-child(1) {
+    width: 60%;
+  }
+}

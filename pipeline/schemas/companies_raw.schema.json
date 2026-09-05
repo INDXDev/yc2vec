@@ -1,0 +1,55 @@
+{
+  "additionalProperties": false,
+  "description": "A source record, preserved verbatim alongside its retrieval provenance.",
+  "properties": {
+    "company_id": {
+      "description": "Stable YC2Vec id, e.g. 'ycoss:5'.",
+      "title": "Company Id",
+      "type": "string"
+    },
+    "content_hash": {
+      "title": "Content Hash",
+      "type": "string"
+    },
+    "payload": {
+      "additionalProperties": true,
+      "title": "Payload",
+      "type": "object"
+    },
+    "retrieved_at": {
+      "format": "date-time",
+      "title": "Retrieved At",
+      "type": "string"
+    },
+    "source": {
+      "default": "yc_oss_api",
+      "title": "Source",
+      "type": "string"
+    },
+    "source_last_updated": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Source Last Updated"
+    },
+    "source_url": {
+      "title": "Source Url",
+      "type": "string"
+    }
+  },
+  "required": [
+    "company_id",
+    "source_url",
+    "retrieved_at",
+    "payload",
+    "content_hash"
+  ],
+  "title": "CompanyRaw",
+  "type": "object"
+}

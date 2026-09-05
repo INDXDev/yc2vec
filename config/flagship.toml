@@ -1,0 +1,28 @@
+# Profile for a machine that can hold a very large local model resident.
+#
+# Read this before using it: a mixture-of-experts model still requires the full
+# quantised weights to be resident across RAM and VRAM. The active-parameter
+# count is not the memory requirement. `yc2vec doctor` will refuse the profile
+# if the weights cannot fit, and it will never quietly fall back to a smaller
+# model. Confirm the model's licence permits your use and the redistribution of
+# derived outputs before running enrichment.
+[models]
+chat_model = "qwen3.8-flash-next:125b"
+embedding_model = "qwen3-embedding:8b"
+num_ctx = 16384
+
+[ontology]
+discovery_batch_size = 16
+max_candidates_per_batch = 16
+min_support = 3
+
+[tagging]
+shortlist_size = 32
+hard_negatives = 6
+pairs_per_call = 8
+concurrency = 4
+
+[embeddings]
+batch_size = 32
+concurrency = 4
+top_k_neighbors = 32

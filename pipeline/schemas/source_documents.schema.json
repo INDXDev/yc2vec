@@ -1,0 +1,69 @@
+{
+  "additionalProperties": false,
+  "description": "Extracted, sanitised text that downstream stages may quote as evidence.",
+  "properties": {
+    "char_count": {
+      "title": "Char Count",
+      "type": "integer"
+    },
+    "company_id": {
+      "title": "Company Id",
+      "type": "string"
+    },
+    "content_hash": {
+      "title": "Content Hash",
+      "type": "string"
+    },
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "document_id": {
+      "title": "Document Id",
+      "type": "string"
+    },
+    "extraction_version": {
+      "title": "Extraction Version",
+      "type": "string"
+    },
+    "kind": {
+      "enum": [
+        "yc_one_liner",
+        "yc_long_description",
+        "website_main_text",
+        "metadata_document"
+      ],
+      "title": "Kind",
+      "type": "string"
+    },
+    "source_url": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Source Url"
+    },
+    "text": {
+      "title": "Text",
+      "type": "string"
+    }
+  },
+  "required": [
+    "document_id",
+    "company_id",
+    "kind",
+    "text",
+    "char_count",
+    "content_hash",
+    "extraction_version",
+    "created_at"
+  ],
+  "title": "SourceDocument",
+  "type": "object"
+}

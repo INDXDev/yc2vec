@@ -1,0 +1,156 @@
+{
+  "$defs": {
+    "EvidenceSpan": {
+      "additionalProperties": false,
+      "properties": {
+        "document_id": {
+          "title": "Document Id",
+          "type": "string"
+        },
+        "quote": {
+          "title": "Quote",
+          "type": "string"
+        }
+      },
+      "required": [
+        "document_id",
+        "quote"
+      ],
+      "title": "EvidenceSpan",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "One independent company/tag decision, with everything needed to audit it.",
+  "properties": {
+    "company_id": {
+      "title": "Company Id",
+      "type": "string"
+    },
+    "confidence": {
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "title": "Confidence",
+      "type": "number"
+    },
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "decision": {
+      "enum": [
+        "yes",
+        "no",
+        "uncertain"
+      ],
+      "title": "Decision",
+      "type": "string"
+    },
+    "evidence": {
+      "items": {
+        "$ref": "#/$defs/EvidenceSpan"
+      },
+      "title": "Evidence",
+      "type": "array"
+    },
+    "judgment_id": {
+      "title": "Judgment Id",
+      "type": "string"
+    },
+    "model": {
+      "title": "Model",
+      "type": "string"
+    },
+    "model_digest": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Model Digest"
+    },
+    "notes": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Contradictions or missing information.",
+      "title": "Notes"
+    },
+    "ontology_version": {
+      "title": "Ontology Version",
+      "type": "string"
+    },
+    "pipeline_version": {
+      "title": "Pipeline Version",
+      "type": "string"
+    },
+    "prompt_version": {
+      "title": "Prompt Version",
+      "type": "string"
+    },
+    "rationale": {
+      "title": "Rationale",
+      "type": "string"
+    },
+    "retrieval_score": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Retrieval Score"
+    },
+    "run_id": {
+      "title": "Run Id",
+      "type": "string"
+    },
+    "shortlist_reason": {
+      "enum": [
+        "retrieval",
+        "facet_prior",
+        "alias",
+        "metadata_rule",
+        "parent",
+        "hard_negative"
+      ],
+      "title": "Shortlist Reason",
+      "type": "string"
+    },
+    "tag_id": {
+      "title": "Tag Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "judgment_id",
+    "company_id",
+    "tag_id",
+    "decision",
+    "confidence",
+    "rationale",
+    "shortlist_reason",
+    "model",
+    "prompt_version",
+    "ontology_version",
+    "pipeline_version",
+    "run_id",
+    "created_at"
+  ],
+  "title": "CompanyTagJudgment",
+  "type": "object"
+}

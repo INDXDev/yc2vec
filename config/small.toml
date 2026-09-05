@@ -1,0 +1,25 @@
+# Profile for a laptop or a 16 GB GPU.
+#
+# The 27B model does not fit comfortably here, so this profile selects smaller
+# models explicitly. It will produce a coarser ontology and noisier assignments;
+# that is a real trade-off, not a configuration detail to hide.
+[models]
+chat_model = "qwen3:8b"
+embedding_model = "qwen3-embedding:0.6b"
+num_ctx = 4096
+
+[ontology]
+discovery_batch_size = 8
+max_candidates_per_batch = 8
+min_support = 2
+
+[tagging]
+shortlist_size = 12
+hard_negatives = 2
+pairs_per_call = 6
+concurrency = 2
+
+[embeddings]
+batch_size = 8
+concurrency = 1
+top_k_neighbors = 16

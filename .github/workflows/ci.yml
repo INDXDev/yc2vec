@@ -1,0 +1,115 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pipeline:
+    name: Pipeline (lint, types, tests, fixture run)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Set up Python
+        run: uv python install 3.12
+
+      - name: Install dependencies
+        run: uv sync --all-extras
+
+      - name: Lint
+        run: uv run ruff check pipeline tests
+
+      - name: Format check
+        run: uv run ruff format --check pipeline tests
+
+      - name: Type check
+        run: uv run mypy pipeline
+
+      - name: Unit tests
+        run: uv run pytest -q --cov=pipeline --cov-report=term-missing
+
+      # The fixture profile uses a deterministic in-process model, so this
+      # exercises the whole vertical slice without downloading an LLM.
+      - name: Fixture pipeline smoke test
+        run: |
+          uv run yc2vec doctor --profile fixture
+          uv run yc2vec run --profile fixture --data-dir "$RUNNER_TEMP/fixture-data"
+
+      - name: Release gates
+        run: uv run yc2vec validate --profile fixture --data-dir "$RUNNER_TEMP/fixture-data"
+
+      - name: Schema generation is up to date
+        run: |
+          uv run yc2vec schemas --out "$RUNNER_TEMP/schemas"
+          diff -r pipeline/schemas "$RUNNER_TEMP/schemas"
+
+      - name: Upload fixture dataset
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fixture-dataset
+          path: ${{ runner.temp }}/fixture-data/public
+          retention-days: 7
+
+  frontend:
+    name: Frontend (types, tests, build)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - run: npm ci
+
+      - name: Type check
+        run: npm run typecheck
+
+      - name: Unit tests
+        run: npm run test
+
+      # Build under a project subpath, which is how GitHub Pages serves it.
+      - name: Production build (Pages subpath)
+        run: npm run build
+        env:
+          VITE_BASE_PATH: /${{ github.event.repository.name }}/
+
+      - name: Check bundle size
+        run: |
+          total=$(du -sk dist | cut -f1)
+          echo "dist is ${total} KiB"
+          if [ "$total" -gt 25000 ]; then
+            echo "::error::dist exceeded 25 MiB; GitHub Pages artifacts should stay small"
+            exit 1
+          fi
+
+      - name: Subpath routing smoke test
+        run: |
+          npx --yes http-server dist -p 8080 --silent &
+          sleep 3
+          # The app must serve from the subpath and survive a direct refresh at depth.
+          curl -sf http://127.0.0.1:8080/index.html > /dev/null
+          curl -sf http://127.0.0.1:8080/data/v1/manifest.json > /dev/null
+          curl -sf http://127.0.0.1:8080/data/v1/points.json > /dev/null
+          echo "subpath assets served"

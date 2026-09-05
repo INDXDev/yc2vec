@@ -1,0 +1,43 @@
+name: Tag review
+description: Propose, merge, split or deprecate a semantic tag
+title: '[tag] '
+labels: [tag-review]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The ontology is open-ended but curated. Merges are never applied silently,
+        so a proposal here is how a borderline case gets resolved.
+  - type: dropdown
+    id: action
+    attributes:
+      label: Proposed action
+      options:
+        - Merge two tags that mean the same thing
+        - Split one tag that is doing two jobs
+        - Deprecate a tag that is not useful
+        - Add a new tag
+        - Fix a definition or facet
+    validations:
+      required: true
+  - type: input
+    id: tags
+    attributes:
+      label: Tag ids
+      description: From the tag explorer URL, e.g. developer-tooling.
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Rationale
+      description: |
+        What would a competent analyst do differently? For a merge, explain why
+        the two tags would always apply to exactly the same companies.
+    validations:
+      required: true
+  - type: textarea
+    id: examples
+    attributes:
+      label: Example companies
+      description: Companies where the current behaviour is clearly wrong.

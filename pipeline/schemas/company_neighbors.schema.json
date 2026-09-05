@@ -1,0 +1,46 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "company_id": {
+      "title": "Company Id",
+      "type": "string"
+    },
+    "embedding_space_version": {
+      "title": "Embedding Space Version",
+      "type": "string"
+    },
+    "neighbor_company_id": {
+      "title": "Neighbor Company Id",
+      "type": "string"
+    },
+    "rank": {
+      "title": "Rank",
+      "type": "integer"
+    },
+    "similarity": {
+      "title": "Similarity",
+      "type": "number"
+    },
+    "space": {
+      "enum": [
+        "combined",
+        "description",
+        "metadata",
+        "tags",
+        "sparse_tags"
+      ],
+      "title": "Space",
+      "type": "string"
+    }
+  },
+  "required": [
+    "company_id",
+    "neighbor_company_id",
+    "space",
+    "rank",
+    "similarity",
+    "embedding_space_version"
+  ],
+  "title": "Neighbor",
+  "type": "object"
+}

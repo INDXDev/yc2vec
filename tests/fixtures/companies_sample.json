@@ -1,0 +1,2539 @@
+[
+ {
+  "all_locations": "London, England, United Kingdom",
+  "api": "https://yc-oss.github.io/api/batches/winter-2012/circuithub.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Winter 2012",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 5,
+  "industries": [
+   "Industrials",
+   "Manufacturing and Robotics"
+  ],
+  "industry": "Industrials",
+  "isHiring": true,
+  "launched_at": 1322045523,
+  "long_description": "CircuitHub offers on-demand electronics manufacturing powered by our factory-scale robotics platform, The Grid. This platform delivers a 10x improvement in the speed and cost of small-batch electronics production. Leading customers like Tesla, NASA, and Zipline rely on CircuitHub to cut their time to market in half.",
+  "name": "CircuitHub",
+  "nonprofit": false,
+  "one_liner": "On-Demand Electronics Manufacturing",
+  "question_answers": false,
+  "regions": [
+   "United Kingdom",
+   "Europe",
+   "Remote",
+   "Partly Remote"
+  ],
+  "slug": "circuithub",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/5967d06c7b101af8570dc47b6eea5cd8567dd32b.png",
+  "stage": "Early",
+  "status": "Active",
+  "subindustry": "Industrials -> Manufacturing and Robotics",
+  "tags": [
+   "Hard Tech",
+   "Hardware",
+   "Robotics",
+   "Manufacturing",
+   "Automation"
+  ],
+  "tags_highlighted": [],
+  "team_size": 58,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/circuithub",
+  "website": "https://circuithub.com"
+ },
+ {
+  "all_locations": "San Francisco, CA, USA; Remote",
+  "api": "https://yc-oss.github.io/api/batches/winter-2012/42floors.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Winter 2012",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 7,
+  "industries": [
+   "Real Estate and Construction",
+   "Housing and Real Estate"
+  ],
+  "industry": "Real Estate and Construction",
+  "isHiring": false,
+  "launched_at": 1322045536,
+  "long_description": "*Acquired by Knotel in 2018\r\n\r\n42Floors was founded in November of 2011 with the vision of making it easy to discover and create your dream office space. Based in San Francisco, the 42Floors team is made up of experienced entrepreneurs, engineers, and real estate professionals. All with a passion for making the commercial real estate search process easier for everyone.\r\n\r\nOn the site, you'll find available spaces, complete with high quality photography and all the data you need to make a decision. The site 100% free to use.\r\n\r\n42Floors is currently in every major market in the United States, and we are still growing.\r\n\r\nWe're always here to serve you.",
+  "name": "42Floors",
+  "nonprofit": false,
+  "one_liner": "We make it easy to search for office space.",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada",
+   "Remote",
+   "Fully Remote"
+  ],
+  "slug": "42floors",
+  "small_logo_thumb_url": "/company/thumb/missing.png",
+  "stage": "Growth",
+  "status": "Acquired",
+  "subindustry": "Real Estate and Construction -> Housing and Real Estate",
+  "tags": [
+   "Real Estate",
+   "Proptech"
+  ],
+  "tags_highlighted": [],
+  "team_size": 60,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/42floors",
+  "website": "http://42floors.com"
+ },
+ {
+  "all_locations": "Los Gatos, CA, USA",
+  "api": "https://yc-oss.github.io/api/batches/winter-2012/medigram.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Winter 2012",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 16,
+  "industries": [
+   "Healthcare",
+   "Healthcare IT"
+  ],
+  "industry": "Healthcare",
+  "isHiring": false,
+  "launched_at": 1322045643,
+  "long_description": "Have you ever wondered why it's so hard for physicians to communicate quickly and why the leading cause of preventable death is still a delay in communication? Our team has built the solution for this. Medigram is a team of tier 1 health system CxO IT executives, technologists, SaaS exec, physicians, engineers, and data experts. We have developed a breakthrough service for the medical industry to save lives and for hospitals to make millions per year. Medigram instantly flags insights from clinician chats for immediate insight into hospital operations and patient care. This reduces critical response times by 50%. We've designed this system to provide instant, reliable messaging (including images and audio files) across very complicated network environments in hospitals. Medigram is secure, designed for HIPAA, and a full stack system which includes database back end, middleware, logic, and client apps for iOS, Android, desktop, and the web.\n\nOur solution to this is Mobile Intelligence For Healthcare by providing a secure, intelligent workflow management platform for the patient care ecosystem and medical professionals. Within the healthcare environment, you have physicians, the patient care team, EMR, workflow, data, and administration which needs to be tied together with intelligence through Medigram.",
+  "name": "Medigram",
+  "nonprofit": false,
+  "one_liner": "We are making a HIPAA-compliant, Groupme app for doctors to\u2026",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada"
+  ],
+  "slug": "medigram",
+  "small_logo_thumb_url": "/company/thumb/missing.png",
+  "stage": "Early",
+  "status": "Active",
+  "subindustry": "Healthcare -> Healthcare IT",
+  "tags": [
+   "Messaging",
+   "Healthcare"
+  ],
+  "tags_highlighted": [],
+  "team_size": 11,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/medigram",
+  "website": "http://medigram.com"
+ },
+ {
+  "all_locations": "San Francisco, CA, USA; Istanbul, Istanbul, Turkey",
+  "api": "https://yc-oss.github.io/api/batches/winter-2012/cleverdeck.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Winter 2012",
+  "demo_day_video_public": false,
+  "former_names": [
+   "EveryArt"
+  ],
+  "id": 32,
+  "industries": [
+   "Education"
+  ],
+  "industry": "Education",
+  "isHiring": false,
+  "launched_at": 1322045787,
+  "long_description": "CleverDeck is a customizable-spaced repetition flashcard application for learning foreign language vocabulary.\n\nIt contains more than three thousand useful words along with images, native speaker audio, and example sentences.",
+  "name": "CleverDeck",
+  "nonprofit": false,
+  "one_liner": "Collaborate with an artist to commission original artwork you'll live\u2026",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "Turkey",
+   "America / Canada",
+   "Middle East and North Africa"
+  ],
+  "slug": "cleverdeck",
+  "small_logo_thumb_url": "/company/thumb/missing.png",
+  "stage": "Early",
+  "status": "Active",
+  "subindustry": "Education",
+  "tags": [
+   "Marketplace"
+  ],
+  "tags_highlighted": [],
+  "team_size": 1,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/cleverdeck",
+  "website": "http://cleverdeck.com"
+ },
+ {
+  "all_locations": "San Francisco, CA, USA",
+  "api": "https://yc-oss.github.io/api/batches/summer-2011/freshplum.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Summer 2011",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 70,
+  "industries": [
+   "B2B",
+   "Analytics"
+  ],
+  "industry": "B2B",
+  "isHiring": false,
+  "launched_at": 1326788965,
+  "long_description": "Freshplum's goal is to bring the decision-making power of data science to companies who sell goods and services electronically.",
+  "name": "Freshplum",
+  "nonprofit": false,
+  "one_liner": "Analytics with action",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada"
+  ],
+  "slug": "freshplum",
+  "small_logo_thumb_url": "/company/thumb/missing.png",
+  "stage": "Early",
+  "status": "Acquired",
+  "subindustry": "B2B -> Analytics",
+  "tags": [
+   "Analytics"
+  ],
+  "tags_highlighted": [],
+  "team_size": 8,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/freshplum",
+  "website": "http://freshplum.com"
+ },
+ {
+  "all_locations": "New York City, NY, USA; New York, NY, USA",
+  "api": "https://yc-oss.github.io/api/batches/summer-2011/codecademy.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Summer 2011",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 86,
+  "industries": [
+   "Education"
+  ],
+  "industry": "Education",
+  "isHiring": false,
+  "launched_at": 1326789163,
+  "long_description": "Working professionals are experiencing their jobs changing amidst the rise of technology and automation threatens over 800 million jobs. At the same time, software is eating the world, disrupting every major industry, and creating millions of new technology jobs that companies are eager to fill. This is the skills gap. Our mission is closing it.\r\n\r\nIn 2011, we changed the face of education by creating free interactive coding courses explored by over 45 million people. As we look to the future, we're focused on helping anyone get the skills they need for the jobs they want.  We aim to bridge the gap: between companies and the workforce, people and their dream jobs. Join one of the most dynamic technology companies in New York that is changing the way the world learns.\r\n\r\nHeadquartered in New York City, our team is filled with highly curious diverse individuals whose backgrounds span tech and education. Our team is passionate about our mission: helping people get the skills they need for the jobs they want. We seek transparency, thrive on feedback, value teamwork, love evolving and never forget it's people first. We enjoy catered lunches together, company outings, guest speakers and long walks on the beach.",
+  "name": "Codecademy",
+  "nonprofit": false,
+  "one_liner": "The leading online learning platform for technical skills.",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada",
+   "Remote",
+   "Partly Remote"
+  ],
+  "slug": "codecademy",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/ee26c3b11a260e7a045f68b47d8c804b306db89f.png",
+  "stage": "Growth",
+  "status": "Acquired",
+  "subindustry": "Education",
+  "tags": [
+   "Education"
+  ],
+  "tags_highlighted": [],
+  "team_size": 225,
+  "top_company": true,
+  "url": "https://www.ycombinator.com/companies/codecademy",
+  "website": "http://codecademy.com"
+ },
+ {
+  "all_locations": "San Francisco, CA, USA",
+  "api": "https://yc-oss.github.io/api/batches/summer-2011/rentobo.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Summer 2011",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 125,
+  "industries": [
+   "Real Estate and Construction",
+   "Housing and Real Estate"
+  ],
+  "industry": "Real Estate and Construction",
+  "isHiring": false,
+  "launched_at": 1326789594,
+  "long_description": "Rentobo is a new tool built for landlords, managers, and agents of all sizes to simplify the process of finding and signing a new tenant for your rental property.\n\nEnter your listing details once at Rentobo and we will help you promote your property across major rental search sites.\n\nRentobo organizes rental applications, credit scores, and social networks into an easy to use tenant profile - everything you need to make a decision.\n\nTenants use Rentobo to sign their lease and submit their deposit electronically. Combined with online applications you can stop pushing paper.\n\nFor more information, please visit us at: http://www.rentobo.com",
+  "name": "Rentobo",
+  "nonprofit": false,
+  "one_liner": "The easiest way to find a tenant.\r\n\r\nRentobo is a tool that makes it\u2026",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada"
+  ],
+  "slug": "rentobo",
+  "small_logo_thumb_url": "/company/thumb/missing.png",
+  "stage": "Early",
+  "status": "Inactive",
+  "subindustry": "Real Estate and Construction -> Housing and Real Estate",
+  "tags": [
+   "Marketplace",
+   "Real Estate"
+  ],
+  "tags_highlighted": [],
+  "team_size": 11,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/rentobo",
+  "website": "http://rentobo.com"
+ },
+ {
+  "all_locations": "San Francisco, CA, USA",
+  "api": "https://yc-oss.github.io/api/batches/summer-2010/hipmunk.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Summer 2010",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 178,
+  "industries": [
+   "Consumer",
+   "Travel, Leisure and Tourism"
+  ],
+  "industry": "Consumer",
+  "isHiring": false,
+  "launched_at": 1326790071,
+  "long_description": "Hipmunk is making travel planning simple and delightful. The site and mobile apps save you time by comparing top travel sites so you don't have to. The unique display makes it easy to visually compare results and choose what's best for you. Hipmunk brings in travel options ranging from commercial flights to trains to charter flights and accommodations ranging from large hotels to home and apartments rentals through Airbnb and Homeaway. Users can find less agonizing flights with the innovative flight search \u201cAgony\u201d sort, as well as the best hotels and home rentals with the hotel search \u201cEcstasy\u201d sort. \r\n\r\nHipmunk is one of TIME Magazine\u2019s \u201c50 Coolest Websites,\u201d TIME Magazine\u2019s \u201c50 Best Smartphone Apps,\u201d Travel + Leisure\u2019s \u201cBest Websites of 2012,\u201d Budget Travel\u2019s \u201cTop 10 Most Useful Websites,\u201d and Inc.\u2019s \u201cBest Booking Website.\u201d Co-founders Adam Goldstein and Steve Huffman were named to Bloomberg BusinessWeek\u2019s \u201cTop Tech Entrepreneurs,\u201d Forbes \u201c30 Under 30\u201d and Inc.\u2019s \u201c30 Under 30\u201d lists. The company launched in 2010, is based in San Francisco, and has funding from IVP, Ignition Partners, Y Combinator, SV Angel, Webb Investment Network, Quest Hospitality Ventures, and several angel investors.",
+  "name": "Hipmunk",
+  "nonprofit": false,
+  "one_liner": "Hipmunk takes the agony out of searching for flights, accommodations,\u2026",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada"
+  ],
+  "slug": "hipmunk",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/f2f4e2b87686f40b66e32d1353f1f8cd4347557f.png",
+  "stage": "Growth",
+  "status": "Acquired",
+  "subindustry": "Consumer -> Travel, Leisure and Tourism",
+  "tags": [
+   "Travel"
+  ],
+  "tags_highlighted": [],
+  "team_size": 51,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/hipmunk",
+  "website": "http://hipmunk.com"
+ },
+ {
+  "all_locations": "San Francisco, CA, USA",
+  "api": "https://yc-oss.github.io/api/batches/summer-2010/padmapper.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Summer 2010",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 186,
+  "industries": [
+   "Real Estate and Construction",
+   "Housing and Real Estate"
+  ],
+  "industry": "Real Estate and Construction",
+  "isHiring": false,
+  "launched_at": 1326790132,
+  "long_description": "PadMapper is a location-based apartment rental search engine with real-time filtering.\n\nPadMapper's entire browsing interface is taken up by a full-screen map, and listings are loaded as the user moves around the map. Zooming into the map loads more listings in that area, zooming out broadens the search. Listings are filtered out or allowed back into the results as filter sliders are moved.\n\nApartment listings from hundreds of sites are included, including Craigslist, Apartments.com, ForRent.com, and Oodle.",
+  "name": "PadMapper",
+  "nonprofit": false,
+  "one_liner": "Map-based apartment search.",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada"
+  ],
+  "slug": "padmapper",
+  "small_logo_thumb_url": "/company/thumb/missing.png",
+  "stage": "Early",
+  "status": "Acquired",
+  "subindustry": "Real Estate and Construction -> Housing and Real Estate",
+  "tags": [
+   "Marketplace",
+   "Real Estate"
+  ],
+  "tags_highlighted": [],
+  "team_size": 2,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/padmapper",
+  "website": "http://padmapper.com"
+ },
+ {
+  "all_locations": "San Francisco, CA, USA; Campbell, CA, USA; Remote",
+  "api": "https://yc-oss.github.io/api/batches/summer-2009/listia.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Summer 2009",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 239,
+  "industries": [
+   "Consumer",
+   "Home and Personal"
+  ],
+  "industry": "Consumer",
+  "isHiring": false,
+  "launched_at": 1326790577,
+  "long_description": "Listia is a new kind of auction marketplace for giving and getting free stuff. Users list items as auctions, and other users bid on these items using credits instead of money. Credits are earned by signing up, giving away stuff, and being an active member.",
+  "name": "Listia",
+  "nonprofit": false,
+  "one_liner": "Mobile marketplace for trading used goods.",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada",
+   "Remote",
+   "Fully Remote"
+  ],
+  "slug": "listia",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/4c8b863d8e3f09499ba7366a4652c816c635f1a9.png",
+  "stage": "Growth",
+  "status": "Active",
+  "subindustry": "Consumer -> Home and Personal",
+  "tags": [
+   "Marketplace",
+   "Crypto / Web3"
+  ],
+  "tags_highlighted": [
+   "Crypto / Web3"
+  ],
+  "team_size": 6,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/listia",
+  "website": "http://listia.com"
+ },
+ {
+  "all_locations": "San Francisco, CA, USA",
+  "api": "https://yc-oss.github.io/api/batches/summer-2009/rethinkdb.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Summer 2009",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 246,
+  "industries": [
+   "B2B",
+   "Infrastructure"
+  ],
+  "industry": "B2B",
+  "isHiring": false,
+  "launched_at": 1326790634,
+  "long_description": "RethinkDB is the first open-source scalable database for the realtime web. It exposes an exciting new access model -- instead of polling for changes, the developer can tell the database to continuously push updated query results to applications in realtime. RethinkDB allows developer to build scalable realtime apps in a fraction of the time with fewer engineering resources.\n\nRethinkDB features a pleasant and powerful query language that has useful queries like table joins and groupBy, a highly parallelized architecture, and web tools for managing clusters.",
+  "name": "RethinkDB",
+  "nonprofit": false,
+  "one_liner": "The open source database for the realtime web.",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada"
+  ],
+  "slug": "rethinkdb",
+  "small_logo_thumb_url": "/company/thumb/missing.png",
+  "stage": "Early",
+  "status": "Acquired",
+  "subindustry": "B2B -> Infrastructure",
+  "tags": [
+   "Open Source"
+  ],
+  "tags_highlighted": [],
+  "team_size": 11,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/rethinkdb",
+  "website": "http://rethinkdb.com"
+ },
+ {
+  "all_locations": "San Francisco, CA, USA",
+  "api": "https://yc-oss.github.io/api/batches/summer-2009/lingt.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Summer 2009",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 259,
+  "industries": [
+   "Education"
+  ],
+  "industry": "Education",
+  "isHiring": false,
+  "launched_at": 1326790750,
+  "long_description": "Lingt empowers teachers to speak more with their students. Create and manage online speaking assignments for use in the classroom.",
+  "name": "Lingt",
+  "nonprofit": false,
+  "one_liner": "Lingt provided a web-based platform for learning languages leveraging\u2026",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada"
+  ],
+  "slug": "lingt",
+  "small_logo_thumb_url": "/company/thumb/missing.png",
+  "stage": "Early",
+  "status": "Active",
+  "subindustry": "Education",
+  "tags": [
+   "Education"
+  ],
+  "tags_highlighted": [],
+  "team_size": 2,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/lingt",
+  "website": "https://www.lingt.com/"
+ },
+ {
+  "all_locations": "San Francisco, CA, USA; Remote",
+  "api": "https://yc-oss.github.io/api/batches/summer-2008/poll-everywhere.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Summer 2008",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 282,
+  "industries": [
+   "B2B",
+   "Analytics"
+  ],
+  "industry": "B2B",
+  "isHiring": false,
+  "launched_at": 1326790942,
+  "long_description": "Poll Everywhere turns any presentation into a two-way conversation - directly in your PowerPoint, Keynote, or Google Slide deck. Participants respond to questions live using mobile phones and the results appear instantly in beautiful, animated displays. Poll Everywhere engages everyone at conferences, town halls, training sessions, marketing events, and everyday meetings. Learn more about how organizations like HP, Volvo, KPMG, and over 75% of the Fortune 500 use Poll Everywhere to get results.",
+  "name": "Poll Everywhere",
+  "nonprofit": false,
+  "one_liner": "Interactive meetings and presentations",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada",
+   "Remote",
+   "Fully Remote"
+  ],
+  "slug": "poll-everywhere",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/ecbec2f3750898b4408fbaa96c7249395a7fc445.png",
+  "stage": "Growth",
+  "status": "Active",
+  "subindustry": "B2B -> Analytics",
+  "tags": [
+   "SaaS"
+  ],
+  "tags_highlighted": [],
+  "team_size": 70,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/poll-everywhere",
+  "website": "https://www.polleverywhere.com"
+ },
+ {
+  "all_locations": "England, United Kingdom",
+  "api": "https://yc-oss.github.io/api/batches/summer-2007/songkick.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Summer 2007",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 324,
+  "industries": [
+   "Consumer",
+   "Travel, Leisure and Tourism"
+  ],
+  "industry": "Consumer",
+  "isHiring": false,
+  "launched_at": 1326791318,
+  "long_description": "Songkick is the great live music startup. Since 2007, we\u2019ve set about making it as easy, fun and fair as possible for you to see your favorite artists live. Right now, more than 15 million music fans across the globe use Songkick to track their favorite artists, discover awesome concerts and never ever miss out.\r\n\r\nWith over 6 million event listings, we\u2019re the biggest concert service on the planet. Across web, iPhone, Android, and through rich partnerships with Spotify, Pandora, Facebook and more, Songkick is the definitive and trusted home for live music online.\r\n\r\nWe\u2019ve always put fans first. We\u2019re a small, fast-moving team packed to the brim with digital expertise, committed to solving real problems for our users. Live music is for everyone, and we work hard to empower our community, add meaningful value and cut out the BS along the way.\r\n\r\nWe do our best work when we\u2019re happy, respectful and relaxed. Our values and work ethic have got us far, and as we grow we\u2019ll never shake that small startup feel. Earlier this year we became part of the Warner Music Group family, opening up epic new realms of opportunities to bring fans and artists closer together.\r\n\r\nWe're hiring: head over to https://www.songkick.com/jobs to see our open roles",
+  "name": "Songkick",
+  "nonprofit": false,
+  "one_liner": "",
+  "question_answers": false,
+  "regions": [
+   "United Kingdom",
+   "Europe"
+  ],
+  "slug": "songkick",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/c112500f3b7989c53a9d6a6717d9c7df44423fd9.png",
+  "stage": "Early",
+  "status": "Acquired",
+  "subindustry": "Consumer -> Travel, Leisure and Tourism",
+  "tags": [],
+  "tags_highlighted": [],
+  "team_size": 11,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/songkick",
+  "website": "http://songkick.com"
+ },
+ {
+  "all_locations": "New York City, NY, USA; New York, NY, USA",
+  "api": "https://yc-oss.github.io/api/batches/winter-2007/octopart.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Winter 2007",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 346,
+  "industries": [
+   "Industrials",
+   "Manufacturing and Robotics"
+  ],
+  "industry": "Industrials",
+  "isHiring": false,
+  "launched_at": 1326791513,
+  "long_description": "Engineering tools should be as streamlined and smart as everything else in your life: as your phone, as your email, as all the apps that help you manage your day-to-day. Your work should be as efficient as possible so you can generate innovative ideas, design elegant technology, and manufacture at scale, all because you can focus on the right things. There should not be any distractions caused by poorly designed websites, unreliable data, or unwieldy spreadsheets of haphazard electronic component information. You should be able to compare components, find important technical information, and easily grasp the spectrum of parts that will be a match for your design.\r\n\r\nThis is what Octopart strives for.\r\n\r\nFinding electronic component information should not be holding engineers back from bringing ideas to life quickly and efficiently. We believe that pricing, availability, technical specifications, and reference designs should be transparent, fast to find, and easy to understand. That\u2019s why we create powerful, intelligent tools that streamline the engineering workflow and enable fast decision making. Octopart provides accurate and complete data for millions of electronic components in a way that makes it easy to find and compare parts. Focus on the important stuff: building the technology of the future.",
+  "name": "Octopart",
+  "nonprofit": false,
+  "one_liner": "Octopart is a search engine for electronic components",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada"
+  ],
+  "slug": "octopart",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/7ec50ec51b3c3aa64ab820a6f8ba8edaabbaf3bf.png",
+  "stage": "Early",
+  "status": "Acquired",
+  "subindustry": "Industrials -> Manufacturing and Robotics",
+  "tags": [
+   "Electronics"
+  ],
+  "tags_highlighted": [],
+  "team_size": 11,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/octopart",
+  "website": "http://octopart.com"
+ },
+ {
+  "all_locations": "San Francisco, CA, USA",
+  "api": "https://yc-oss.github.io/api/batches/summer-2006/scribd.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Summer 2006",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 356,
+  "industries": [
+   "Consumer",
+   "Content"
+  ],
+  "industry": "Consumer",
+  "isHiring": false,
+  "launched_at": 1326791580,
+  "long_description": "Scribd gives you access to millions of ebooks, audiobooks, magazines, podcasts, and more \u2014 all in one place, for one price.\r\n\r\nOUR VISION\r\nInspire the world through stories and knowledge.\r\n\r\nOUR MISSION\r\nBuild the largest and most accessible library connecting storytellers with their audience.\r\n\r\nIf you love working with smart, motivated people, you\u2019ll love working at Scribd. We value our employees, we demonstrate accountability, and we take action. We\u2019re one team with a common goal: helping our customers flourish.",
+  "name": "Scribd",
+  "nonprofit": false,
+  "one_liner": "World's largest online library.",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada",
+   "Remote",
+   "Partly Remote"
+  ],
+  "slug": "scribd",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/01a86e89391dfdeb194190d1925b25fee5854301.png",
+  "stage": "Growth",
+  "status": "Active",
+  "subindustry": "Consumer -> Content",
+  "tags": [
+   "AI-Enhanced Learning",
+   "Remote Work",
+   "Edtech"
+  ],
+  "tags_highlighted": [],
+  "team_size": 300,
+  "top_company": true,
+  "url": "https://www.ycombinator.com/companies/scribd",
+  "website": "http://scribd.com"
+ },
+ {
+  "all_locations": "Seattle, WA, USA; Redmond, WA, USA",
+  "api": "https://yc-oss.github.io/api/batches/summer-2005/textpayme.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Summer 2005",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 374,
+  "industries": [
+   "Fintech",
+   "Consumer Finance"
+  ],
+  "industry": "Fintech",
+  "isHiring": false,
+  "launched_at": 1326791686,
+  "long_description": "Founded in 2005, TextPayMe is an SMS payment service that lets you send money to other people using cell phone text messaging. TextPayMe lets you send money to anyone else in the US with an SMS-capable cell phone, and while phone carriers may charge for the actual text message sent/received, sending and receiving money is free while TextPayMe remains in Beta.\n\nIn July 2006, the TextPayMe team started working for Amazon and, as of 2011, the site redirects to an Amazon's mobile payment website. There was no press release related to this event but it's assumed the company was acquired.\n\nSending and receiving payments through TextPayMe is easy: simply write a text message to SMS@TextPayMe.com with \"pay amount phonenumber\" in the body (i.e. to send $5 to 123-456-7890, text \"pay 5 1234567890\"). The service is secure as well, as each payment needs to be confirmed by a user-created PIN. To fund your transactions, TextPayMe lets you add money directly from your bank account and now also lets you link your credit card as well. Currently, the maximum amount that can be sent or received per month is $500.",
+  "name": "TextPayMe",
+  "nonprofit": false,
+  "one_liner": "",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada"
+  ],
+  "slug": "textpayme",
+  "small_logo_thumb_url": "/company/thumb/missing.png",
+  "stage": "Early",
+  "status": "Acquired",
+  "subindustry": "Fintech -> Consumer Finance",
+  "tags": [],
+  "tags_highlighted": [],
+  "team_size": 11,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/textpayme",
+  "website": "http://textpayme.com"
+ },
+ {
+  "all_locations": "San Francisco, CA, USA",
+  "api": "https://yc-oss.github.io/api/batches/winter-2013/styleup.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Winter 2013",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 470,
+  "industries": [
+   "Consumer",
+   "Apparel and Cosmetics"
+  ],
+  "industry": "Consumer",
+  "isHiring": false,
+  "launched_at": 1354492592,
+  "long_description": "StyleUp brings effortless joy to getting dressed with daily, weather-appropriate advice tailored to suit your life and style. It's your shortcut to chic.\r\n\r\nWe believe in discovery. It's our job to find outfit recommendations you love and deliver them to you conveniently and beautifully. Your feedback helps us make better recommendations, so we can serve you better every single day.",
+  "name": "StyleUp",
+  "nonprofit": false,
+  "one_liner": "StyleUp brings effortless joy to getting dressed with daily,\u2026",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada"
+  ],
+  "slug": "styleup",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/0b9e6ef382c45610608bd2bdb72d905cd6a41486.png",
+  "stage": "Early",
+  "status": "Active",
+  "subindustry": "Consumer -> Apparel and Cosmetics",
+  "tags": [
+   "Fashion"
+  ],
+  "tags_highlighted": [],
+  "team_size": 10,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/styleup",
+  "website": "http://thestyleup.com"
+ },
+ {
+  "all_locations": "San Francisco, CA, USA",
+  "api": "https://yc-oss.github.io/api/batches/winter-2013/medisas.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Winter 2013",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 487,
+  "industries": [
+   "Healthcare",
+   "Healthcare IT"
+  ],
+  "industry": "Healthcare",
+  "isHiring": false,
+  "launched_at": 1354492748,
+  "long_description": "Healthcare is broken and underserved by technology.\n\nHospital software is too complicated, too convoluted, and too disconnected. Doctors and nurses spend more time clicking through prompts than checking in on patients, and the quality of care suffers as a result. We're going to change that, and have been able to do so for the care teams of half a million patients and counting.",
+  "name": "Medisas",
+  "nonprofit": false,
+  "one_liner": "Medisas builds workflow & collaboration software for hospitals.",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada"
+  ],
+  "slug": "medisas",
+  "small_logo_thumb_url": "/company/thumb/missing.png",
+  "stage": "Growth",
+  "status": "Inactive",
+  "subindustry": "Healthcare -> Healthcare IT",
+  "tags": [
+   "Workflow Automation",
+   "Healthcare"
+  ],
+  "tags_highlighted": [],
+  "team_size": 11,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/medisas",
+  "website": "http://medisas.com"
+ },
+ {
+  "all_locations": "San Francisco, CA, USA",
+  "api": "https://yc-oss.github.io/api/batches/winter-2013/airware.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Winter 2013",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 513,
+  "industries": [
+   "Industrials",
+   "Drones"
+  ],
+  "industry": "Industrials",
+  "isHiring": false,
+  "launched_at": 1357185682,
+  "long_description": "Airware offers commercial drone solutions, enabling enterprises to take full advantage of aerial data for any business application. Airware\u2019s solutions combine hardware, software, and cloud services to enable companies to efficiently manage and safely and reliably operate commercial drones at scale.",
+  "name": "Airware",
+  "nonprofit": false,
+  "one_liner": "Airware provides end-to-end solutions that enable enterprises to\u2026",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada"
+  ],
+  "slug": "airware",
+  "small_logo_thumb_url": "/company/thumb/missing.png",
+  "stage": "Growth",
+  "status": "Inactive",
+  "subindustry": "Industrials -> Drones",
+  "tags": [
+   "Drones",
+   "Enterprise"
+  ],
+  "tags_highlighted": [],
+  "team_size": 51,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/airware",
+  "website": "http://airware.com"
+ },
+ {
+  "all_locations": "Portland, OR, USA",
+  "api": "https://yc-oss.github.io/api/batches/summer-2013/realcrowd.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Summer 2013",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 554,
+  "industries": [
+   "Real Estate and Construction",
+   "Housing and Real Estate"
+  ],
+  "industry": "Real Estate and Construction",
+  "isHiring": false,
+  "launched_at": 1367523674,
+  "long_description": "RealCrowd puts the power of commercial real estate investing into your hands. This unique crowd based equity platform was created by experienced commercial real estate investment professionals to allow you to decide where your money is invested by offering direct investments. Pooling your money with other like-minded investors and working with a seasoned real estate operator with the skills, knowledge and experience to optimize the asset will remove the traditional barriers to entry that typically exist in commercial real estate investing.",
+  "name": "RealCrowd",
+  "nonprofit": false,
+  "one_liner": "Direct real estate investing marketplace",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada",
+   "Remote",
+   "Partly Remote"
+  ],
+  "slug": "realcrowd",
+  "small_logo_thumb_url": "/company/thumb/missing.png",
+  "stage": "Growth",
+  "status": "Acquired",
+  "subindustry": "Real Estate and Construction -> Housing and Real Estate",
+  "tags": [
+   "Marketplace",
+   "Real Estate"
+  ],
+  "tags_highlighted": [],
+  "team_size": 9,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/realcrowd",
+  "website": "http://realcrowd.com"
+ },
+ {
+  "all_locations": "Lisbon, Lisbon, Portugal; Remote",
+  "api": "https://yc-oss.github.io/api/batches/winter-2014/airhelp.json",
+  "app_answers": true,
+  "app_video_public": true,
+  "batch": "Winter 2014",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 574,
+  "industries": [
+   "Consumer",
+   "Travel, Leisure and Tourism"
+  ],
+  "industry": "Consumer",
+  "isHiring": false,
+  "launched_at": 1384978570,
+  "long_description": "We help get compensation for air passengers that have experienced delayed, cancelled, and overbooked flights. We make the claim process much faster, easier and less painfull because the airlines won't.\r\n\r\nWe love new challenges! As a start-up, we\u2019ve been through it all and thanks to this our AirHelpers have developed the skills to deal with it all, and more, all while remaining passionate about what we do \u2013 helping ordinary people \u2013 as flight delays can happen to anyone.\r\n\r\nWhat helps us continuously develop, is our combination of talent, passion and persistance.\r\n\r\nWhat makes us different?\r\nEvery single one of our employees can make an impact on the future of AirHelp \u2013 come up with an innovative idea \u2013 and we\u2019ll help you implement it at AirHelp. This is an experience you can gain in very few places! \r\nIf you\u2019re looking to develop new skills, make an impact on not only global business, but ordinary, everyday travellers, and take risks developing and implementing new projects \u2013 what are you waiting for? Come join us today!\r\n\r\nWith a variety of departments to choose from: tech, product, legal, finance, human resources, customer service (and the list goes on!) - you don\u2019t have to narrow your horizons, just take your pick. Pick what you\u2019ve got a knack for, and most importantly, what you enjoy!\r\n\r\nAirHelp. We're here to help!",
+  "name": "AirHelp",
+  "nonprofit": false,
+  "one_liner": "AirHelp helps air passengers get compensation for delayed, cancelled\u2026",
+  "question_answers": false,
+  "regions": [
+   "Portugal",
+   "Europe",
+   "Remote",
+   "Fully Remote"
+  ],
+  "slug": "airhelp",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/4e0dee02b88310ef4536fac2221c79633010d047.png",
+  "stage": "Growth",
+  "status": "Active",
+  "subindustry": "Consumer -> Travel, Leisure and Tourism",
+  "tags": [],
+  "tags_highlighted": [],
+  "team_size": 350,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/airhelp",
+  "website": "http://www.airhelp.com"
+ },
+ {
+  "all_locations": "San Francisco, CA, USA",
+  "api": "https://yc-oss.github.io/api/batches/winter-2014/cambly.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Winter 2014",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 583,
+  "industries": [
+   "Education"
+  ],
+  "industry": "Education",
+  "isHiring": true,
+  "launched_at": 1384978655,
+  "long_description": "The Cambly app gives English learners instant 1-on-1 access to friendly native speakers over video chat 24/7. Students get an affordable and convenient way to practice their English and gain confidence. Tutors get to make money helping people from around the world practice English.",
+  "name": "Cambly",
+  "nonprofit": false,
+  "one_liner": "On-demand access to English tutors over video chat.",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada"
+  ],
+  "slug": "cambly",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/5c774e23b82a6ee8805cd340a8dd9d8e468279de.png",
+  "stage": "Growth",
+  "status": "Active",
+  "subindustry": "Education",
+  "tags": [
+   "Education"
+  ],
+  "tags_highlighted": [],
+  "team_size": 200,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/cambly",
+  "website": "http://www.cambly.com"
+ },
+ {
+  "all_locations": "San Francisco, CA, USA",
+  "api": "https://yc-oss.github.io/api/batches/winter-2014/cruise.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Winter 2014",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 590,
+  "industries": [
+   "Industrials",
+   "Automotive"
+  ],
+  "industry": "Industrials",
+  "isHiring": false,
+  "launched_at": 1384978717,
+  "long_description": "Cruise is building the world\u2019s most advanced, all-electric, self-driving car technology to safely connect people with the places, things, and experiences they care about. Self-driving cars will help save lives, reimagine cities, redefine time in transit, and restore freedom of movement for individuals who live in dense urban settings. Acquired by GM in 2016.",
+  "name": "Cruise",
+  "nonprofit": false,
+  "one_liner": "Self-driving cars.",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada",
+   "Remote",
+   "Partly Remote"
+  ],
+  "slug": "cruise",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/b9aae9ad065dcf8b7a07d47b45a0667c6953810b.png",
+  "stage": "Growth",
+  "status": "Acquired",
+  "subindustry": "Industrials -> Automotive",
+  "tags": [
+   "Autonomous Delivery",
+   "Machine Learning",
+   "Climate",
+   "AI",
+   "Self-Driving Vehicles"
+  ],
+  "tags_highlighted": [],
+  "team_size": 3000,
+  "top_company": true,
+  "url": "https://www.ycombinator.com/companies/cruise",
+  "website": "http://getcruise.com"
+ },
+ {
+  "all_locations": "Portland, OR, USA; San Francisco, CA, USA",
+  "api": "https://yc-oss.github.io/api/batches/winter-2014/snapdocs.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Winter 2014",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 622,
+  "industries": [
+   "Real Estate and Construction",
+   "Housing and Real Estate"
+  ],
+  "industry": "Real Estate and Construction",
+  "isHiring": false,
+  "launched_at": 1384979019,
+  "long_description": "We're building digital infrastructure and workflow tools to connect the many parties involved in real estate transactions. The result is a more digital, online, and automated process for everyone involved. ",
+  "name": "Snapdocs",
+  "nonprofit": false,
+  "one_liner": "digital mortgage closing",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada",
+   "Remote",
+   "Partly Remote"
+  ],
+  "slug": "snapdocs",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/0c7da56bebc37ff80b767431aa81d082980d4c1a.png",
+  "stage": "Growth",
+  "status": "Active",
+  "subindustry": "Real Estate and Construction -> Housing and Real Estate",
+  "tags": [
+   "SaaS",
+   "B2B",
+   "Housing",
+   "Enterprise",
+   "Networks"
+  ],
+  "tags_highlighted": [],
+  "team_size": 285,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/snapdocs",
+  "website": "http://snapdocs.com"
+ },
+ {
+  "all_locations": "San Francisco, CA, USA; Foster City, CA, USA",
+  "api": "https://yc-oss.github.io/api/batches/winter-2015/notable-labs.json",
+  "app_answers": false,
+  "app_video_public": false,
+  "batch": "Winter 2015",
+  "demo_day_video_public": true,
+  "former_names": [],
+  "id": 739,
+  "industries": [
+   "Healthcare",
+   "Diagnostics"
+  ],
+  "industry": "Healthcare",
+  "isHiring": true,
+  "launched_at": 1407578442,
+  "long_description": "Notable Labs is building a personalized drug discovery platform to identify treatment options for relapsed and refractory cancer patients \u2014 starting with blood cancer \u2014 to address the long tail of cancer treatment. We look at a person\u2019s actual cancer cells, test combinations of FDA approved drugs, and see which combinations kill the cancer cells and leave the healthy cells alive. We focus on combinations because cancer is often difficult to target with just one drug and starting with a single drug can lead to resistant clones or relapse. We're building a highly automated lab in Foster City running on our custom software and are currently testing relapsed/refractory cancer patients as well as samples from a variety of pharma/biotech partnerships.\r\n\r\nhttps://www.notablelabs.com/careers",
+  "name": "Notable Labs",
+  "nonprofit": false,
+  "one_liner": "Personalized drug discovery for blood cancer.",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada",
+   "Remote",
+   "Partly Remote"
+  ],
+  "slug": "notable-labs",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/c2bf47d120c3bdde2a9ad11d9f05f1c08a72ca0e.png",
+  "stage": "Growth",
+  "status": "Public",
+  "subindustry": "Healthcare -> Diagnostics",
+  "tags": [
+   "Biotech",
+   "Drug discovery",
+   "Oncology"
+  ],
+  "tags_highlighted": [],
+  "team_size": 40,
+  "top_company": true,
+  "url": "https://www.ycombinator.com/companies/notable-labs",
+  "website": "http://notablelabs.com"
+ },
+ {
+  "all_locations": "San Francisco, CA, USA; Oakland, CA, USA",
+  "api": "https://yc-oss.github.io/api/batches/winter-2015/final.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Winter 2015",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 743,
+  "industries": [
+   "Fintech",
+   "Payments"
+  ],
+  "industry": "Fintech",
+  "isHiring": false,
+  "launched_at": 1415700217,
+  "long_description": "At Final, we are re-building the credit card from the ground up. \r\n\r\nFinal is issuing a credit card that gives consumers total control over their merchant relationships, transparency in their spending, and piece of mind across all payment experiences. Rather than a single, 16-digit card number, Final generates multiple card numbers and manages them automatically.\r\n\r\nIt works everywhere you buy; online, and offline, and integrates with digital wallets like Google Wallet and ApplePay with zero updates to the payment infrastructure. Bottom line - with Final, you\u2019ll never lose access to your spending ability from a breach, fraud, cancelled or stolen card ever again.",
+  "name": "Final",
+  "nonprofit": false,
+  "one_liner": "A credit card that drastically reduces payment fraud and gives\u2026",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada"
+  ],
+  "slug": "final",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/a9f9365e5ac7dcefbab5bfab9129637279050427.png",
+  "stage": "Early",
+  "status": "Acquired",
+  "subindustry": "Fintech -> Payments",
+  "tags": [
+   "Payments",
+   "Security"
+  ],
+  "tags_highlighted": [],
+  "team_size": 11,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/final",
+  "website": "http://getfinal.com"
+ },
+ {
+  "all_locations": "New York City, NY, USA; Mexico City, CDMX, Mexico; Remote",
+  "api": "https://yc-oss.github.io/api/batches/winter-2015/bright.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Winter 2015",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 755,
+  "industries": [
+   "Industrials",
+   "Energy"
+  ],
+  "industry": "Industrials",
+  "isHiring": false,
+  "launched_at": 1416219275,
+  "long_description": "Bright is Mexico\u2019s #1 residential solar provider (think Sunrun for the developing world, starting first in Mexico). We provide the financing and software that enable thousands of student ambassadors and retail promoters to offer cheaper electricity to homes at no upfront cost, and we work with our network of hundreds of local installers and distributors to satisfy the resulting demand. Our first market is Mexico, which has more sun, higher electricity rates, and lower labor costs than the US. Bright's investors include First Round Capital, Y Combinator, and other top Silicon Valley firms.",
+  "name": "Bright",
+  "nonprofit": false,
+  "one_liner": "Sunrun for the developing world",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "Mexico",
+   "America / Canada",
+   "Latin America",
+   "Remote",
+   "Fully Remote"
+  ],
+  "slug": "bright",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/4f860d42183017f025fa2a44238b098217f8b456.png",
+  "stage": "Growth",
+  "status": "Active",
+  "subindustry": "Industrials -> Energy",
+  "tags": [
+   "Fintech",
+   "Solar Power",
+   "Climate"
+  ],
+  "tags_highlighted": [],
+  "team_size": 100,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/bright",
+  "website": "https://www.thinkbright.mx"
+ },
+ {
+  "all_locations": "Madrid, Community of Madrid, Spain; Remote",
+  "api": "https://yc-oss.github.io/api/batches/winter-2015/democracy-earth.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Winter 2015",
+  "demo_day_video_public": false,
+  "former_names": [
+   "DemocracyOS"
+  ],
+  "id": 760,
+  "industries": [
+   "Unspecified"
+  ],
+  "industry": "Unspecified",
+  "isHiring": false,
+  "launched_at": 1416219702,
+  "long_description": "Our mission is to build a sustainable democracy for the Information Age. We create censorship resistant, free and open source software that can deploy democracies anywhere there's an internet connection. We have implemented governance infrastructure for crypto networks; shadow referendums for activists in critical countries and the first Quadratic Voting implementation in the USA for the Colorado Legislative House.\r\n\r\nBacked by Templeton Foundation (2019), Y Combinator (2015) and Fast Forward (2016). Presented on TED Global (2014). Awarded by MIT Technology Review (2017) and Singularity University (2016). We did research for Alphabet, World Economic Forum and the University of Berkeley.",
+  "name": "Democracy Earth",
+  "nonprofit": true,
+  "one_liner": "Censorship resistant democracies. ",
+  "question_answers": false,
+  "regions": [
+   "Spain",
+   "Europe",
+   "Remote",
+   "Fully Remote"
+  ],
+  "slug": "democracy-earth",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/31289c55d5f1228f43a9bcccfd0f7933fb63a58c.png",
+  "stage": "Early",
+  "status": "Active",
+  "subindustry": "Unspecified",
+  "tags": [
+   "Crypto / Web3",
+   "Nonprofit"
+  ],
+  "tags_highlighted": [
+   "Crypto / Web3"
+  ],
+  "team_size": 2,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/democracy-earth",
+  "website": "http://democracy.earth/"
+ },
+ {
+  "all_locations": "Washington, DC, USA; Remote",
+  "api": "https://yc-oss.github.io/api/batches/summer-2015/givecampus.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Summer 2015",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 914,
+  "industries": [
+   "Education"
+  ],
+  "industry": "Education",
+  "isHiring": true,
+  "launched_at": 1430156123,
+  "long_description": "GiveCampus is the world's #1 fundraising platform for non-profit educational institutions. Trusted by millions of donors and more than 1,500 colleges, universities, and K-12 schools, our mission is to advance the quality, the affordability, and the accessibility of education. Since 2015, we have facilitated more than $7 billion in charitable giving.",
+  "name": "GiveCampus",
+  "nonprofit": false,
+  "one_liner": "The fundraising platform for schools.",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada",
+   "Remote",
+   "Fully Remote"
+  ],
+  "slug": "givecampus",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/55a1d2299284203df1bfdb4eb60c9ad5ca6328d2.png",
+  "stage": "Early",
+  "status": "Active",
+  "subindustry": "Education",
+  "tags": [
+   "Education",
+   "Fintech",
+   "SaaS",
+   "B2B"
+  ],
+  "tags_highlighted": [],
+  "team_size": 130,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/givecampus",
+  "website": "http://go.givecampus.com"
+ },
+ {
+  "all_locations": "Copenhagen, Denmark",
+  "api": "https://yc-oss.github.io/api/batches/winter-2016/soundboks.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Winter 2016",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 974,
+  "industries": [
+   "Consumer",
+   "Consumer Electronics"
+  ],
+  "industry": "Consumer",
+  "isHiring": true,
+  "launched_at": 1447199415,
+  "long_description": "SOUNDBOKS is a Copenhagen-based, Y Combinator backed, hardware start-up developing and selling the world's loudest battery powered speaker.\r\n\r\nSOUNDBOKS was founded in 2015 by three young Danes who shared the same love and passion for music, amazing parties and festivals. Today, SOUNDBOKS is Scandinavia's fastest growing hardware start-up delivering speakers to happy customers all over Europe & North America. In March 2016, SOUNDBOKS launched the most succesful Danish Kickstarter Campaign of all time!\r\n\r\nWe are a young, ambitious team ready to take on the challenge of becoming the number 1 brand for outdoor audio and provide world-class service to our customers.\r\n\r\nJOIN THE PARTY, JOIN SOUNDBOKS.",
+  "name": "SOUNDBOKS",
+  "nonprofit": false,
+  "one_liner": "We're creating the loudest battery-driven speaker on the market",
+  "question_answers": false,
+  "regions": [
+   "Denmark",
+   "Europe",
+   "Remote",
+   "Partly Remote"
+  ],
+  "slug": "soundboks",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/e4d31b409b1f0367d1d4bc6d8614148b73cc4b59.png",
+  "stage": "Growth",
+  "status": "Active",
+  "subindustry": "Consumer -> Consumer Electronics",
+  "tags": [],
+  "tags_highlighted": [],
+  "team_size": 50,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/soundboks",
+  "website": "http://soundboks.com"
+ },
+ {
+  "all_locations": "San Francisco, CA, USA",
+  "api": "https://yc-oss.github.io/api/batches/winter-2016/embark-trucks.json",
+  "app_answers": null,
+  "app_video_public": true,
+  "batch": "Winter 2016",
+  "demo_day_video_public": true,
+  "former_names": [
+   "Varden Labs",
+   "Embark Trucks"
+  ],
+  "id": 982,
+  "industries": [
+   "Industrials",
+   "Automotive"
+  ],
+  "industry": "Industrials",
+  "isHiring": false,
+  "launched_at": 1447199416,
+  "long_description": "Embark Technology develops self-driving truck software. \r\n\r\nEmbark was the first self-driving truck company to achieve an autonomous coast-to-coast drive, the first to reach 100,000 miles driven on public roads, and the first to open a network of transfer points.\r\n\r\nEmbark went public on NASDAQ in 2021 and was acquired by Applied Intuition in 2023.",
+  "name": "Embark Trucks",
+  "nonprofit": false,
+  "one_liner": "Self-driving semi trucks.",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada",
+   "Remote",
+   "Partly Remote"
+  ],
+  "slug": "embark-trucks",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/7f54038f84e639bce5c45d1756018b94f17f6125.png",
+  "stage": "Growth",
+  "status": "Public",
+  "subindustry": "Industrials -> Automotive",
+  "tags": [
+   "Autonomous Trucking"
+  ],
+  "tags_highlighted": [],
+  "team_size": 300,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/embark-trucks",
+  "website": "http://embarktrucks.com"
+ },
+ {
+  "all_locations": "San Francisco, CA, USA; Remote",
+  "api": "https://yc-oss.github.io/api/batches/winter-2016/outschool.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Winter 2016",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 994,
+  "industries": [
+   "Education"
+  ],
+  "industry": "Education",
+  "isHiring": false,
+  "launched_at": 1447280415,
+  "long_description": "Outschool is an innovative education platform that offers a variety of engaging, small-group classes online. Unlike traditional classes, Outschool classes give kids the unique opportunity to explore their interests in-depth via interactive, live video by experienced, independent educators.\r\n\r\nWhen Outschool was founded in 2015, homeschoolers were the first to discover our classes, but it wasn\u2019t long before kids in conventional schools began supplementing their education with fun and unique, interest-based classes. During the COVID-19 pandemic, Outschool became vital to families who wanted to keep kids learning, social, and pursuing their passions.\r\nToday, Outschool offers more than 140,000 live online classes to more than 1,000,000 learners in 183 countries worldwide.",
+  "name": "Outschool",
+  "nonprofit": false,
+  "one_liner": "A live online learning platform that empowers kids ages 3\u201318.",
+  "question_answers": true,
+  "regions": [
+   "United States of America",
+   "America / Canada",
+   "Remote",
+   "Fully Remote"
+  ],
+  "slug": "outschool",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/8d4f5bc63953a4887b889e74645b81f6aa339942.png",
+  "stage": "Growth",
+  "status": "Active",
+  "subindustry": "Education",
+  "tags": [
+   "Education",
+   "Marketplace"
+  ],
+  "tags_highlighted": [],
+  "team_size": 107,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/outschool",
+  "website": "http://outschool.com"
+ },
+ {
+  "all_locations": "Chicago, IL, USA",
+  "api": "https://yc-oss.github.io/api/batches/winter-2016/mrelief.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Winter 2016",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 1055,
+  "industries": [
+   "Unspecified"
+  ],
+  "industry": "Unspecified",
+  "isHiring": false,
+  "launched_at": 1447653916,
+  "long_description": "mRelief is a nonprofit that provides an easy-to-use platform on the web and text messaging -- at 74544 -- for Americans to sign up for SNAP. Built on public datasets provided by the USDA on BBCE and COVID-19 Waivers, they help people find out if they might be likely eligible for SNAP in all 50 states and DC. ",
+  "name": "mRelief",
+  "nonprofit": true,
+  "one_liner": "mRelief has built an easy-to-use platform and web and text messaging\u2026",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada",
+   "Remote",
+   "Partly Remote"
+  ],
+  "slug": "mrelief",
+  "small_logo_thumb_url": "/company/thumb/missing.png",
+  "stage": "Early",
+  "status": "Active",
+  "subindustry": "Unspecified",
+  "tags": [
+   "Nonprofit"
+  ],
+  "tags_highlighted": [],
+  "team_size": 12,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/mrelief",
+  "website": "https://www.mrelief.com"
+ },
+ {
+  "all_locations": "San Francisco, CA, USA; Menlo Park, CA, USA",
+  "api": "https://yc-oss.github.io/api/batches/summer-2017/billiontoone.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Summer 2017",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 1109,
+  "industries": [
+   "Healthcare",
+   "Diagnostics"
+  ],
+  "industry": "Healthcare",
+  "isHiring": true,
+  "launched_at": 1453416611,
+  "long_description": "BillionToOne has developed a DNA molecular counter that increases the cell-free DNA diagnostics resolution by over 1,000 fold, which unlocks transformative improvements in prenatal screening and liquid biopsy for cancers. Unity Screen, BillionToOne's commercially available non-invasive prenatal test (NIPT), is the only NIPT that can assess fetal risk for both recessive conditions and aneuploidies from maternal blood. UNITY Screen continues to grow exponentially and is on its path to becoming the next standard-of-care, with an increasing number of publications showing its accuracy and advantages over other screening methods. We have also recently used our molecular counting technology to develop liquid biopsy tests, which have the potential to completely transform oncology care.",
+  "name": "BillionToOne",
+  "nonprofit": false,
+  "one_liner": "The genetic testing platform detecting and measuring disease.",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada",
+   "Remote",
+   "Partly Remote"
+  ],
+  "slug": "billiontoone",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/7374f48e30f2dabadb3413903af69fcda589d67f.png",
+  "stage": "Growth",
+  "status": "Public",
+  "subindustry": "Healthcare -> Diagnostics",
+  "tags": [
+   "Diagnostics",
+   "Genomics"
+  ],
+  "tags_highlighted": [],
+  "team_size": 300,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/billiontoone",
+  "website": "https://www.billiontoone.com"
+ },
+ {
+  "all_locations": "Broken Arrow, OK, USA",
+  "api": "https://yc-oss.github.io/api/batches/winter-2017/trade.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Winter 2017",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 1439,
+  "industries": [
+   "Industrials",
+   "Agriculture"
+  ],
+  "industry": "Industrials",
+  "isHiring": false,
+  "launched_at": 1478052019,
+  "long_description": "Trade is a platform that connects buyers, sellers, and transporters of commodities in Ghana.\r\n\r\nTrade allows buyers and sellers in Ghana to trade directly, cutting out the middlemen. You pick your quantity, grade, and price and they look for sellers to match you with. They weigh and grade every bag that they trade, deliver directly to you, and will take back any bag you reject, so you can buy without worrying.",
+  "name": "Trade",
+  "nonprofit": false,
+  "one_liner": "We're building Africa's Commodity Exchange. ",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada"
+  ],
+  "slug": "trade",
+  "small_logo_thumb_url": "/company/thumb/missing.png",
+  "stage": "Early",
+  "status": "Inactive",
+  "subindustry": "Industrials -> Agriculture",
+  "tags": [
+   "Logistics",
+   "Supply Chain"
+  ],
+  "tags_highlighted": [],
+  "team_size": 3,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/trade",
+  "website": "http://www.tradeghana.co"
+ },
+ {
+  "all_locations": "Lagos, LA, Nigeria",
+  "api": "https://yc-oss.github.io/api/batches/winter-2017/tizeti.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Winter 2017",
+  "demo_day_video_public": false,
+  "former_names": [
+   "Tizeti",
+   "Tizeti (Wifi.com.ng)",
+   "Tizeti",
+   "Tizeti",
+   "Wifi.com.ng",
+   "Tizeti",
+   "Wifi.com.ng"
+  ],
+  "id": 1442,
+  "industries": [
+   "Consumer",
+   "Home and Personal"
+  ],
+  "industry": "Consumer",
+  "isHiring": false,
+  "launched_at": 1478052026,
+  "long_description": "Tizeti provides broadband internet services to densely populated urban centers in Africa. Tizeti is leveraging the large wireless capacity available with Wi-Fi and plummeting cost of solar panels to create a low CAPEX/OPEX network of owned and operated towers to offer disruptive, customer-friendly pricing for unlimited internet service right across Africa.",
+  "name": "Tizeti",
+  "nonprofit": false,
+  "one_liner": "ISP for Africa",
+  "question_answers": false,
+  "regions": [
+   "Nigeria",
+   "Africa",
+   "Remote",
+   "Partly Remote"
+  ],
+  "slug": "tizeti",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/60b8c9049781514a899127e43df42c016ba7e206.png",
+  "stage": "Growth",
+  "status": "Active",
+  "subindustry": "Consumer -> Home and Personal",
+  "tags": [
+   "Telecommunications"
+  ],
+  "tags_highlighted": [],
+  "team_size": 0,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/tizeti",
+  "website": "http://www.tizeti.com"
+ },
+ {
+  "all_locations": "San Francisco, CA, USA",
+  "api": "https://yc-oss.github.io/api/batches/winter-2017/token-transit.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Winter 2017",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 1488,
+  "industries": [
+   "Government"
+  ],
+  "industry": "Government",
+  "isHiring": false,
+  "launched_at": 1478224835,
+  "long_description": "Token Transit puts cities in the center of managing new mobility by providing a complete fare payment platform for public transportation.\r\n\r\nToken Transit launched our mobile ticketing app in 2016. We now provide payments for transportation in over 200 cities across the United States and Canada with integration into the major third party trip planning apps such as Transit, Moovit and Google Maps.",
+  "name": "Token Transit",
+  "nonprofit": false,
+  "one_liner": "Complete fare payment platform for public transportation",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada",
+   "Remote",
+   "Partly Remote"
+  ],
+  "slug": "token-transit",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/a20ca2e23eec17b0ed9a952b4a38cc39b71f8e1e.png",
+  "stage": "Early",
+  "status": "Active",
+  "subindustry": "Government",
+  "tags": [
+   "Fintech",
+   "GovTech",
+   "Transportation"
+  ],
+  "tags_highlighted": [],
+  "team_size": 12,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/token-transit",
+  "website": "https://tokentransit.com"
+ },
+ {
+  "all_locations": "Oxford, England, United Kingdom",
+  "api": "https://yc-oss.github.io/api/batches/winter-2017/the-centre-for-effective-altruism.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Winter 2017",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 1552,
+  "industries": [
+   "Unspecified"
+  ],
+  "industry": "Unspecified",
+  "isHiring": false,
+  "launched_at": 1481766630,
+  "long_description": "effective altruism \u2014 the use of high-quality evidence and careful reasoning to work out how to help others as much as possible. Its purpose is to help you figure out how you can do the most good. It will help you think about which cause to focus on and how to use your money or your time to start making a difference, right away.",
+  "name": "The Centre for Effective Altruism",
+  "nonprofit": true,
+  "one_liner": "We're your non-profit portfolio managers. We make giving to\u2026",
+  "question_answers": false,
+  "regions": [
+   "United Kingdom",
+   "Europe"
+  ],
+  "slug": "the-centre-for-effective-altruism",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/83931fc12c8193e3bfd25a38799080e28c4d3c6e.png",
+  "stage": "Early",
+  "status": "Active",
+  "subindustry": "Unspecified",
+  "tags": [
+   "Nonprofit"
+  ],
+  "tags_highlighted": [],
+  "team_size": 15,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/the-centre-for-effective-altruism",
+  "website": "http://effectivealtruism.org"
+ },
+ {
+  "all_locations": "Los Angeles, CA, USA",
+  "api": "https://yc-oss.github.io/api/batches/winter-2018/lucy-goods-inc.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Winter 2018",
+  "demo_day_video_public": false,
+  "former_names": [
+   "Lucy",
+   "Lucy Nicotine"
+  ],
+  "id": 1721,
+  "industries": [
+   "Consumer",
+   "Food and Beverage"
+  ],
+  "industry": "Consumer",
+  "isHiring": false,
+  "launched_at": 1507160421,
+  "long_description": "If it isn\u2019t bad enough that smokers don\u2019t realize the scientific facts about nicotine, most non-tobacco nicotine products are poorly designed and unappealing to use. The leading gum is sold like a pharmaceutical drug, with flavoring and packaging to match. Vapes provide a cumbersome, over-the-top experience \u2014 with use as tightly restricted as cigarette smoking itself, but more juvenile, conspicuous, and highly addictive. People want, and deserve, a better way.\r\n\r\nTherefore, we want to deliver nicotine users a superior experience, and at the same time give them a way to transition out of feeling dependent. In a better society, people wouldn\u2019t carry around the sensation that they\u2019re stuck with an involuntary habit. Our mission isn\u2019t to encourage nicotine use among people who haven\u2019t started. Unlike certain vapes or other products, ours isn\u2019t the sort coveted by underage users on social media. Our mission is to alleviate the harm related to tobacco \u2014 first and foremost, by switching people away from the most harmful products.\r\n\r\nSo, at Lucy, we take an evidence based view of nicotine. Nicotine\u2019s pleasurable properties make it an inevitable part of modern society. Therefore, minimizing harm in all nicotine products is key, in addition to giving people products and strategies for cessation. We feel that, as 1,300 people are dying of tobacco related illnesses every day in the US, the most important and immediate step toward a better society is giving nicotine consumers products they enjoy using that will cause less harm.\r\n\r\nOur first product is designed to appeal to smokers and encourage them to switch. And, looking ahead, we hope to secure approval in the future as a clinically proven smoking cessation aid, while continuing to participate in the FDA\u2019s public hearings around how NRTs are best regulated. Our goals are simple: because harm reduction is a better strategy around nicotine delivery than abstinence or prohibition, we want to help improve public health \u2014 and reduce its costs \u2014 through a superior pure nicotine product.",
+  "name": "Lucy Goods, Inc",
+  "nonprofit": false,
+  "one_liner": "Lucy\u2019s mission is to reduce tobacco-related harm to zero. We provide\u2026",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada",
+   "Remote",
+   "Partly Remote"
+  ],
+  "slug": "lucy-goods-inc",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/6fa905ed0111248b2a03722c5ba79f0b395dae83.png",
+  "stage": "Growth",
+  "status": "Active",
+  "subindustry": "Consumer -> Food and Beverage",
+  "tags": [
+   "3D Printed Foods",
+   "Biotech",
+   "E-commerce"
+  ],
+  "tags_highlighted": [],
+  "team_size": 7,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/lucy-goods-inc",
+  "website": "https://lucy.co/"
+ },
+ {
+  "all_locations": "Washington, DC, USA",
+  "api": "https://yc-oss.github.io/api/batches/winter-2018/beanstalk.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Winter 2018",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 1730,
+  "industries": [
+   "Industrials",
+   "Agriculture"
+  ],
+  "industry": "Industrials",
+  "isHiring": false,
+  "launched_at": 1509562868,
+  "long_description": "Brothers, Michael and Jack, started Beanstalk as a solution to solve a local restaurant\u2019s need for consistent, high-quality salad. In doing so, they created a vertical farming technology capable of growing lettuces, spinach, basil, carrots, lavender, and more.\r\n\r\nBeanstalk is at the nexus of industrial robotics, plant science, and the culinary arts. Our technology enables us to develop new products quickly, automate traditionally labor-intensive work, and connect consumers to fresh produce in ways not before seen.",
+  "name": "Beanstalk",
+  "nonprofit": false,
+  "one_liner": "Great tasting produce, farmed around the corner",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada",
+   "Remote",
+   "Partly Remote"
+  ],
+  "slug": "beanstalk",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/1ccd8b9d6b1ac431234008946b6ca8bd57db0122.png",
+  "stage": "Growth",
+  "status": "Active",
+  "subindustry": "Industrials -> Agriculture",
+  "tags": [
+   "Food Service Robots & Machines",
+   "Grocery",
+   "Vertical Farming"
+  ],
+  "tags_highlighted": [],
+  "team_size": 15,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/beanstalk",
+  "website": "http://beanstalk.farm"
+ },
+ {
+  "all_locations": "San Francisco, CA, USA; Oakland, CA, USA",
+  "api": "https://yc-oss.github.io/api/batches/winter-2018/mighty-buildings.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Winter 2018",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 1754,
+  "industries": [
+   "Real Estate and Construction",
+   "Housing and Real Estate"
+  ],
+  "industry": "Real Estate and Construction",
+  "isHiring": false,
+  "launched_at": 1579431996,
+  "long_description": "Mighty Buildings is an innovative construction technology company based in Oakland, CA creating beautiful, sustainable, and high-quality homes using 3d-printing, robotics, and automation. Their mission is to have a positive impact on the environment, local communities, and the housing crisis through their sustainable approach.\r\n\r\nMighty Buildings' technology has the potential to unlock the needed productivity for large scale construction alongside the opportunity for reduced emissions, leading to a more sustainable product and future. Mighty Buildings was founded by a team of physicists and robotics engineers with extensive experience solving hard R&D problems and building successful engineering firms. They started by inventing a new material that is a 3D printing tech that enabled printing of an entire building, not just walls, in a single cycle. Unlike concrete, Mighty Buildings\u2019 material is lighter, can be uniquely treated (trimmed and cut) by robotic arms, and features high thermal insulation properties. This allows them to produce prefab housing with up to 80% of operations automated.\r\n\r\nMighty Buildings has a near-zero waste production process, preventing 1,100 - 2,000 kg of CO2 emission per 3D-printed home. They are committed to achieving Net-Zero by 2028 - making the company 22 years ahead of the construction industry.\r\n\r\nThe company is certified under California's Factory Built Housing program to build units using 3D-printing, but they are also the first company to achieve certification under the UL 3401 standard for evaluating building structures and assemblies.",
+  "name": "Mighty Buildings",
+  "nonprofit": false,
+  "one_liner": "3D printing beautiful, high-quality, and sustainable homes.",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada",
+   "Remote",
+   "Partly Remote"
+  ],
+  "slug": "mighty-buildings",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/0751a2456763d15191cc0c59216be6ab7810d208.png",
+  "stage": "Growth",
+  "status": "Inactive",
+  "subindustry": "Real Estate and Construction -> Housing and Real Estate",
+  "tags": [
+   "Robotics",
+   "Construction",
+   "3D Printing"
+  ],
+  "tags_highlighted": [],
+  "team_size": 200,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/mighty-buildings",
+  "website": "https://www.mightybuildings.com"
+ },
+ {
+  "all_locations": "Boston, MA, USA",
+  "api": "https://yc-oss.github.io/api/batches/winter-2018/biobot-analytics.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Winter 2018",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 1763,
+  "industries": [
+   "Government"
+  ],
+  "industry": "Government",
+  "isHiring": false,
+  "launched_at": 1509599020,
+  "long_description": "Our mission is to transform wastewater infrastructure into public health observatories.\r\n\r\nNamed as one of Fast Company\u2019s most innovative companies in the world in 2021, Biobot Analytics is a wastewater epidemiology company and uses technology developed at MIT to measure biomarkers in sewage to better understand population health in cities. We first launched an opioid product to support government and public health officials in responding to the opioid epidemic, and in 2020 launched a Covid19 product to estimate the scope and trend of the outbreak in communities. We have operated in almost 500 communities across 43 U.S. states, generating Covid19 case estimates for over 13% of the U.S. population.\r\n\r\nBattling the opioid epidemic and now the Covid19 pandemic is just the beginning - we\u2019re transforming sewage into a data asset and building a public health database. Eventually, Biobot data will be an early warning system for disease outbreaks, a map of nutrition disparities, and more.\r\n\r\nPlease visit our website at www.biobot.io",
+  "name": "Biobot Analytics",
+  "nonprofit": false,
+  "one_liner": "Population health analytics powered by wastewater.",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada",
+   "Remote",
+   "Partly Remote"
+  ],
+  "slug": "biobot-analytics",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/df9a4889e935ddd93b4102bb586d2990073ca598.png",
+  "stage": "Early",
+  "status": "Active",
+  "subindustry": "Government",
+  "tags": [
+   "Health Tech",
+   "Analytics"
+  ],
+  "tags_highlighted": [],
+  "team_size": 12,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/biobot-analytics",
+  "website": "http://biobot.io"
+ },
+ {
+  "all_locations": "Beijing, Beijing, China",
+  "api": "https://yc-oss.github.io/api/batches/winter-2019/juzibot.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Winter 2019",
+  "demo_day_video_public": false,
+  "former_names": [
+   "Bot Orange"
+  ],
+  "id": 2019,
+  "industries": [
+   "B2B",
+   "Engineering, Product and Design"
+  ],
+  "industry": "B2B",
+  "isHiring": true,
+  "launched_at": 1527048483,
+  "long_description": "JuziBot is a startup that provides smart marketing and sales services for customers on WeChat platform, the company helps SMBs build secure and stable key opinion customer (KOC) channels, as well as helps corporate clients with customer acquisition and sales conversion. JuziBot currently serves customers in education, insurance, healthcare, and a few other industries, some of the clients include Meituan Dianping, Digital China, Zuoyebang, etc., and 80% of these existing customers have been acquired through word of mouth. JuziBot's products have been known to improve the sales experience for one million sales professionals on a daily basis. \r\n\r\nThe company is invested by a number of leading VCs including PreAngel, Plug and Play, Y Combinator, TSVC, and Alpha Startups. JuziBot received the CCFA Retail Technology Rising Enterprise Award in 2018. In 2018 and 2019, respectively, the company won the 1st place in both of the task-based human-machine dialogue response naturalness, and the chat-type human-machine dialogue assessment in the SMP Chinese Human-Machine Dialogue Technology Evaluation held by the Chinese Information Processing Society of China (CIPSC).",
+  "name": "JuziBot",
+  "nonprofit": false,
+  "one_liner": "Intercom for WeChat, help companies to acquire,  engage, retain\u2026",
+  "question_answers": false,
+  "regions": [
+   "China",
+   "East Asia",
+   "Remote",
+   "Partly Remote"
+  ],
+  "slug": "juzibot",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/f06ad45b7f49712e329e6cfd50db0616164f6ce0.png",
+  "stage": "Early",
+  "status": "Active",
+  "subindustry": "B2B -> Engineering, Product and Design",
+  "tags": [
+   "Chatbot",
+   "Analytics",
+   "Customer Support"
+  ],
+  "tags_highlighted": [],
+  "team_size": 34,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/juzibot",
+  "website": "https://www.juzibot.com/"
+ },
+ {
+  "all_locations": "Toronto, ON, Canada",
+  "api": "https://yc-oss.github.io/api/batches/winter-2019/trexo-robotics.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Winter 2019",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 11922,
+  "industries": [
+   "Healthcare",
+   "Medical Devices"
+  ],
+  "industry": "Healthcare",
+  "isHiring": false,
+  "launched_at": 1540953087,
+  "long_description": "Trexo Robotics is building exoskeletons to help people walk, starting with children. Our product allows children with disabilities like Cerebral Palsy, to walk, in many cases for the first time in their lives. Trexo was started when Manmeet found that his nephew was born with Cerebral Palsy and would never be able to walk. Trexo is selling commercially, with a vision is to replace the wheelchair, for children, adults, and the elderly. ",
+  "name": "Trexo Robotics",
+  "nonprofit": false,
+  "one_liner": "Exoskeletons to help people walk, starting with children",
+  "question_answers": false,
+  "regions": [
+   "Canada",
+   "America / Canada",
+   "Remote",
+   "Partly Remote"
+  ],
+  "slug": "trexo-robotics",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/6edf024636f99502167ab7cb24e80e37d32ca758.png",
+  "stage": "Early",
+  "status": "Active",
+  "subindustry": "Healthcare -> Medical Devices",
+  "tags": [
+   "Medical Robotics"
+  ],
+  "tags_highlighted": [],
+  "team_size": 30,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/trexo-robotics",
+  "website": "http://trexorobotics.com"
+ },
+ {
+  "all_locations": "San Francisco, CA, USA",
+  "api": "https://yc-oss.github.io/api/batches/winter-2019/keeper-2.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Winter 2019",
+  "demo_day_video_public": false,
+  "former_names": [
+   "Write It Off",
+   "Keeper",
+   "Keeper Tax"
+  ],
+  "id": 11940,
+  "industries": [
+   "Fintech",
+   "Consumer Finance"
+  ],
+  "industry": "Fintech",
+  "isHiring": true,
+  "launched_at": 1541037760,
+  "long_description": "Keeper is AI tax filing for complex returns. We serve individuals and small businesses in the US. Today, over 50% of tax returns still get filed by accountants - that\u2019s 75M returns a year. Unfortunately, great accountants are really hard to find, and the data shows most of them are retiring in the next 5-10 years. \r\n\r\nKeeper is the modern alternative. We use AI to automate most of the prep work, which frees up in-house human tax experts to focus on guidance and reviewing final results. The net outcome is that we\u2019re able to deliver higher quality / more accurate returns at 50% of the cost of traditional accountants.",
+  "name": "Keeper",
+  "nonprofit": false,
+  "one_liner": "AI tax filing for complex returns",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada",
+   "Remote",
+   "Partly Remote"
+  ],
+  "slug": "keeper-2",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/0bfbb1071a34d969fc17410d80d00fc916230dcb.png",
+  "stage": "Early",
+  "status": "Active",
+  "subindustry": "Fintech -> Consumer Finance",
+  "tags": [
+   "Fintech",
+   "Consumer"
+  ],
+  "tags_highlighted": [],
+  "team_size": 16,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/keeper-2",
+  "website": "https://keepertax.com"
+ },
+ {
+  "all_locations": "New York City, NY, USA; New York, NY, USA",
+  "api": "https://yc-oss.github.io/api/batches/winter-2019/careertu.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Winter 2019",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 12072,
+  "industries": [
+   "Education"
+  ],
+  "industry": "Education",
+  "isHiring": false,
+  "launched_at": 1541646249,
+  "long_description": "CareerTu is an online school for today\u2019s most in-demand digital skills, starting with digital marketing, data analytics, and product design. We teach our students real-world business problems via capstone projects to make sure they are equipped with the must-have technical skills.\r\n\r\n250+ top companies hired CareerTu students in 14 countries - including Google,  Facebook, Microsoft, Amazon, Spotify,  Pinterest, LVMH, TikTok, Expedia, Alibaba, Tencent, Meituan etc. \r\n\r\nCareerTu's mission is to teach students the industry\u2019s most relevant and in-demand skills, making them the ideal hire at their dream companies, in return providing businesses with experienced and reliable talents to increase their efficiency.\r\n\r\n\u534e\u8bed\u6570\u5b57\u5316\u6280\u80fd\u5b66\u4e60\u5e73\u53f0\u3002\u901a\u8fc7\u7cfb\u7edf\u5b66\u4e60\u9ad8\u85aa\u6570\u5b57\u5316\u6280\u80fd, \u8fc5\u901f\u57f9\u517b\u65b0\u5174\u884c\u4e1a\u7d27\u7f3a\u7684\u4eba\uff0c\u4e3a\u5168\u740314\u4e2a\u56fd\u5bb6\u7684\u79d1\u6280\u548c\u65b0\u96f6\u552e\u4f01\u4e1a, \u4e0d\u65ad\u8f93\u9001\u4f18\u79c0\u4eba\u624d\u3002\r\n\r\n",
+  "name": "CareerTu",
+  "nonprofit": false,
+  "one_liner": "Online school for Chinese to learn in-demand digital skills ",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada",
+   "Remote",
+   "Partly Remote"
+  ],
+  "slug": "careertu",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/4253a70d7c0fe82758e7435bcfbf24852b902a4b.png",
+  "stage": "Early",
+  "status": "Inactive",
+  "subindustry": "Education",
+  "tags": [
+   "Education",
+   "Careers"
+  ],
+  "tags_highlighted": [],
+  "team_size": 15,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/careertu",
+  "website": "https://careertu.com/"
+ },
+ {
+  "all_locations": "Bengaluru, KA, India; San Francisco, CA, USA; Remote",
+  "api": "https://yc-oss.github.io/api/batches/winter-2020/chaos-genius.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Winter 2020",
+  "demo_day_video_public": false,
+  "former_names": [
+   "GoodHealth"
+  ],
+  "id": 12724,
+  "industries": [
+   "B2B",
+   "Analytics"
+  ],
+  "industry": "B2B",
+  "isHiring": false,
+  "launched_at": 1600455323,
+  "long_description": "Chaos Genius is a DataOps Observability platform for Snowflake. Enable Snowflake Observability to reduce Snowflake costs and optimize query performance.",
+  "name": "Chaos Genius",
+  "nonprofit": false,
+  "one_liner": "DataOps Observability Platform for Snowflake",
+  "question_answers": false,
+  "regions": [
+   "India",
+   "United States of America",
+   "South Asia",
+   "America / Canada",
+   "Remote",
+   "Fully Remote"
+  ],
+  "slug": "chaos-genius",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/c4d680463f8fee3408726becdad9bccd8e14c8a1.png",
+  "stage": "Early",
+  "status": "Acquired",
+  "subindustry": "B2B -> Analytics",
+  "tags": [
+   "Cloud Workload Protection",
+   "Machine Learning",
+   "Analytics",
+   "Open Source",
+   "Data Engineering"
+  ],
+  "tags_highlighted": [],
+  "team_size": 10,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/chaos-genius",
+  "website": "http://www.chaosgenius.io"
+ },
+ {
+  "all_locations": "Los Angeles, CA, USA",
+  "api": "https://yc-oss.github.io/api/batches/winter-2020/karat-financial.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Winter 2020",
+  "demo_day_video_public": false,
+  "former_names": [
+   "Karat"
+  ],
+  "id": 12950,
+  "industries": [
+   "Fintech",
+   "Credit and Lending"
+  ],
+  "industry": "Fintech",
+  "isHiring": true,
+  "launched_at": 1584246453,
+  "long_description": "We're building the one-stop shop for creator finances.\r\n\r\nYour favorite digital creators\u2014the ones you follow every day on YouTube, Instagram, TikTok or Twitch\u2014aren\u2019t just extraordinarily talented personalities and community builders. They\u2019re also businesses. That means they have business needs\u2014managing revenues, expenses, savings, credit, banking. \r\n\r\nWe\u2019re building products that help creators spend less time worrying about finances so they can focus on creating.",
+  "name": "Karat Financial",
+  "nonprofit": false,
+  "one_liner": "Better financial services for creators",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada",
+   "Remote",
+   "Partly Remote"
+  ],
+  "slug": "karat-financial",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/b45b4a40ee6990bb094f256f20eeef3730bba066.png",
+  "stage": "Growth",
+  "status": "Active",
+  "subindustry": "Fintech -> Credit and Lending",
+  "tags": [
+   "Fintech",
+   "Entertainment"
+  ],
+  "tags_highlighted": [],
+  "team_size": 40,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/karat-financial",
+  "website": "http://trykarat.com"
+ },
+ {
+  "all_locations": "San Francisco, CA, USA",
+  "api": "https://yc-oss.github.io/api/batches/winter-2020/pantheon.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Winter 2020",
+  "demo_day_video_public": false,
+  "former_names": [
+   "Simplata",
+   "BlitzBowl (was Simplata)",
+   "BlitzBowl",
+   "Jostle"
+  ],
+  "id": 13111,
+  "industries": [
+   "Education"
+  ],
+  "industry": "Education",
+  "isHiring": false,
+  "launched_at": 1584056598,
+  "long_description": "Pantheon is an online competitive community of the brightest students in the world. High school and middle school students match with each other based on skill level and compete head-to-head in real-time to see who can answer questions fastest, much like offline competitions such as Science Bowl.",
+  "name": "Pantheon",
+  "nonprofit": false,
+  "one_liner": "A competitive community of the brightest students in the world",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada"
+  ],
+  "slug": "pantheon",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/49e5ca6976b0b3c7b5f57410296411904fbbd0fd.png",
+  "stage": "Early",
+  "status": "Inactive",
+  "subindustry": "Education",
+  "tags": [
+   "Education",
+   "Gaming",
+   "Social"
+  ],
+  "tags_highlighted": [],
+  "team_size": 2,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/pantheon",
+  "website": "https://www.joinpantheon.io/"
+ },
+ {
+  "all_locations": "Panama City, Panama, Panama; Remote",
+  "api": "https://yc-oss.github.io/api/batches/summer-2020/panadata.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Summer 2020",
+  "demo_day_video_public": false,
+  "former_names": [
+   "Crowbar Inc"
+  ],
+  "id": 22075,
+  "industries": [
+   "Government"
+  ],
+  "industry": "Government",
+  "isHiring": false,
+  "launched_at": 1597811091,
+  "long_description": "We run background checks on businesses using data from public records in Panama.\r\n\r\nTrusted locally by largest banks, law firms, banking regulators, ports, foreign embassies, law enforcement. Our main use cases are due diligence, commercial intelligence and compliance. ",
+  "name": "PANADATA",
+  "nonprofit": false,
+  "one_liner": "We run background checks on businesses using data from public records\u2026",
+  "question_answers": false,
+  "regions": [
+   "Panama",
+   "Latin America",
+   "Remote",
+   "Fully Remote"
+  ],
+  "slug": "panadata",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/b522b43cc5edbf12cf1805d45134091b71d770e8.png",
+  "stage": "Early",
+  "status": "Active",
+  "subindustry": "Government",
+  "tags": [
+   "LegalTech"
+  ],
+  "tags_highlighted": [],
+  "team_size": 4,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/panadata",
+  "website": "https://www.panadata.net"
+ },
+ {
+  "all_locations": "Zagreb, Croatia; London, England, United Kingdom; Remote",
+  "api": "https://yc-oss.github.io/api/batches/winter-2021/webiny.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Winter 2021",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 22533,
+  "industries": [
+   "B2B",
+   "Engineering, Product and Design"
+  ],
+  "industry": "B2B",
+  "isHiring": false,
+  "launched_at": 1615457343,
+  "long_description": "When the public cloud appeared migration was easy. Existing apps running on physical servers could just be moved to virtual machines running in the cloud. The cloud is now moving towards serverless, and serverless is not backward compatible. New tools need to be created and existing apps need to be rewritten. Webiny provides developers with everything they need to build those serverless apps.\r\n\r\nWe are a 100% remote team.",
+  "name": "Webiny",
+  "nonprofit": false,
+  "one_liner": "Open-source framework for building serverless applications",
+  "question_answers": false,
+  "regions": [
+   "Croatia",
+   "United Kingdom",
+   "Europe",
+   "Remote",
+   "Fully Remote"
+  ],
+  "slug": "webiny",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/adfd1c33ceed7c9e58e31857fc68ab3c74ad1ad4.png",
+  "stage": "Early",
+  "status": "Active",
+  "subindustry": "B2B -> Engineering, Product and Design",
+  "tags": [
+   "Developer Tools",
+   "B2B",
+   "Open Source"
+  ],
+  "tags_highlighted": [],
+  "team_size": 6,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/webiny",
+  "website": "https://www.webiny.com"
+ },
+ {
+  "all_locations": "Ontario, CA, USA; Remote",
+  "api": "https://yc-oss.github.io/api/batches/winter-2021/serna-bio.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Winter 2021",
+  "demo_day_video_public": false,
+  "former_names": [
+   "Ladder Therapeutics (LTX)"
+  ],
+  "id": 22617,
+  "industries": [
+   "Healthcare",
+   "Therapeutics"
+  ],
+  "industry": "Healthcare",
+  "isHiring": false,
+  "launched_at": 1659537090,
+  "long_description": "Serna Bio is developing small molecules to modulate RNA function, unlocking the potential to treat diseases driven by biology intractable by other modalities. \r\n",
+  "name": "Serna Bio",
+  "nonprofit": false,
+  "one_liner": "Genetic Medicine with Small Molecules ",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada",
+   "Remote",
+   "Fully Remote"
+  ],
+  "slug": "serna-bio",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/e5c345ecf4dc0bf6d96b3cb2f1e7485d78c1449d.png",
+  "stage": "Early",
+  "status": "Active",
+  "subindustry": "Healthcare -> Therapeutics",
+  "tags": [
+   "Biotech",
+   "Drug discovery"
+  ],
+  "tags_highlighted": [],
+  "team_size": 5,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/serna-bio",
+  "website": "http://serna.bio"
+ },
+ {
+  "all_locations": "San Francisco, CA, USA",
+  "api": "https://yc-oss.github.io/api/batches/winter-2021/finley.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Winter 2021",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 22667,
+  "industries": [
+   "Fintech",
+   "Credit and Lending"
+  ],
+  "industry": "Fintech",
+  "isHiring": false,
+  "launched_at": 1613622206,
+  "long_description": "Finley simplifies debt capital raise and management. Our software helps companies like Ramp, Arc and Parafin automate due diligence, ensure compliance, and streamline ongoing reporting with their capital providers. Our team brings experience from Goldman Sachs, Nova Credit, and Palantir Technologies, and is backed by Y Combinator and Bain Capital Ventures.",
+  "name": "Finley",
+  "nonprofit": false,
+  "one_liner": "Streamline your debt capital raise and management",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada",
+   "Remote",
+   "Partly Remote"
+  ],
+  "slug": "finley",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/b8f7eafbaed6e4784352f8ba9e3f4c19615d784e.png",
+  "stage": "Growth",
+  "status": "Acquired",
+  "subindustry": "Fintech -> Credit and Lending",
+  "tags": [
+   "Fintech",
+   "SaaS",
+   "Enterprise"
+  ],
+  "tags_highlighted": [],
+  "team_size": 32,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/finley",
+  "website": "https://www.finleycms.com"
+ },
+ {
+  "all_locations": "Ho Chi Minh City, Ho Chi Minh City, Vietnam; Ho Chi Minh City, Vietnam",
+  "api": "https://yc-oss.github.io/api/batches/winter-2021/homebase.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Winter 2021",
+  "demo_day_video_public": false,
+  "former_names": [
+   "Princep Pte Ltd."
+  ],
+  "id": 22983,
+  "industries": [
+   "Real Estate and Construction",
+   "Housing and Real Estate"
+  ],
+  "industry": "Real Estate and Construction",
+  "isHiring": true,
+  "launched_at": 1614618857,
+  "long_description": "Homebase provides Rent-To-Own real estate financing for buyers in Southeast Asia - the only alternative to inflexible/high-interest rate (12%+) mortgages in the region. We strive to provide more innovative, compelling, and empathetic solutions for those who aspire to own a home.\r\n\r\nHomebase was founded in 2019 in Singapore and is backed by Y Combinator, VinaCapital Ventures, Class 5 Global, Pegasus Technology Ventures, 1982 Ventures, Iterative VC and Antler, as well as the founders and executives at disruptive real estate financing companies including Opendoor, Zerodown, 99.co and Divvy Homes.",
+  "name": "Homebase",
+  "nonprofit": false,
+  "one_liner": "Personalized rent-to-own real estate financing using technology in SEA",
+  "question_answers": false,
+  "regions": [
+   "Vietnam",
+   "Southeast Asia"
+  ],
+  "slug": "homebase",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/40f593ffbf87115d864ecfbdee92baad6860322a.png",
+  "stage": "Early",
+  "status": "Active",
+  "subindustry": "Real Estate and Construction -> Housing and Real Estate",
+  "tags": [
+   "Fintech",
+   "Proptech"
+  ],
+  "tags_highlighted": [],
+  "team_size": 20,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/homebase",
+  "website": "http://www.gethomebase.com/"
+ },
+ {
+  "all_locations": "Remote",
+  "api": "https://yc-oss.github.io/api/batches/winter-2022/nira-energy.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Winter 2022",
+  "demo_day_video_public": false,
+  "former_names": [
+   "Net Zero Labs",
+   "Nira Energy",
+   "Nira"
+  ],
+  "id": 24352,
+  "industries": [
+   "Industrials",
+   "Climate"
+  ],
+  "industry": "Industrials",
+  "isHiring": true,
+  "launched_at": 1664395372,
+  "long_description": "Nira is a map tool, built for renewable energy developers, that shows available capacity at every interconnection point on the electrical grid. Customers like AES and Cypress Creek use Nira to find the most profitable points on the grid to site new projects.",
+  "name": "Nira Energy",
+  "nonprofit": false,
+  "one_liner": "Software to find the best sites for renewables on the electrical grid",
+  "question_answers": false,
+  "regions": [
+   "Remote",
+   "Fully Remote"
+  ],
+  "slug": "nira-energy",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/e59de748140c2abe4901df495b402acb929dfbf0.png",
+  "stage": "Early",
+  "status": "Active",
+  "subindustry": "Industrials -> Climate",
+  "tags": [
+   "Solar Power",
+   "Climate",
+   "Energy",
+   "Renewable Energy",
+   "ClimateTech"
+  ],
+  "tags_highlighted": [],
+  "team_size": 20,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/nira-energy",
+  "website": "https://www.niraenergy.com/"
+ },
+ {
+  "all_locations": "New York City, NY, USA",
+  "api": "https://yc-oss.github.io/api/batches/summer-2022/emerge-career.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Summer 2022",
+  "demo_day_video_public": false,
+  "former_names": [
+   "Ameelio",
+   "Ameelio Emerge",
+   "Emerge"
+  ],
+  "id": 25059,
+  "industries": [
+   "Education"
+  ],
+  "industry": "Education",
+  "isHiring": true,
+  "launched_at": 1657112954,
+  "long_description": "Vocational training programs and workforce management software for government agencies looking to create high-paying jobs and up-skill their low-income and justice-involved citizens out of poverty.",
+  "name": "Emerge Career",
+  "nonprofit": false,
+  "one_liner": "All-in-one re-entry & workforce development training platform",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada"
+  ],
+  "slug": "emerge-career",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/9e401a97dde3f7f88aeada95e5e8968168ae0390.png",
+  "stage": "Early",
+  "status": "Active",
+  "subindustry": "Education",
+  "tags": [
+   "Education",
+   "GovTech"
+  ],
+  "tags_highlighted": [],
+  "team_size": 8,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/emerge-career",
+  "website": "https://www.emergecareer.com/"
+ },
+ {
+  "all_locations": "San Francisco, CA, USA",
+  "api": "https://yc-oss.github.io/api/batches/winter-2022/arc-2.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Winter 2022",
+  "demo_day_video_public": false,
+  "former_names": [],
+  "id": 25118,
+  "industries": [
+   "Fintech"
+  ],
+  "industry": "Fintech",
+  "isHiring": false,
+  "launched_at": 1642185516,
+  "long_description": "Arc is the cash management and capital markets platform for technology companies. Arc helps businesses manage cash, unlock competitive yield, raise debt capital, and access AI-powered financial services \u2013 all in one unified platform.\r\n\r\nFounded in 2021, Arc has headquarters in San Francisco and New York City and is backed by investors including Left Lane Capital, NFX, Bain Capital Ventures, Atalaya, Clocktower Technology Ventures, Torch Capital, and Y Combinator. To learn more, visit www.joinarc.com.\r\n\r\nArc is a financial technology company, not a bank. For important information about Arc, see our general disclosures: https://www.joinarc.com/general-disclosures",
+  "name": "Arc",
+  "nonprofit": false,
+  "one_liner": "Banking & Funding for Startups",
+  "question_answers": false,
+  "regions": [
+   "United States of America",
+   "America / Canada",
+   "Remote",
+   "Partly Remote"
+  ],
+  "slug": "arc-2",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/3e6594af5b3bfb4435bc6c0611eb94d41fb69de9.png",
+  "stage": "Growth",
+  "status": "Acquired",
+  "subindustry": "Fintech",
+  "tags": [
+   "Banking as a Service",
+   "Fintech",
+   "B2B",
+   "Neobank"
+  ],
+  "tags_highlighted": [],
+  "team_size": 30,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/arc-2",
+  "website": "https://www.joinarc.com/"
+ },
+ {
+  "all_locations": "New York City, NY, USA",
+  "api": "https://yc-oss.github.io/api/batches/winter-2022/govdash.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Winter 2022",
+  "demo_day_video_public": false,
+  "former_names": [
+   "Realize",
+   "Inc.",
+   "Realize",
+   "Pipebird",
+   "Realize",
+   "Chula.ai",
+   "Olli.ai",
+   "Govdash"
+  ],
+  "id": 26125,
+  "industries": [
+   "Government"
+  ],
+  "industry": "Government",
+  "isHiring": true,
+  "launched_at": 1642986901,
+  "long_description": "GovDash helps modern government contractors win work faster and execute successfully after award, using one AI-native platform across capture, proposals, and post-award.",
+  "name": "GovDash",
+  "nonprofit": false,
+  "one_liner": "AI platform to win and run government contracts",
+  "question_answers": true,
+  "regions": [
+   "United States of America",
+   "America / Canada",
+   "Remote",
+   "Partly Remote"
+  ],
+  "slug": "govdash",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/83d67d2e022acdad34c065119dc1423c5c7cf6e7.png",
+  "stage": "Growth",
+  "status": "Active",
+  "subindustry": "Government",
+  "tags": [
+   "Artificial Intelligence",
+   "Generative AI",
+   "GovTech"
+  ],
+  "tags_highlighted": [],
+  "team_size": 56,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/govdash",
+  "website": "https://govdash.com/"
+ },
+ {
+  "all_locations": "London, England, United Kingdom; Remote",
+  "api": "https://yc-oss.github.io/api/batches/winter-2023/unify.json",
+  "app_answers": null,
+  "app_video_public": false,
+  "batch": "Winter 2023",
+  "demo_day_video_public": false,
+  "former_names": [
+   "Deep Ivy Inc.",
+   "Ivy",
+   "Unify",
+   "Ivy"
+  ],
+  "id": 26837,
+  "industries": [
+   "B2B",
+   "Productivity"
+  ],
+  "industry": "B2B",
+  "isHiring": false,
+  "launched_at": 1657390616,
+  "long_description": "No prompting, no setup, no jargon. Just hop on a call, onboard like anyone else, and let them take the tedious tasks off your plate.",
+  "name": "Unify",
+  "nonprofit": false,
+  "one_liner": "AI teammates for everyone else \ud83e\udd16",
+  "question_answers": false,
+  "regions": [
+   "United Kingdom",
+   "Europe",
+   "Remote",
+   "Fully Remote"
+  ],
+  "slug": "unify",
+  "small_logo_thumb_url": "https://bookface-images.s3.amazonaws.com/small_logos/fb15970521caafcd30f313c8eaa1359733d2d2dd.png",
+  "stage": "Early",
+  "status": "Active",
+  "subindustry": "B2B -> Productivity",
+  "tags": [
+   "Artificial Intelligence",
+   "Productivity",
+   "Open Source",
+   "AI",
+   "AI Assistant"
+  ],
+  "tags_highlighted": [],
+  "team_size": 6,
+  "top_company": false,
+  "url": "https://www.ycombinator.com/companies/unify",
+  "website": "https://unify.ai"
+ }
+]

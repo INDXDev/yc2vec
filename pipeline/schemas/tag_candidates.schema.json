@@ -1,0 +1,99 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "candidate_id": {
+      "title": "Candidate Id",
+      "type": "string"
+    },
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "definition": {
+      "title": "Definition",
+      "type": "string"
+    },
+    "discovery_run_id": {
+      "title": "Discovery Run Id",
+      "type": "string"
+    },
+    "facet": {
+      "title": "Facet",
+      "type": "string"
+    },
+    "model": {
+      "title": "Model",
+      "type": "string"
+    },
+    "negative_examples": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Negative Examples",
+      "type": "array"
+    },
+    "normalized_name": {
+      "title": "Normalized Name",
+      "type": "string"
+    },
+    "positive_examples": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Positive Examples",
+      "type": "array"
+    },
+    "prompt_version": {
+      "title": "Prompt Version",
+      "type": "string"
+    },
+    "proposed_name": {
+      "title": "Proposed Name",
+      "type": "string"
+    },
+    "resolution": {
+      "default": "pending",
+      "enum": [
+        "pending",
+        "activated",
+        "merged",
+        "rejected"
+      ],
+      "title": "Resolution",
+      "type": "string"
+    },
+    "resolved_tag_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Resolved Tag Id"
+    },
+    "support_company_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Support Company Ids",
+      "type": "array"
+    }
+  },
+  "required": [
+    "candidate_id",
+    "proposed_name",
+    "normalized_name",
+    "facet",
+    "definition",
+    "discovery_run_id",
+    "model",
+    "prompt_version",
+    "created_at"
+  ],
+  "title": "TagCandidate",
+  "type": "object"
+}

@@ -1,0 +1,76 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "company_id": {
+      "title": "Company Id",
+      "type": "string"
+    },
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "dim": {
+      "title": "Dim",
+      "type": "integer"
+    },
+    "document_hash": {
+      "title": "Document Hash",
+      "type": "string"
+    },
+    "embedding_space_version": {
+      "title": "Embedding Space Version",
+      "type": "string"
+    },
+    "kind": {
+      "enum": [
+        "description",
+        "metadata",
+        "tags",
+        "combined"
+      ],
+      "title": "Kind",
+      "type": "string"
+    },
+    "model": {
+      "title": "Model",
+      "type": "string"
+    },
+    "model_digest": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Model Digest"
+    },
+    "template_version": {
+      "title": "Template Version",
+      "type": "string"
+    },
+    "vector": {
+      "items": {
+        "type": "number"
+      },
+      "title": "Vector",
+      "type": "array"
+    }
+  },
+  "required": [
+    "company_id",
+    "kind",
+    "dim",
+    "embedding_space_version",
+    "model",
+    "template_version",
+    "document_hash",
+    "vector",
+    "created_at"
+  ],
+  "title": "CompanyEmbedding",
+  "type": "object"
+}

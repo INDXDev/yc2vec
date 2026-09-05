@@ -1,0 +1,145 @@
+.app {
+  display: grid;
+  grid-template-rows: var(--header-h) minmax(0, 1fr);
+  height: 100%;
+}
+
+.app__header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 20px;
+  padding: 0 16px;
+  background: var(--bg-raised);
+  border-bottom: 1px solid var(--border);
+}
+
+.app__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* A small double-helix mark drawn in CSS: no image request, no decoration. */
+.app__logo {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 30%, var(--accent) 0 3px, transparent 3px),
+    radial-gradient(circle at 70% 70%, var(--accent) 0 3px, transparent 3px),
+    radial-gradient(circle at 70% 30%, var(--accent-dim) 0 2px, transparent 2px),
+    radial-gradient(circle at 30% 70%, var(--accent-dim) 0 2px, transparent 2px);
+  border: 1px solid var(--border-strong);
+}
+
+.app__title {
+  display: block;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.app__tagline {
+  display: block;
+  font-size: 11px;
+  color: var(--text-faint);
+  line-height: 1.1;
+}
+
+.app__nav {
+  display: flex;
+  gap: 4px;
+}
+
+.app__navlink {
+  padding: 5px 11px;
+  border-radius: var(--radius);
+  color: var(--text-muted);
+  font-size: 13px;
+  text-decoration: none;
+}
+.app__navlink:hover {
+  background: var(--bg-hover);
+  color: var(--text);
+  text-decoration: none;
+}
+.app__navlink.is-active {
+  background: var(--bg-sunken);
+  color: var(--text);
+  box-shadow: inset 0 0 0 1px var(--border);
+}
+
+.app__headerRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.app__count {
+  color: var(--text-faint);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.app__main {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.app__error {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  max-width: 60ch;
+  margin: 12vh auto 0;
+  padding: 0 24px;
+}
+
+@media (max-width: 860px) {
+  .app__header {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    height: auto;
+    padding: 8px 12px;
+    gap: 8px;
+  }
+  .app {
+    grid-template-rows: auto minmax(0, 1fr);
+  }
+  .app__headerRight {
+    grid-column: 1 / -1;
+  }
+  .app__tagline {
+    display: none;
+  }
+}
+
+.searchbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchbox__input {
+  width: 300px;
+  max-width: 42vw;
+  padding-right: 26px;
+}
+
+.searchbox__input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.searchbox__clear {
+  position: absolute;
+  right: 6px;
+  padding: 0 4px;
+  color: var(--text-faint);
+  font-size: 17px;
+  line-height: 1;
+}
+.searchbox__clear:hover {
+  color: var(--text);
+}

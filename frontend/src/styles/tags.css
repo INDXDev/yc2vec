@@ -1,0 +1,248 @@
+.tags {
+  display: grid;
+  grid-template-columns: 330px minmax(0, 1fr);
+  height: 100%;
+}
+
+.tags--message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 40px;
+  text-align: center;
+}
+
+.tags__list {
+  border-right: 1px solid var(--border);
+  background: var(--bg-raised);
+  display: flex;
+  flex-direction: column;
+}
+
+.tags__controls {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--bg-raised);
+  border-bottom: 1px solid var(--border);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tags__controls input {
+  width: 100%;
+}
+
+/* The facet list can be long. Collapse it to three rows by default rather than
+   clipping a row in half, and let it scroll from there. */
+.tags__facets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  max-height: 96px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  padding-bottom: 2px;
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 10px), transparent 100%);
+}
+
+.tags__count {
+  font-size: 11px;
+  margin: 0;
+}
+
+.tags__items {
+  list-style: none;
+  margin: 0;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.tags__item {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: baseline;
+  gap: 8px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 13px;
+}
+.tags__item:hover {
+  background: var(--bg-hover);
+  text-decoration: none;
+}
+.tags__item.is-active {
+  background: var(--bg-sunken);
+  box-shadow: inset 0 0 0 1px var(--accent-dim);
+}
+
+.tags__itemName {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tags__itemFacet {
+  font-size: 10.5px;
+}
+
+.tags__empty {
+  padding: 12px 8px;
+  font-size: 12px;
+}
+
+.tags__detail {
+  min-width: 0;
+}
+
+.tags__placeholder,
+.tagdetail {
+  max-width: 780px;
+  padding: 26px 26px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tags__placeholder h1,
+.tagdetail__name {
+  font-size: 24px;
+  letter-spacing: -0.02em;
+}
+
+.tags__placeholder p {
+  margin: 0;
+  max-width: 60ch;
+}
+
+.tagdetail header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+}
+
+.tagdetail__definition {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 68ch;
+}
+
+.tagdetail__aliases {
+  margin: 0;
+  font-size: 12px;
+}
+
+.tagdetail__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 8px;
+}
+
+.tagdetail__stat {
+  padding: 9px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tagdetail__statLabel {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-faint);
+}
+
+.tagdetail .btn--primary {
+  align-self: flex-start;
+}
+
+.tagdetail__section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+}
+
+.tagdetail__sectionTitle {
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+}
+
+.tagdetail__note {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  max-width: 66ch;
+}
+
+.tagdetail__section p {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+
+.tagdetail__chips {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.tagdetail__years {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 92px;
+}
+
+.tagdetail__years li {
+  flex: 1;
+  min-width: 8px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 3px;
+}
+
+.tagdetail__bar {
+  width: 100%;
+  background: var(--accent-dim);
+  border-radius: 2px 2px 0 0;
+  min-height: 2px;
+}
+
+.tagdetail__yearLabel {
+  font-size: 9.5px;
+}
+
+@media (max-width: 860px) {
+  .tags {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(200px, 38vh) minmax(0, 1fr);
+  }
+  .tags__list {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}

@@ -90,6 +90,22 @@ jobs:
 
       - run: npm ci
 
+      # frontend/public/data/ is generated, not committed, so it has to be
+      # staged from the published release exactly as the deploy job does.
+      # Without this the browser checks would run against an app with no
+      # dataset, i.e. against its error state.
+      - name: Stage the published dataset
+        run: |
+          mkdir -p public/data
+          if [ -d ../data/public/v1 ]; then
+            cp -r ../data/public/v1 public/data/v1
+            [ -f ../data/quality.json ] && cp ../data/quality.json public/data/v1/quality.json
+            echo "staged the committed release"
+          else
+            echo "::error::no published release found under data/public/v1"
+            exit 1
+          fi
+
       - name: Type check
         run: npm run typecheck
 

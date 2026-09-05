@@ -56,6 +56,11 @@ function Shell() {
   if (error) {
     return (
       <div className="app">
+        {/* The skip link belongs to the shell, not to the happy path: a reader
+            navigating by keyboard needs it most when the page is degraded. */}
+        <a className="skip-link" href="#main">
+          Skip to main content
+        </a>
         <Header />
         <main className="app__error" id="main">
           <h1>The dataset could not be loaded</h1>

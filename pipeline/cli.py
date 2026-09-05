@@ -416,6 +416,13 @@ def assign_tags(
     resume: Annotated[
         bool, typer.Option("--resume/--restart", help="Reuse checkpointed judgments.")
     ] = True,
+    finalize: Annotated[
+        bool,
+        typer.Option(
+            "--finalize",
+            help="Consolidate the existing checkpoint into the final tables without judging anything new.",
+        ),
+    ] = False,
     dry_run: DryRunOpt = False,
     verbose: VerboseOpt = False,
 ) -> None:
@@ -459,6 +466,7 @@ def assign_tags(
                 company_ids=ids,
                 sample=sample,
                 resume=resume,
+                finalize_only=finalize,
             )
 
     console.print(_run(go()))

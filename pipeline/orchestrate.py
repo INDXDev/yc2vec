@@ -274,7 +274,15 @@ async def assign_stage(
     company_ids: list[str] | None = None,
     sample: int | None = None,
     resume: bool = True,
+    finalize_only: bool = False,
 ) -> dict[str, int]:
+    """Judge shortlisted pairs and build the sparse features.
+
+    ``finalize_only`` consolidates whatever the checkpoint already holds into
+    the final tables without judging anything new. Assignment is the expensive
+    stage and is expected to be interrupted, so harvesting a partial run is a
+    first-class operation rather than a recovery hack.
+    """
     companies = load_normalized(store)
     if company_ids:
         wanted = set(company_ids)
@@ -286,6 +294,10 @@ async def assign_stage(
 
     registry = OntologyRegistry(store.path("inferred", "ontology"))
     tags = registry.active()
+
+    if finalize_only:
+        return _finalize_judgments(config, store, n_companies=len(companies))
+
     if not tags:
         LOG.warning(
             "assign-tags: ontology has no active tags; run discover-tags and review-tags first"
@@ -358,27 +370,59 @@ async def assign_stage(
         on_result=checkpoint,
     )
 
-    judgments = existing + fresh
-    write_jsonl(store.path("inferred", "company_tag_judgments.jsonl"), judgments)
-    features = build_features(
-        judgments,
-        n_companies=len(companies),
-        min_confidence=config.tagging.min_confidence,
-        weight_floor=config.tagging.information_weight_floor,
-        run_id=run.run_id,
-    )
-    write_jsonl(store.path("inferred", "company_tag_features.jsonl"), features)
+    counts = _finalize_judgments(config, store, n_companies=len(companies), run_id=run.run_id)
+    counts["companies"] = len(companies)
+    counts["fresh_judgments"] = len(fresh)
+    _ = existing
 
     run.finished_at = now()
     run.status = "ok"
-    run.counts = {
+    run.counts = counts
+    store.write_run(run)
+    LOG.info("assign-tags: %s", counts)
+    return counts
+
+
+def _finalize_judgments(
+    config: Config, store: Store, *, n_companies: int, run_id: str = ""
+) -> dict[str, int]:
+    """Promote the append-only checkpoint into the durable judgment and feature tables.
+
+    The checkpoint is append-only and can hold the same pair twice if a company
+    was re-judged after a prompt or ontology change; the later record wins, so
+    the tables always reflect the most recent judgment.
+    """
+    partial = store.path("inferred", "company_tag_judgments.partial.jsonl")
+    by_pair: dict[tuple[str, str], CompanyTagJudgment] = {}
+    for row in read_jsonl(partial):
+        j = CompanyTagJudgment(**row)
+        by_pair[(j.company_id, j.tag_id)] = j
+    judgments = sorted(by_pair.values(), key=lambda j: (j.company_id, j.tag_id))
+
+    judged_companies = {j.company_id for j in judgments}
+    write_jsonl(store.path("inferred", "company_tag_judgments.jsonl"), judgments)
+
+    # Tag prevalence -- and therefore the information weight -- is measured over
+    # the companies actually judged, not over the whole corpus. Dividing by the
+    # corpus size while only a subset has been judged would make every tag look
+    # rare and inflate its weight.
+    features = build_features(
+        judgments,
+        n_companies=max(1, len(judged_companies)),
+        min_confidence=config.tagging.min_confidence,
+        weight_floor=config.tagging.information_weight_floor,
+        run_id=run_id,
+    )
+    write_jsonl(store.path("inferred", "company_tag_features.jsonl"), features)
+
+    counts = {
         "judgments": len(judgments),
         "features": len(features),
-        "companies": len(companies),
+        "judged_companies": len(judged_companies),
+        "corpus_companies": n_companies,
     }
-    store.write_run(run)
-    LOG.info("assign-tags: %s", run.counts)
-    return run.counts
+    LOG.info("finalize: %s", counts)
+    return counts
 
 
 async def _embed_all(client: OllamaClient, docs: list[str], config: Config) -> list[list[float]]:

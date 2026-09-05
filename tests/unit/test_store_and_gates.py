@@ -372,3 +372,70 @@ def test_stratified_sample_returns_everything_when_size_exceeds_corpus(sample_ra
 
     companies = normalize_companies(sample_raws)
     assert stratified_sample(companies, 10_000, seed=1) == companies
+
+
+# -- harvesting a partial assignment run ----------------------------------------
+
+
+def test_finalize_deduplicates_the_checkpoint_keeping_the_latest(tmp_path, sample_raws):
+    """The checkpoint is append-only, so a re-judged pair appears twice."""
+    from pipeline.config import load_config
+    from pipeline.orchestrate import _finalize_judgments
+
+    config = load_config("fixture", data_dir=tmp_path)
+    store = Store(tmp_path)
+    ids = [c.company_id for c in normalize_companies(sample_raws)[:2]]
+
+    old = judgment(ids[0], "alpha")
+    old.confidence = 0.60
+    new = judgment(ids[0], "alpha")
+    new.confidence = 0.95
+    append_jsonl(store.path("inferred", "company_tag_judgments.partial.jsonl"), [old, new, judgment(ids[1], "beta")])
+
+    counts = _finalize_judgments(config, store, n_companies=100)
+    assert counts["judgments"] == 2          # the duplicate collapsed
+    assert counts["judged_companies"] == 2
+
+    rows = list(read_jsonl(store.path("inferred", "company_tag_judgments.jsonl")))
+    alpha = next(r for r in rows if r["tag_id"] == "alpha")
+    assert alpha["confidence"] == pytest.approx(0.95)  # the later record wins
+
+
+def test_finalize_weights_prevalence_by_companies_judged_not_the_corpus(tmp_path, sample_raws):
+    """A partial run must not make every tag look rare and over-weighted."""
+    from pipeline.config import load_config
+    from pipeline.orchestrate import _finalize_judgments
+
+    config = load_config("fixture", data_dir=tmp_path)
+    store = Store(tmp_path)
+    companies = normalize_companies(sample_raws)[:4]
+    # Every judged company carries the same tag, so it is ubiquitous *among
+    # those judged* and must be weighted down accordingly.
+    append_jsonl(
+        store.path("inferred", "company_tag_judgments.partial.jsonl"),
+        [judgment(c.company_id, "alpha") for c in companies],
+    )
+
+    _finalize_judgments(config, store, n_companies=6200)
+    features = list(read_jsonl(store.path("inferred", "company_tag_features.jsonl")))
+    assert len(features) == 4
+    # Prevalence is 4/4, so the weight collapses to the configured floor.
+    assert features[0]["information_weight"] == pytest.approx(0.15, abs=1e-6)
+
+
+def test_finalize_is_idempotent(tmp_path, sample_raws):
+    from pipeline.config import load_config
+    from pipeline.orchestrate import _finalize_judgments
+
+    config = load_config("fixture", data_dir=tmp_path)
+    store = Store(tmp_path)
+    ids = [c.company_id for c in normalize_companies(sample_raws)[:3]]
+    append_jsonl(
+        store.path("inferred", "company_tag_judgments.partial.jsonl"),
+        [judgment(cid, "alpha") for cid in ids],
+    )
+    first = _finalize_judgments(config, store, n_companies=10)
+    payload = store.path("inferred", "company_tag_features.jsonl").read_bytes()
+    second = _finalize_judgments(config, store, n_companies=10)
+    assert first == second
+    assert store.path("inferred", "company_tag_features.jsonl").read_bytes() == payload

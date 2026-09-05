@@ -68,7 +68,7 @@
     "detail/8.json": "48e073866d6555c1",
     "detail/9.json": "cb6b9fef823f7c4c",
     "points.json": "fbe67db6ed68b7ec",
-    "quality.json": "e07d40bcb12bc876",
+    "quality.json": "566612ca9580e635",
     "search/docs.json": "23d274df8a9c893f",
     "tags.json": "7f6517803c210b21",
     "taxonomy.json": "92f41ddb9535d9ea"
@@ -78,6 +78,7 @@
     "companies": 6200,
     "detail_shards": 64,
     "points": 6200,
+    "quality_metrics": 21,
     "search_docs": 6200,
     "tags": 1018,
     "taxonomy_terms": 612
@@ -158,8 +159,8 @@
     "tags.json",
     "taxonomy.json"
   ],
-  "generated_at": "2026-09-05T03:19:43.119609Z",
-  "git_commit": "816c76a18719f8510a70cc87f089095b61de1e1f",
+  "generated_at": "2026-09-05T03:26:11.632766Z",
+  "git_commit": "e8e615e0de25206cc968654f6eaf8cb0c9326e24",
   "key_map": {
     "S": "tag_scores",
     "T": "tag_ids",
@@ -207,7 +208,7 @@
     "Coverage depends on what the public source records contain; missing metadata is left missing rather than inferred."
   ],
   "models": {
-    "chat": "qwen3.8:latest",
+    "chat": "qwen3.8:27b",
     "embedding": "qwen3-embedding:8b",
     "profile": "balanced",
     "seed": 20240917,

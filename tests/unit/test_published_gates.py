@@ -123,6 +123,7 @@ def release(tmp_path, sample_raws) -> Path:
         terms=[],
         mappings=[],
         manifest=manifest,
+        quality={"companies": 10, "active_tags": 1},
     )
     return tmp_path
 
@@ -221,3 +222,20 @@ def test_a_company_missing_from_the_search_index_fails(release):
 def test_a_manifest_without_provenance_fails(release):
     rewrite(root(release) / "manifest.json", lambda d: d.update({"limitations": [], "models": {}}))
     assert not gate(run_published_gates(release), "records versions").passed
+
+
+def test_the_quality_report_is_covered_by_the_manifest(release):
+    """Anything written after the checksum sweep records a stale hash.
+
+    That failure surfaces on the *next* release, in a deploy job, which is a
+    confusing place to learn about it. The quality report is written by the
+    publisher for exactly this reason.
+    """
+    manifest = json.loads((root(release) / "manifest.json").read_text())
+    published = set(manifest["checksums"])
+    on_disk = {
+        str(p.relative_to(root(release)))
+        for p in root(release).rglob("*.json")
+        if p.name != "manifest.json"
+    }
+    assert on_disk <= published, f"not checksummed: {sorted(on_disk - published)}"

@@ -138,7 +138,15 @@ def publish_browser_artifacts(
     terms: list[SourceTaxonomyTerm],
     mappings: list[SourceTaxonomyTagMapping],
     manifest: ReleaseManifest,
+    quality: dict[str, Any] | None = None,
 ) -> dict[str, int]:
+    """Write the browser bundle and its manifest.
+
+    ``quality`` is written here rather than by the caller so that it exists
+    before checksums are computed. Anything written after the manifest records
+    a stale hash for itself, which the published gates then flag on the *next*
+    release -- a confusing place to learn about it.
+    """
     root = out_dir / f"v{PUBLIC_ARTIFACT_VERSION}"
     root.mkdir(parents=True, exist_ok=True)
 
@@ -402,6 +410,12 @@ def publish_browser_artifacts(
     for shard_id in range(DETAIL_SHARDS):
         write_json(root / "detail" / f"{shard_id}.json", shards.get(shard_id, {}))
     counts["detail_shards"] = DETAIL_SHARDS
+
+    # -- quality report ---------------------------------------------------------
+    # Written before the checksum sweep so the manifest covers it.
+    if quality is not None:
+        write_json(root / "quality.json", quality, pretty=True)
+        counts["quality_metrics"] = len(quality)
 
     # -- manifest --------------------------------------------------------------
     checksums: dict[str, str] = {}

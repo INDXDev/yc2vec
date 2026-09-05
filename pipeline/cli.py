@@ -596,38 +596,6 @@ def publish_data(
         ),
     )
 
-    active = [t for t in a["tags"] if t.state == "active"]
-    counts = publish_browser_artifacts(
-        config.public_dir,
-        companies=a["companies"],
-        tags=active,
-        features=a["features"],
-        judgments=a["judgments"],
-        neighbors=a["neighbors"],
-        points=a["points"],
-        clusters=a["clusters"],
-        terms=a["terms"],
-        mappings=a["mappings"],
-        manifest=manifest,
-    )
-    if not skip_exports:
-        counts.update(
-            write_exports(
-                config.export_dir,
-                companies=a["companies"],
-                tags=a["tags"],
-                terms=a["terms"],
-                mappings=a["mappings"],
-                features=a["features"],
-                judgments=a["judgments"],
-                neighbors=a["neighbors"],
-                points=a["points"],
-                # Full-precision vectors are 700 MB for the corpus and are not
-                # part of a release; regenerate them with `yc2vec embed`.
-                embeddings=None,
-            )
-        )
-
     from pipeline.models import CompanyTagJudgment
     from pipeline.util import read_jsonl
 
@@ -647,9 +615,42 @@ def publish_data(
         / "gold"
         / "judgments.json",
     )
-    write_json(
-        config.public_dir / f"v{PUBLIC_ARTIFACT_VERSION}" / "quality.json", metrics, pretty=True
+
+    active = [t for t in a["tags"] if t.state == "active"]
+    counts = publish_browser_artifacts(
+        config.public_dir,
+        companies=a["companies"],
+        tags=active,
+        features=a["features"],
+        judgments=a["judgments"],
+        neighbors=a["neighbors"],
+        points=a["points"],
+        clusters=a["clusters"],
+        terms=a["terms"],
+        mappings=a["mappings"],
+        manifest=manifest,
+        quality=metrics,
     )
+    if not skip_exports:
+        counts.update(
+            write_exports(
+                config.export_dir,
+                companies=a["companies"],
+                tags=a["tags"],
+                terms=a["terms"],
+                mappings=a["mappings"],
+                features=a["features"],
+                judgments=a["judgments"],
+                neighbors=a["neighbors"],
+                points=a["points"],
+                # Full-precision vectors are 700 MB for the corpus and are not
+                # part of a release; regenerate them with `yc2vec embed`.
+                embeddings=None,
+            )
+        )
+
+    # The release copy is written by the publisher, before the checksum sweep.
+    # This one lives outside the versioned release for `yc2vec stats`.
     write_json(config.data_dir / "quality.json", metrics, pretty=True)
     console.print(
         {

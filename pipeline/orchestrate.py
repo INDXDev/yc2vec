@@ -594,10 +594,7 @@ def project_stage(config: Config, store: Store, *, align: bool = True) -> dict[s
         CompanyTagFeature(**r)
         for r in read_jsonl(store.path("inferred", "company_tag_features.jsonl"))
     ]
-    companies = {c.company_id: c.name for c in load_normalized(store)}
-    clusters = label_clusters(
-        points, features, {t.tag_id: t for t in registry.tags.values()}, companies
-    )
+    clusters = label_clusters(points, features, {t.tag_id: t for t in registry.tags.values()})
 
     write_jsonl(prev_path, points)
     write_jsonl(store.path("inferred", "clusters.jsonl"), clusters)

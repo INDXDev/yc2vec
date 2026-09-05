@@ -542,7 +542,7 @@ def publish_data(
 
     from pipeline.fetch.stage import source_meta
     from pipeline.models import ReleaseManifest
-    from pipeline.orchestrate import dataset_version, load_artifacts, load_embeddings
+    from pipeline.orchestrate import dataset_version, load_artifacts
     from pipeline.prompts import prompt_hashes
     from pipeline.publish.browser import publish_browser_artifacts
     from pipeline.publish.exports import write_exports
@@ -622,10 +622,11 @@ def publish_data(
                 judgments=a["judgments"],
                 neighbors=a["neighbors"],
                 points=a["points"],
+                # Full-precision vectors are 700 MB for the corpus and are not
+                # part of a release; regenerate them with `yc2vec embed`.
                 embeddings=None,
             )
         )
-        _ = load_embeddings
 
     from pipeline.models import CompanyTagJudgment
     from pipeline.util import read_jsonl
@@ -729,7 +730,7 @@ def migrate_ontology(
     verbose: VerboseOpt = False,
 ) -> None:
     """Apply an ontology migration. Tag ids are never changed."""
-    config, store = _ctx(profile, data_dir, verbose=verbose)
+    _, store = _ctx(profile, data_dir, verbose=verbose)
     from pipeline.ontology.migrations import MIGRATIONS
     from pipeline.ontology.registry import OntologyRegistry
 
@@ -754,7 +755,6 @@ def migrate_ontology(
             "examples": result.examples,
         }
     )
-    _ = config
 
 
 @app.command()

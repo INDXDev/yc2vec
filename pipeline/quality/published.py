@@ -79,10 +79,6 @@ def run_published_gates(public_dir: Path) -> list[GateResult]:
         )
     )
 
-    @_guard("the published artifacts parse")
-    def _read() -> GateResult:
-        return GateResult("the published artifacts parse", True, "")
-
     try:
         points = _load(root, "points.json")
         companies = _load(root, "companies.json")
@@ -96,7 +92,6 @@ def run_published_gates(public_dir: Path) -> list[GateResult]:
         for r in results:
             LOG.info("published gate %-56s %s %s", r.name, "PASS" if r.passed else "FAIL", r.detail)
         return results
-    _ = _read
 
     # 2. The map and the index describe exactly the same companies. A mismatch
     #    means a point with no detail, or a row that can never be plotted.

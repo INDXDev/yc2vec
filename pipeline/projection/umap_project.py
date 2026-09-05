@@ -145,7 +145,6 @@ def label_clusters(
     points: list[UmapPoint],
     features: list[CompanyTagFeature],
     tags_by_id: dict[str, Tag],
-    company_names: dict[str, str],
     *,
     top_n: int = 5,
 ) -> list[Cluster]:
@@ -194,5 +193,4 @@ def label_clusters(
                 projection_version=points[0].projection_version if points else "",
             )
         )
-    _ = company_names  # reserved for LLM cluster labelling; see prompts.cluster_prompt
     return clusters

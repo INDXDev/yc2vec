@@ -295,9 +295,12 @@ class UmapPoint(Base):
 
 class Cluster(Base):
     cluster_id: int
-    label: str = Field(description="Algorithmic label from over-represented tags.")
+    label: str = Field(description="Algorithmic label from over-represented tags or source terms.")
+    #: Which signal produced the label, so the UI can say what it is describing.
+    label_source: Literal["semantic_tags", "source_taxonomy", "none"] = "none"
     size: int
     top_tag_ids: list[str] = Field(default_factory=list)
+    top_source_terms: list[str] = Field(default_factory=list)
     centroid_x: float
     centroid_y: float
     projection_version: str

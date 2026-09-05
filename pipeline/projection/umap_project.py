@@ -146,13 +146,22 @@ def label_clusters(
     features: list[CompanyTagFeature],
     tags_by_id: dict[str, Tag],
     *,
+    source_terms: dict[str, list[str]] | None = None,
     top_n: int = 5,
 ) -> list[Cluster]:
-    """Name clusters from over-represented tags, using lift rather than raw count.
+    """Name clusters from over-represented attributes, by lift rather than count.
 
-    Raw frequency would label every cluster with the most common tag in the
-    corpus. Lift (in-cluster rate / global rate) surfaces what actually
-    distinguishes the cluster.
+    Raw frequency would label every cluster with the most common attribute in
+    the corpus. Lift -- the in-cluster rate divided by the global rate --
+    surfaces what actually distinguishes it.
+
+    Semantic tags are the preferred signal. Early in a corpus's life, though,
+    assignment has reached too few companies to say anything about a cluster of
+    hundreds, and a bare "Cluster 12" tells a reader nothing. Where that is the
+    case the label falls back to over-represented *source* taxonomy terms --
+    YC's own industries and tags, which exist for every company. The signal
+    used is recorded on the cluster so the UI can name it rather than passing
+    one off as the other.
     """
     by_cluster: dict[int, list[str]] = {}
     for p in points:
@@ -165,32 +174,71 @@ def label_clusters(
         per_company.setdefault(f.company_id, set()).add(f.tag_id)
     total = max(1, len({p.company_id for p in points}))
 
+    # The same lift computation, over whichever attribute set is supplied.
+    source_terms = source_terms or {}
+    term_global: dict[str, int] = {}
+    for terms in source_terms.values():
+        for term in set(terms):
+            term_global[term] = term_global.get(term, 0) + 1
+
     clusters: list[Cluster] = []
     for cluster_id, members in sorted(by_cluster.items()):
-        local: dict[str, int] = {}
-        for cid in members:
-            for tag_id in per_company.get(cid, ()):
-                local[tag_id] = local.get(tag_id, 0) + 1
-        scored: list[tuple[float, str]] = []
-        for tag_id, count in local.items():
-            if count < max(2, len(members) * 0.12):
-                continue
-            lift = (count / len(members)) / max(1e-9, global_counts.get(tag_id, 1) / total)
-            scored.append((lift * count, tag_id))
-        scored.sort(key=lambda t: (-t[0], t[1]))
-        top = [tag_id for _, tag_id in scored[:top_n]]
-        names = [tags_by_id[t].canonical_name for t in top if t in tags_by_id]
+        top_tags = _by_lift(members, per_company, global_counts, total, top_n)
+        names = [tags_by_id[t].canonical_name for t in top_tags if t in tags_by_id]
+
+        top_terms = _by_lift(
+            members,
+            {cid: set(source_terms.get(cid, ())) for cid in members},
+            term_global,
+            total,
+            top_n,
+        )
+
+        if names:
+            label, label_source = " · ".join(names[:3]), "semantic_tags"
+        elif top_terms:
+            label, label_source = " · ".join(top_terms[:3]), "source_taxonomy"
+        else:
+            label, label_source = f"Cluster {cluster_id}", "none"
+
         xs = [p.x for p in points if p.cluster_id == cluster_id]
         ys = [p.y for p in points if p.cluster_id == cluster_id]
         clusters.append(
             Cluster(
                 cluster_id=cluster_id,
-                label=" · ".join(names[:3]) if names else f"Cluster {cluster_id}",
+                label=label,
+                label_source=label_source,  # type: ignore[arg-type]
                 size=len(members),
-                top_tag_ids=top,
+                top_tag_ids=top_tags,
+                top_source_terms=top_terms,
                 centroid_x=round(sum(xs) / max(1, len(xs)), 4),
                 centroid_y=round(sum(ys) / max(1, len(ys)), 4),
                 projection_version=points[0].projection_version if points else "",
             )
         )
     return clusters
+
+
+def _by_lift(
+    members: list[str],
+    per_company: dict[str, set[str]],
+    global_counts: dict[str, int],
+    total: int,
+    top_n: int,
+) -> list[str]:
+    """Attributes over-represented in ``members`` relative to the whole corpus."""
+    local: dict[str, int] = {}
+    for cid in members:
+        for key in per_company.get(cid, ()):
+            local[key] = local.get(key, 0) + 1
+
+    scored: list[tuple[float, str]] = []
+    # Require a real presence in the cluster, so a single company cannot name it.
+    threshold = max(2, len(members) * 0.12)
+    for key, count in local.items():
+        if count < threshold:
+            continue
+        lift = (count / len(members)) / max(1e-9, global_counts.get(key, 1) / total)
+        scored.append((lift * count, key))
+    scored.sort(key=lambda t: (-t[0], t[1]))
+    return [key for _, key in scored[:top_n]]

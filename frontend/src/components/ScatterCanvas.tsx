@@ -53,6 +53,8 @@ export interface ScatterProps {
 
 interface Legend {
   label: string
+  /** Optional caption explaining what the categories are, and where they came from. */
+  note?: string
   entries: Array<{ label: string; color: string; count: number }>
 }
 
@@ -241,10 +243,32 @@ export function ScatterCanvas(props: ScatterProps) {
   )
 }
 
+/**
+ * Say what the cluster names are actually derived from.
+ *
+ * Labels come from whichever attributes are most over-represented in a cluster.
+ * While semantic assignment is still incremental that is usually YC's own
+ * classifications rather than inferred tags, and a reader should not have to
+ * guess which.
+ */
+function clusterLabelNote(dataset: Dataset): string | undefined {
+  const sources = new Set(dataset.clusters.rows.map((c) => c.label_source))
+  if (sources.has('semantic_tags') && sources.size === 1) {
+    return 'Named by the semantic tags most over-represented in each group.'
+  }
+  if (sources.has('source_taxonomy')) {
+    return sources.has('semantic_tags')
+      ? 'Named by over-represented attributes: semantic tags where enough have been assigned, otherwise YC’s own categories.'
+      : 'Named by YC’s own categories, which are over-represented in each group. Not inferred tags — assignment has not reached enough companies yet.'
+  }
+  return undefined
+}
+
 function LegendPanel({ legend }: { legend: Legend }) {
   return (
     <div className="scatter__legend panel scroll">
       <h3 className="scatter__legendTitle">{legend.label}</h3>
+      {legend.note && <p className="scatter__legendNote">{legend.note}</p>}
       <ul>
         {legend.entries.map((e) => (
           <li key={e.label}>
@@ -307,6 +331,7 @@ function computeColors(
       palette: [...CATEGORY_COLORS, DIMMED],
       legend: {
         label: 'Algorithmic cluster',
+        note: clusterLabelNote(dataset),
         entries: dataset.clusters.rows
           .slice()
           .sort((a, b) => b.size - a.size)

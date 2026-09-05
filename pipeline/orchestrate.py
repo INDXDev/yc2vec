@@ -594,7 +594,23 @@ def project_stage(config: Config, store: Store, *, align: bool = True) -> dict[s
         CompanyTagFeature(**r)
         for r in read_jsonl(store.path("inferred", "company_tag_features.jsonl"))
     ]
-    clusters = label_clusters(points, features, {t.tag_id: t for t in registry.tags.values()})
+    # Source terms give the labeller something to work with while semantic
+    # assignment is still incremental.
+    companies = load_normalized(store)
+    source_terms = {
+        c.company_id: [
+            *([c.industry] if c.industry else []),
+            *([c.subindustry] if c.subindustry else []),
+            *c.source_tags,
+        ]
+        for c in companies
+    }
+    clusters = label_clusters(
+        points,
+        features,
+        {t.tag_id: t for t in registry.tags.values()},
+        source_terms=source_terms,
+    )
 
     write_jsonl(prev_path, points)
     write_jsonl(store.path("inferred", "clusters.jsonl"), clusters)

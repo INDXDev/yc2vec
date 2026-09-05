@@ -311,13 +311,20 @@ def publish_browser_artifacts(
         root / "clusters.json",
         {
             "projection_version": manifest.projection_version,
-            "disclaimer": "Clusters are algorithmic, not official YC categories.",
+            "disclaimer": (
+                "Clusters are algorithmic groupings of the 2D projection, not official YC "
+                "categories. Labels name the attributes most over-represented in each cluster "
+                "relative to the corpus; label_source says whether those were inferred semantic "
+                "tags or Y Combinator's own classifications."
+            ),
             "rows": [
                 {
                     "cluster_id": c.cluster_id,
                     "label": c.label,
+                    "label_source": c.label_source,
                     "size": c.size,
                     "top_tag_ids": c.top_tag_ids,
+                    "top_source_terms": c.top_source_terms,
                     "x": c.centroid_x,
                     "y": c.centroid_y,
                 }

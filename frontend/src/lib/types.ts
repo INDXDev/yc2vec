@@ -115,8 +115,11 @@ export interface TaxonomyPayload {
 export interface ClusterRow {
   cluster_id: number
   label: string
+  /** Which signal produced the label. The UI names it rather than implying one. */
+  label_source: 'semantic_tags' | 'source_taxonomy' | 'none'
   size: number
   top_tag_ids: string[]
+  top_source_terms: string[]
   x: number
   y: number
 }

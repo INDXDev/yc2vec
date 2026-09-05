@@ -1,13 +1,13 @@
 {
   "active_tags": 1018,
-  "assignments": 117,
-  "assignments_per_company": 0.02,
+  "assignments": 173,
+  "assignments_per_company": 0.03,
   "candidate_tags": 821,
   "companies": 6200,
   "decision_mix": {
-    "no": 196,
-    "uncertain": 77,
-    "yes": 117
+    "no": 297,
+    "uncertain": 96,
+    "yes": 173
   },
   "duplicate_tag_groups": {},
   "duplicate_tag_rate": 0.0,
@@ -28,16 +28,16 @@
     "technology": 88,
     "workflow": 257
   },
-  "hard_negative_acceptance_rate": 0.25,
-  "hard_negatives_judged": 44,
+  "hard_negative_acceptance_rate": 0.2462,
+  "hard_negatives_judged": 65,
   "inter_run_stability": {
     "decision_agreement": null,
     "mean_confidence_delta": null,
     "repeated_pairs": 0
   },
-  "judgments": 390,
+  "judgments": 566,
   "merged_tags": 225,
-  "orphan_tag_rate": 0.9028,
+  "orphan_tag_rate": 0.8694,
   "orphan_tags": [
     "abstracts-complex-integration",
     "administrative-automation",
@@ -70,8 +70,20 @@
   "tag_prevalence_median": 0.0,
   "tag_prevalence_top": [
     {
-      "companies": 8,
+      "companies": 11,
       "tag_id": "early-stage-startup"
+    },
+    {
+      "companies": 4,
+      "tag_id": "consumer-or-prosumer-self-service"
+    },
+    {
+      "companies": 3,
+      "tag_id": "self-serve-digital-onboarding"
+    },
+    {
+      "companies": 3,
+      "tag_id": "mobile-cross-platform-support"
     },
     {
       "companies": 2,
@@ -111,24 +123,12 @@
     },
     {
       "companies": 2,
-      "tag_id": "physical-hardware-manufacturing"
+      "tag_id": "operates-on-physical-sensor-data"
     },
     {
       "companies": 2,
-      "tag_id": "local-physical-service"
-    },
-    {
-      "companies": 1,
-      "tag_id": "content-creation-tool"
-    },
-    {
-      "companies": 1,
-      "tag_id": "operates-on-unstructured-web-or-document-data"
-    },
-    {
-      "companies": 1,
-      "tag_id": "regulatory-compliance-data-access"
+      "tag_id": "operates-on-sensor-or-telemetry-data"
     }
   ],
-  "uncertain_rate": 0.1974
+  "uncertain_rate": 0.1696
 }

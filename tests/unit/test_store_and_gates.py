@@ -504,3 +504,95 @@ def test_evaluation_prefers_the_checkpoint_for_stability(world):
     )
     assert metrics["inter_run_stability"]["repeated_pairs"] == 1
     assert metrics["inter_run_stability"]["decision_agreement"] == 0.0
+
+
+# -- cluster labelling -----------------------------------------------------------
+
+
+def _points(n_a: int, n_b: int):
+    from pipeline.models import UmapPoint as _P
+
+    return [
+        _P(
+            company_id=f"a{i}",
+            x=0.0,
+            y=0.0,
+            cluster_id=0,
+            projection_version="p",
+            embedding_space_version="v",
+        )
+        for i in range(n_a)
+    ] + [
+        _P(
+            company_id=f"b{i}",
+            x=1.0,
+            y=1.0,
+            cluster_id=1,
+            projection_version="p",
+            embedding_space_version="v",
+        )
+        for i in range(n_b)
+    ]
+
+
+def test_clusters_are_named_by_lift_not_raw_frequency():
+    """A tag on almost every company must not end up naming every cluster."""
+    from pipeline.projection.umap_project import label_clusters
+
+    points = _points(10, 10)
+    tags = {t: tag(t) for t in ("ubiquitous", "distinctive")}
+    features = [feature(p.company_id, "ubiquitous") for p in points]
+    features += [feature(p.company_id, "distinctive") for p in points if p.cluster_id == 0]
+
+    clusters = {c.cluster_id: c for c in label_clusters(points, features, tags)}
+    # The distinguishing tag leads, even though the ubiquitous one is just as
+    # frequent inside the cluster — that is what lift buys.
+    assert clusters[0].top_tag_ids[0] == "distinctive"
+    assert clusters[0].label.startswith("distinctive")
+    assert clusters[0].label_source == "semantic_tags"
+    # Cluster 1 has only the ubiquitous tag, so it is all there is to say.
+    assert clusters[1].top_tag_ids == ["ubiquitous"]
+
+
+def test_clusters_fall_back_to_source_terms_when_tags_are_sparse():
+    """Early on, assignment has not reached enough companies to name a cluster.
+
+    A bare "Cluster 3" tells a reader nothing, so the label falls back to YC's
+    own categories -- and records that it did, so the UI does not pass one off
+    as the other.
+    """
+    from pipeline.projection.umap_project import label_clusters
+
+    points = _points(10, 10)
+    source_terms = {
+        p.company_id: (["Healthcare"] if p.cluster_id == 0 else ["Fintech"]) for p in points
+    }
+    clusters = {c.cluster_id: c for c in label_clusters(points, [], {}, source_terms=source_terms)}
+    assert clusters[0].label == "Healthcare"
+    assert clusters[1].label == "Fintech"
+    assert all(c.label_source == "source_taxonomy" for c in clusters.values())
+
+
+def test_clusters_prefer_semantic_tags_when_both_are_available():
+    from pipeline.projection.umap_project import label_clusters
+
+    points = _points(10, 10)
+    tags = {"distinctive": tag("distinctive")}
+    features = [feature(p.company_id, "distinctive") for p in points if p.cluster_id == 0]
+    source_terms = {p.company_id: ["Healthcare"] for p in points}
+
+    clusters = {
+        c.cluster_id: c for c in label_clusters(points, features, tags, source_terms=source_terms)
+    }
+    assert clusters[0].label_source == "semantic_tags"
+    # The cluster with no tags still gets a useful name.
+    assert clusters[1].label_source == "source_taxonomy"
+
+
+def test_a_single_company_cannot_name_a_cluster():
+    from pipeline.projection.umap_project import label_clusters
+
+    points = _points(20, 0)
+    source_terms = {p.company_id: (["Rare"] if p.company_id == "a0" else []) for p in points}
+    clusters = label_clusters(points, [], {}, source_terms=source_terms)
+    assert "Rare" not in clusters[0].label

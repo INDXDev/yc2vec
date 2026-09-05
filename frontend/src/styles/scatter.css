@@ -122,3 +122,10 @@
   flex-wrap: wrap;
   gap: 5px;
 }
+
+.scatter__legendNote {
+  margin: 0 0 7px;
+  font-size: 10.5px;
+  line-height: 1.4;
+  color: var(--text-faint);
+}

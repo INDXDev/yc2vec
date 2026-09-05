@@ -74,11 +74,11 @@ const detail = {
       shortlist_reason: 'retrieval',
     }],
     uncertain_tags: [{ tag_id: 'marketplace', name: 'Marketplace Model', notes: 'thin evidence' }],
+    // Neighbours carry only id, score and the shared facts; the rest is
+    // resolved from the company index.
     neighbors: {
-      combined: [{ id: 'c:2', name: 'Airbnb', one_liner: 'Book homes', batch: 'Winter 2009',
-                   score: 0.71, shared_metadata: ['status: Active'] }],
-      metadata: [{ id: 'c:2', name: 'Airbnb', one_liner: 'Book homes', batch: 'Winter 2009',
-                   score: 0.93, shared_metadata: ['batch: Winter 2009', 'status: Active'] }],
+      combined: [{ id: 'c:2', score: 0.71, shared_metadata: ['status: Active'] }],
+      metadata: [{ id: 'c:2', score: 0.93, shared_metadata: ['batch: Winter 2009', 'status: Active'] }],
     },
     coordinates: { x: 0.1, y: -0.2, cluster: 0 },
   },

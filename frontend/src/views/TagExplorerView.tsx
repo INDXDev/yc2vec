@@ -14,10 +14,13 @@ export function TagExplorerView() {
 
   const rows = dataset?.tags.rows ?? []
 
+  const [assignedOnly, setAssignedOnly] = useState(false)
+
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase()
     return rows.filter((t) => {
       if (facet && t.facet !== facet) return false
+      if (assignedOnly && t.prevalence === 0) return false
       if (!q) return true
       return (
         t.name.toLowerCase().includes(q) ||
@@ -25,7 +28,9 @@ export function TagExplorerView() {
         t.aliases.some((a) => a.toLowerCase().includes(q))
       )
     })
-  }, [rows, query, facet])
+  }, [rows, query, facet, assignedOnly])
+
+  const unassigned = useMemo(() => rows.filter((t) => t.prevalence === 0).length, [rows])
 
   const selected = tagId ? dataset?.tagsById.get(tagId) : null
 
@@ -85,6 +90,16 @@ export function TagExplorerView() {
               </button>
             ))}
           </div>
+          {unassigned > 0 && (
+            <label className="tags__toggle">
+              <input
+                type="checkbox"
+                checked={assignedOnly}
+                onChange={() => setAssignedOnly((v) => !v)}
+              />
+              <span>Only tags with assignments</span>
+            </label>
+          )}
           <p className="faint mono tags__count" role="status" aria-live="polite">
             {filtered.length} tags
           </p>
@@ -99,7 +114,12 @@ export function TagExplorerView() {
               >
                 <span className="tags__itemName">{t.name}</span>
                 <span className="tags__itemFacet faint">{t.facet.replace(/_/g, ' ')}</span>
-                <span className="mono faint">{t.prevalence}</span>
+                <span
+                  className={`mono faint${t.prevalence === 0 ? ' tags__zero' : ''}`}
+                  title={t.prevalence === 0 ? 'No company has been judged against this tag yet' : undefined}
+                >
+                  {t.prevalence}
+                </span>
               </Link>
             </li>
           ))}
@@ -114,8 +134,16 @@ export function TagExplorerView() {
           <div className="tags__placeholder">
             <h1>Tag explorer</h1>
             <p className="muted">
-              {rows.length} active semantic tags across {dataset.tags.facets.length} facets, each
-              discovered by a local model and grounded in company evidence.
+              {rows.length.toLocaleString()} active semantic tags across{' '}
+              {dataset.tags.facets.length} facets, discovered by a local model from the companies
+              themselves rather than taken from a fixed list.
+              {unassigned > 0 && (
+                <>
+                  {' '}
+                  {(rows.length - unassigned).toLocaleString()} have been assigned to at least one
+                  company so far; assignment is incremental and continues.
+                </>
+              )}
             </p>
             <p className="faint">
               Select a tag to see its definition, how prevalent it is, which tags it co-occurs with,
@@ -162,9 +190,17 @@ function TagDetail({ tag, onOpenInMap }: { tag: Tag; onOpenInMap: (t: Tag) => vo
         <Stat label="Tag id" value={tag.tag_id} mono />
       </div>
 
-      <button className="btn btn--primary" onClick={() => onOpenInMap(tag)}>
-        Show these companies on the map
-      </button>
+      {tag.prevalence === 0 ? (
+        <p className="tagdetail__pending panel">
+          No company carries this tag yet. It was discovered and activated, but assignment is
+          incremental and has not reached a company that exhibits it. This is a statement about
+          coverage, not about the attribute.
+        </p>
+      ) : (
+        <button className="btn btn--primary" onClick={() => onOpenInMap(tag)}>
+          Show these companies on the map
+        </button>
+      )}
 
       {years.length > 1 && (
         <section className="tagdetail__section">

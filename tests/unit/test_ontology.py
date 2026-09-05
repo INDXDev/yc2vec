@@ -234,7 +234,7 @@ def test_display_name_migration_keeps_ids_and_preserves_lookups(registry):
 
     result = normalize_display_names(registry)
     assert result.changed == 1
-    assert registry.tags[original_id].tag_id == original_id      # id frozen
+    assert registry.tags[original_id].tag_id == original_id  # id frozen
     assert registry.tags[original_id].canonical_name == "AI Agent Automation"
     # The previous spelling still resolves, so old references keep working.
     assert registry.resolve("Ai Agent Automation").tag_id == original_id

@@ -33,6 +33,15 @@ frontend/.vite/
 .DS_Store
 *.log
 
-# The generated ontology and derived tables are produced by an enrichment run
-# and land via the enrichment workflow's pull request, not by hand.
-data/inferred/
+# Intermediate derived tables are large and regenerable. The ontology itself is
+# committed (it is the expensive, reviewable artifact); the vector dumps and the
+# per-judgment audit tables are not.
+data/inferred/*.npz
+data/inferred/company_embeddings.jsonl
+data/inferred/company_neighbors.jsonl
+data/inferred/company_tag_judgments.partial.jsonl
+
+# Full-fidelity analytical exports are large and reproducible from the pipeline.
+# The browser-ready release under data/public/ is what the site serves and IS
+# committed; researchers regenerate data/export/ with `make publish`.
+data/export/

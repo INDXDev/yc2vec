@@ -33,9 +33,21 @@ LOG = log(__name__)
 
 
 def _frame(rows: Sequence[Any]) -> pl.DataFrame:
+    """Build a frame from typed records.
+
+    ``infer_schema_length=None`` scans every row rather than the first hundred.
+    That matters here because several columns are lists that are empty for long
+    runs of companies -- a company with no source taxonomy terms, or no
+    regions. Inferring from a prefix types those as a null list and then fails
+    on the first row that actually has a value.
+    """
     if not rows:
         return pl.DataFrame()
-    return pl.DataFrame([r.model_dump(mode="json") for r in rows], strict=False)
+    return pl.DataFrame(
+        [r.model_dump(mode="json") for r in rows],
+        strict=False,
+        infer_schema_length=None,
+    )
 
 
 def _write(df: pl.DataFrame, path: Path, *, csv: bool = False) -> int:

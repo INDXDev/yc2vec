@@ -215,7 +215,13 @@ def publish_browser_artifacts(
             for tag_id in tag_ids:
                 by_year[tag_id][str(company.batch_year)] += 1
 
-    published_tags = [t for t in tags if t.state == "active" and prevalence.get(t.tag_id)]
+    # Publish the whole active ontology, not just the tags that happen to have
+    # assignments yet. The ontology is a result in its own right, and hiding
+    # the unassigned two-thirds would misrepresent both what was discovered and
+    # how far assignment has got. Prevalence is published as-is -- including
+    # zero -- and the UI is expected to say so rather than imply the tag is
+    # unused in the world.
+    published_tags = [t for t in tags if t.state == "active"]
     write_json(
         root / "tags.json",
         {
@@ -244,7 +250,13 @@ def publish_browser_artifacts(
                     "by_year": dict(sorted(by_year[t.tag_id].items())),
                 }
                 for t in sorted(
-                    published_tags, key=lambda t: (-prevalence.get(t.tag_id, 0), t.tag_id)
+                    # Most-assigned first, then best-supported. The second key
+                    # matters early in a corpus's life, when most tags have no
+                    # assignments yet and prevalence alone would order them
+                    # alphabetically -- burying the tags discovery was most
+                    # confident about.
+                    published_tags,
+                    key=lambda t: (-prevalence.get(t.tag_id, 0), -t.support_count, t.tag_id),
                 )
             ],
         },
@@ -460,27 +472,35 @@ def _detail_record(
     my_tags = {f.tag_id for f in features}
     my_meta = neighbor_facts.get(c.company_id, set())
     for n in sorted(neighbors, key=lambda n: (n.space, n.rank)):
-        idx = order.get(n.neighbor_company_id)
-        if idx is None:
+        # A neighbour that did not make it into the published set would be a
+        # dangling reference in the browser.
+        if n.neighbor_company_id not in order:
             continue
         if len(nb[n.space]) >= PUBLISHED_NEIGHBORS_PER_SPACE:
             continue
-        other = published[idx]
+        # Only the id, the score and the shared facts. Name, one-liner and
+        # batch already live in companies.json, which the client has loaded
+        # before it can open a company at all; repeating them here duplicated
+        # the whole index roughly sixty times over across the detail shards.
         entry: dict[str, Any] = {
             "id": n.neighbor_company_id,
-            "name": other.name,
-            "one_liner": truncate(other.one_liner or "", 120),
-            "batch": other.batch,
             "score": round(n.similarity, 4),
         }
-        shared_tags = sorted(my_tags & neighbor_tags.get(n.neighbor_company_id, set()))
-        if shared_tags:
-            entry["shared_tags"] = [
-                tags_by_id[t].canonical_name for t in shared_tags[:6] if t in tags_by_id
-            ]
-        shared_meta = sorted(my_meta & neighbor_facts.get(other.company_id, set()))
-        if shared_meta:
-            entry["shared_metadata"] = shared_meta[:6]
+        # Explanations are scoped to the space that produced the match. Shared
+        # metadata explains a *metadata* neighbour; attaching it to a
+        # description match would suggest the shared batch caused the
+        # similarity, which is exactly the false causal story to avoid -- and
+        # across five spaces it also dominated the payload.
+        if n.space in ("combined", "tags", "sparse_tags"):
+            shared_tags = sorted(my_tags & neighbor_tags.get(n.neighbor_company_id, set()))
+            if shared_tags:
+                entry["shared_tags"] = [
+                    tags_by_id[t].canonical_name for t in shared_tags[:6] if t in tags_by_id
+                ]
+        if n.space in ("combined", "metadata"):
+            shared_meta = sorted(my_meta & neighbor_facts.get(n.neighbor_company_id, set()))
+            if shared_meta:
+                entry["shared_metadata"] = shared_meta[:5]
         nb[n.space].append(entry)
 
     point = points_by_company.get(c.company_id)

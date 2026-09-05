@@ -245,16 +245,21 @@ export function CompanyView() {
             </p>
           ) : (
             <ol className="company__neighbors">
-              {neighbors.map((n) => (
+              {neighbors.map((n) => {
+                // Resolved from the company index the app already holds.
+                const other = dataset?.companiesById.get(n.id)
+                return (
                 <li key={n.id} className="company__neighbor panel">
                   <div className="company__neighborHead">
-                    <Link to={`/company/${encodeURIComponent(n.id)}?space=${space}`}>{n.name}</Link>
+                    <Link to={`/company/${encodeURIComponent(n.id)}?space=${space}`}>
+                      {other?.name ?? n.id}
+                    </Link>
                     <span className="mono faint">{n.score.toFixed(3)}</span>
                   </div>
                   {/* 84 company names are shared by more than one YC company,
                       so the batch is what makes a neighbour identifiable. */}
-                  {n.batch && <p className="company__neighborBatch faint">{n.batch}</p>}
-                  {n.one_liner && <p className="company__neighborLine">{n.one_liner}</p>}
+                  {other?.batch && <p className="company__neighborBatch faint">{other.batch}</p>}
+                  {other?.oneLiner && <p className="company__neighborLine">{other.oneLiner}</p>}
                   {n.shared_tags && n.shared_tags.length > 0 && (
                     <p className="company__why">
                       <span className="faint">Shared tags:</span> {n.shared_tags.join(', ')}
@@ -266,7 +271,8 @@ export function CompanyView() {
                     </p>
                   )}
                 </li>
-              ))}
+                )
+              })}
             </ol>
           )}
         </section>

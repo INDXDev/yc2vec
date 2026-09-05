@@ -58,6 +58,11 @@ make site-data DATA_DIR=/tmp/yc2vec-fixture   # stage the result for the UI
 cd frontend && npm ci && npm run dev
 ```
 
+To run the UI against the *published* dataset instead of the fixture, stage the
+committed release: `make site-data` (it defaults to `./data`). The frontend
+reads its data from `frontend/public/data/`, which is generated rather than
+committed, so this step is what fills it.
+
 That is the same vertical slice CI runs on every pull request.
 
 ---

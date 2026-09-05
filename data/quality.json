@@ -1,0 +1,134 @@
+{
+  "active_tags": 1018,
+  "assignments": 54,
+  "assignments_per_company": 0.01,
+  "candidate_tags": 821,
+  "companies": 6200,
+  "decision_mix": {
+    "no": 98,
+    "uncertain": 31,
+    "yes": 54
+  },
+  "duplicate_tag_groups": {},
+  "duplicate_tag_rate": 0.0,
+  "evidence_coverage": 1.0,
+  "facet_distribution": {
+    "business_model": 63,
+    "buyer": 112,
+    "company_stage": 1,
+    "customer": 11,
+    "data_modality": 132,
+    "deployment": 29,
+    "geography": 24,
+    "go_to_market": 8,
+    "industry": 105,
+    "problem_archetype": 29,
+    "product_form": 136,
+    "regulation": 23,
+    "technology": 88,
+    "workflow": 257
+  },
+  "hard_negative_acceptance_rate": 0.2,
+  "hard_negatives_judged": 20,
+  "inter_run_stability": {
+    "decision_agreement": null,
+    "mean_confidence_delta": null,
+    "repeated_pairs": 0
+  },
+  "judgments": 183,
+  "merged_tags": 225,
+  "orphan_tag_rate": 0.9499,
+  "orphan_tags": [
+    "abstracts-complex-integration",
+    "administrative-automation",
+    "advertising-and-marketing-optimization",
+    "advertising-marketing",
+    "aerospace-defense",
+    "agentic-automation",
+    "ai-agent-automation",
+    "ai-agent-evaluation",
+    "ai-agent-infrastructure",
+    "ai-agent-or-automation",
+    "ai-agent-or-generative-interface",
+    "ai-agent-orchestration",
+    "ai-agent-workflow-automation",
+    "ai-agentic-core",
+    "ai-assisted-creation",
+    "ai-augmented-cognitive-task",
+    "ai-augmented-workflow",
+    "ai-automated-execution",
+    "ai-automated-service-delivery",
+    "ai-automated-workflow-execution"
+  ],
+  "reviewed_sample": {
+    "f1": 0.0,
+    "gold_pairs": 16,
+    "matched_pairs": 0,
+    "precision": 0.0,
+    "recall": 0.0
+  },
+  "tag_prevalence_median": 0.0,
+  "tag_prevalence_top": [
+    {
+      "companies": 3,
+      "tag_id": "early-stage-startup"
+    },
+    {
+      "companies": 2,
+      "tag_id": "internal-tool-for-non-technical-users"
+    },
+    {
+      "companies": 1,
+      "tag_id": "content-creation-tool"
+    },
+    {
+      "companies": 1,
+      "tag_id": "financial-data-or-fintech"
+    },
+    {
+      "companies": 1,
+      "tag_id": "operates-on-unstructured-web-or-document-data"
+    },
+    {
+      "companies": 1,
+      "tag_id": "regulatory-compliance-data-access"
+    },
+    {
+      "companies": 1,
+      "tag_id": "unstructured-data-structuring"
+    },
+    {
+      "companies": 1,
+      "tag_id": "consumer-b2c-customer"
+    },
+    {
+      "companies": 1,
+      "tag_id": "financial-instrument-abstraction"
+    },
+    {
+      "companies": 1,
+      "tag_id": "financial-instrument-management"
+    },
+    {
+      "companies": 1,
+      "tag_id": "financial-investment-management"
+    },
+    {
+      "companies": 1,
+      "tag_id": "financial-risk-management"
+    },
+    {
+      "companies": 1,
+      "tag_id": "financial-risk-management-domain"
+    },
+    {
+      "companies": 1,
+      "tag_id": "financial-risk-mitigation"
+    },
+    {
+      "companies": 1,
+      "tag_id": "focuses-on-financial-risk-or-compliance"
+    }
+  ],
+  "uncertain_rate": 0.1694
+}

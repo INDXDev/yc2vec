@@ -239,7 +239,9 @@ def test_tags_payload_reports_prevalence_and_cooccurrence(published):
     payload = load(published["root"], "tags.json")
     assert payload["count"] == len(payload["rows"])
     for row in payload["rows"]:
-        assert row["prevalence"] > 0  # orphan tags are not published
+        # The whole active ontology ships, including tags with no assignments
+        # yet; prevalence is reported honestly rather than filtered away.
+        assert row["prevalence"] >= 0
         assert row["definition"]
     names = {r["tag_id"] for r in payload["rows"]}
     for row in payload["rows"]:
@@ -433,3 +435,81 @@ def test_companies_without_a_projection_are_not_published(tmp_path, sample_raws)
     published_ids = {r["i"] for r in json.loads((root / "companies.json").read_text())["rows"]}
     assert published_ids == {c.company_id for c in projected}
     assert json.loads((root / "points.json").read_text())["count"] == 4
+
+
+def test_active_tags_without_assignments_are_still_published(tmp_path, sample_raws):
+    """The ontology is a result in its own right; hiding the unassigned part of
+    it would misrepresent both what was discovered and how far assignment got."""
+    from pipeline.normalize.companies import normalize_companies
+
+    companies = normalize_companies(sample_raws)[:4]
+    tags = [tag("assigned"), tag("never-assigned")]
+    judgment = CompanyTagJudgment(
+        judgment_id="j",
+        company_id=companies[0].company_id,
+        tag_id="assigned",
+        decision="yes",
+        confidence=0.9,
+        rationale="because",
+        evidence=[EvidenceSpan(document_id="d", quote="q")],
+        shortlist_reason="retrieval",
+        model="m",
+        prompt_version="p",
+        ontology_version="1",
+        pipeline_version="1",
+        run_id="r",
+        created_at=NOW,
+    )
+    feature = CompanyTagFeature(
+        company_id=companies[0].company_id,
+        tag_id="assigned",
+        present=1,
+        raw_confidence=0.9,
+        calibrated_confidence=0.8,
+        information_weight=0.5,
+        feature_value=0.4,
+        judgment_id="j",
+        ontology_version="1",
+        run_id="r",
+    )
+    manifest = ReleaseManifest(
+        dataset_version="t",
+        schema_version="1",
+        public_artifact_version=PUBLIC_ARTIFACT_VERSION,
+        pipeline_version="1",
+        ontology_version="1",
+        embedding_space_version="v1",
+        projection_version="p1",
+        generated_at=NOW,
+        source_url="https://example.com",
+    )
+    publish_browser_artifacts(
+        tmp_path,
+        companies=companies,
+        tags=tags,
+        features=[feature],
+        judgments=[judgment],
+        neighbors=[],
+        points=[
+            UmapPoint(
+                company_id=c.company_id,
+                x=0.0,
+                y=0.0,
+                cluster_id=0,
+                projection_version="p1",
+                embedding_space_version="v1",
+            )
+            for c in companies
+        ],
+        clusters=[],
+        terms=[],
+        mappings=[],
+        manifest=manifest,
+    )
+    rows = json.loads((tmp_path / f"v{PUBLIC_ARTIFACT_VERSION}" / "tags.json").read_text())["rows"]
+    by_id = {r["tag_id"]: r for r in rows}
+    assert set(by_id) == {"assigned", "never-assigned"}
+    assert by_id["assigned"]["prevalence"] == 1
+    assert by_id["never-assigned"]["prevalence"] == 0
+    # Most-used first, so the useful tags surface even in a large ontology.
+    assert rows[0]["tag_id"] == "assigned"

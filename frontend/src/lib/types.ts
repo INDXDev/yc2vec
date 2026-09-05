@@ -140,11 +140,14 @@ export interface AssignedTag {
   shortlist_reason: string | null
 }
 
+/**
+ * A published neighbour carries only what cannot be looked up: its id, the
+ * similarity score, and the facts that explain the match. Name, one-liner and
+ * batch are resolved from the already-loaded company index rather than
+ * repeated in every detail shard.
+ */
 export interface NeighborEntry {
   id: string
-  name: string
-  one_liner: string
-  batch: string | null
   score: number
   shared_tags?: string[]
   shared_metadata?: string[]

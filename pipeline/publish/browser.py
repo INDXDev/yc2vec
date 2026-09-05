@@ -44,9 +44,15 @@ from pipeline.versions import PUBLIC_ARTIFACT_VERSION, SCHEMA_VERSION
 
 LOG = log(__name__)
 
-#: Number of per-company detail shards. Chosen so each shard stays well under
-#: ~200 KB for the full corpus, which is one comfortable HTTP fetch.
+#: Number of per-company detail shards. At the full corpus this puts roughly a
+#: hundred companies in each shard, so opening one company fetches about 1/64th
+#: of the detail data instead of all of it.
 DETAIL_SHARDS = 64
+
+#: Neighbours published per similarity space. The pipeline computes and exports
+#: more (see EmbeddingConfig.top_k_neighbors); the browser only ever shows the
+#: head of the list, and shipping the tail would dominate the detail payload.
+PUBLISHED_NEIGHBORS_PER_SPACE = 12
 
 #: Short transport keys for the company index, documented in the manifest.
 COMPANY_KEY_MAP = {
@@ -450,6 +456,8 @@ def _detail_record(
     for n in sorted(neighbors, key=lambda n: (n.space, n.rank)):
         idx = order.get(n.neighbor_company_id)
         if idx is None:
+            continue
+        if len(nb[n.space]) >= PUBLISHED_NEIGHBORS_PER_SPACE:
             continue
         other = published[idx]
         entry: dict[str, Any] = {

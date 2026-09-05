@@ -389,6 +389,30 @@ def assign_tags(
     companies: Annotated[
         str | None, typer.Option("--companies", help="Comma-separated company ids.")
     ] = None,
+    sample: Annotated[
+        int | None,
+        typer.Option(
+            "--sample",
+            help="Judge a representative sample of N companies, stratified by industry and batch year.",
+        ),
+    ] = None,
+    shortlist: Annotated[
+        int | None,
+        typer.Option("--shortlist", help="Tags shortlisted per company before hard negatives."),
+    ] = None,
+    hard_negatives: Annotated[
+        int | None,
+        typer.Option("--hard-negatives", help="Calibrated hard negatives added per company."),
+    ] = None,
+    pairs_per_call: Annotated[
+        int | None,
+        typer.Option(
+            "--pairs-per-call", help="Pairs judged per model call. 1 = strictly one call per pair."
+        ),
+    ] = None,
+    concurrency: Annotated[
+        int | None, typer.Option("--concurrency", help="Concurrent companies in flight.")
+    ] = None,
     resume: Annotated[
         bool, typer.Option("--resume/--restart", help="Reuse checkpointed judgments.")
     ] = True,
@@ -396,22 +420,45 @@ def assign_tags(
     verbose: VerboseOpt = False,
 ) -> None:
     """Judge shortlisted company/tag pairs with evidence, then build sparse features."""
+    from dataclasses import replace as _replace
+
     config, store = _ctx(profile, data_dir, chat_model, embedding_model, ollama_host, verbose)
     ids = [c.strip() for c in companies.split(",") if c.strip()] if companies else None
+
+    overrides = {
+        k: v
+        for k, v in {
+            "shortlist_size": shortlist,
+            "hard_negatives": hard_negatives,
+            "pairs_per_call": pairs_per_call,
+            "concurrency": concurrency,
+        }.items()
+        if v is not None
+    }
+    cfg = _replace(config, tagging=_replace(config.tagging, **overrides)) if overrides else config
+
+    # Report the settings that would actually be used, overrides included.
     if dry_run:
         console.print(
-            f"would judge up to {config.tagging.shortlist_size} tags + "
-            f"{config.tagging.hard_negatives} hard negatives per company, "
-            f"{config.tagging.pairs_per_call} pairs per call, concurrency {config.tagging.concurrency}"
+            f"would judge up to {cfg.tagging.shortlist_size} tags + "
+            f"{cfg.tagging.hard_negatives} hard negatives per company, "
+            f"{cfg.tagging.pairs_per_call} pairs per call, concurrency {cfg.tagging.concurrency}"
+            + (f", over a stratified sample of {sample}" if sample else "")
         )
         return
 
     from pipeline.orchestrate import assign_stage
 
     async def go() -> dict[str, int]:
-        async with await _client(config, store) as client:
+        async with await _client(cfg, store) as client:
             return await assign_stage(
-                config, store, client, limit=limit, company_ids=ids, resume=resume
+                cfg,
+                store,
+                client,
+                limit=limit,
+                company_ids=ids,
+                sample=sample,
+                resume=resume,
             )
 
     console.print(_run(go()))

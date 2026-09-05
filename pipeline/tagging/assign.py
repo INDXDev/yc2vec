@@ -77,11 +77,28 @@ async def assign_tags(
         if tag is not None:
             groups[tag.facet].append(item)
 
+    # Facets keep related tags together, which makes each call's context
+    # coherent. But with a large ontology a company's shortlist spreads thinly
+    # across many facets, and one call per facet would mean a dozen calls each
+    # judging two tags -- paying the full evidence prompt every time. Small
+    # facet groups are therefore packed together up to `pairs_per_call`.
+    # This changes only how the calls are batched: each tag still gets its own
+    # independent decision, confidence, rationale and evidence.
     per_call = max(1, config.tagging.pairs_per_call)
     calls: list[list[ShortlistItem]] = []
-    for items in groups.values():
+    pending: list[ShortlistItem] = []
+    for items in sorted(groups.values(), key=len, reverse=True):
         for i in range(0, len(items), per_call):
-            calls.append(items[i : i + per_call])
+            chunk = items[i : i + per_call]
+            if len(chunk) == per_call:
+                calls.append(chunk)
+            elif len(pending) + len(chunk) <= per_call:
+                pending.extend(chunk)
+            else:
+                calls.append(pending)
+                pending = list(chunk)
+    if pending:
+        calls.append(pending)
 
     judgments: list[CompanyTagJudgment] = []
     for chunk in calls:

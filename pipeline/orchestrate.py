@@ -66,6 +66,56 @@ from pipeline.versions import METADATA_TEMPLATE_VERSION, ONTOLOGY_VERSION, SCHEM
 LOG = log(__name__)
 
 
+def stratified_sample(
+    companies: list[CompanyNormalized], size: int, *, seed: int
+) -> list[CompanyNormalized]:
+    """Pick a representative subset, spread across industry and batch year.
+
+    Assignment is the expensive stage, so a partial run is the normal case
+    rather than a failure mode. Taking the first N companies would bias the
+    result toward whatever the source happens to order first -- in practice the
+    oldest batches. Sampling proportionally across (industry, batch year) keeps
+    a partial dataset usable for comparison across the whole corpus, and the
+    seed keeps the choice reproducible.
+    """
+    if size >= len(companies):
+        return companies
+
+    strata: dict[tuple[str, int], list[CompanyNormalized]] = {}
+    for c in companies:
+        strata.setdefault((c.industry or "Unlisted", c.batch_year or 0), []).append(c)
+
+    rng = np.random.default_rng(seed)
+    picked: list[CompanyNormalized] = []
+    # Round-robin over strata so every stratum contributes before any
+    # contributes twice; large strata still end up proportionally represented
+    # because they simply have more rounds to give to.
+    #
+    # The *order* of the strata is shuffled as well as their contents. Many
+    # strata hold a single company, and with those a fixed iteration order
+    # would make the sample a deterministic prefix of the sorted keys -- which
+    # in practice means one or two industries, exactly the bias this function
+    # exists to avoid.
+    pools = []
+    for key in sorted(strata):
+        group = sorted(strata[key], key=lambda c: c.company_id)
+        rng.shuffle(group)
+        pools.append(group)
+    rng.shuffle(pools)
+    idx = 0
+    while len(picked) < size and any(pools):
+        pool = pools[idx % len(pools)]
+        if pool:
+            picked.append(pool.pop())
+        idx += 1
+        if idx % len(pools) == 0:
+            pools = [p for p in pools if p]
+            if not pools:
+                break
+            idx = 0
+    return sorted(picked, key=lambda c: c.company_id)[:size]
+
+
 def new_run(config: Config, stage: str, models: dict[str, Any] | None = None) -> PipelineRun:
     return PipelineRun(
         run_id=uuid.uuid4().hex,
@@ -222,12 +272,15 @@ async def assign_stage(
     *,
     limit: int | None = None,
     company_ids: list[str] | None = None,
+    sample: int | None = None,
     resume: bool = True,
 ) -> dict[str, int]:
     companies = load_normalized(store)
     if company_ids:
         wanted = set(company_ids)
         companies = [c for c in companies if c.company_id in wanted]
+    if sample:
+        companies = stratified_sample(companies, sample, seed=config.models.seed)
     if limit:
         companies = companies[:limit]
 

@@ -335,3 +335,40 @@ def test_evaluation_scores_against_a_gold_set(world, tmp_path):
     sample = metrics["reviewed_sample"]
     assert sample["matched_pairs"] == 2
     assert sample["precision"] == pytest.approx(0.5)  # one true positive, one false positive
+
+
+# -- stratified sampling --------------------------------------------------------
+
+
+def test_stratified_sample_spreads_across_industries_and_years(sample_raws):
+    """A partial assignment run must stay representative of the whole corpus."""
+    from pipeline.orchestrate import stratified_sample
+
+    companies = normalize_companies(sample_raws)
+    picked = stratified_sample(companies, 20, seed=7)
+
+    assert len(picked) == 20
+    assert len({c.company_id for c in picked}) == 20
+    # The sample should touch most industries, not concentrate in one.
+    all_industries = {c.industry for c in companies}
+    picked_industries = {c.industry for c in picked}
+    assert len(picked_industries) >= min(len(all_industries), 6)
+    # And it must not simply be the first N by id.
+    assert [c.company_id for c in picked] != [c.company_id for c in companies[:20]]
+
+
+def test_stratified_sample_is_reproducible(sample_raws):
+    from pipeline.orchestrate import stratified_sample
+
+    companies = normalize_companies(sample_raws)
+    a = [c.company_id for c in stratified_sample(companies, 15, seed=3)]
+    b = [c.company_id for c in stratified_sample(companies, 15, seed=3)]
+    assert a == b
+    assert a != [c.company_id for c in stratified_sample(companies, 15, seed=4)]
+
+
+def test_stratified_sample_returns_everything_when_size_exceeds_corpus(sample_raws):
+    from pipeline.orchestrate import stratified_sample
+
+    companies = normalize_companies(sample_raws)
+    assert stratified_sample(companies, 10_000, seed=1) == companies

@@ -334,13 +334,13 @@ async def assign_stage(
         seed=config.models.seed,
     )
 
+    # Resume needs only the set of companies already judged; the judgments
+    # themselves are re-read from the checkpoint at finalize time, so there is
+    # no reason to hold a growing corpus of them in memory here.
     partial = store.path("inferred", "company_tag_judgments.partial.jsonl")
     done: set[str] = set()
-    existing: list[CompanyTagJudgment] = []
     if resume and partial.exists():
-        for row in read_jsonl(partial):
-            existing.append(CompanyTagJudgment(**row))
-            done.add(row["company_id"])
+        done = {row["company_id"] for row in read_jsonl(partial)}
         LOG.info("assign-tags: resuming, %d companies already judged", len(done))
 
     work = []
@@ -373,7 +373,6 @@ async def assign_stage(
     counts = _finalize_judgments(config, store, n_companies=len(companies), run_id=run.run_id)
     counts["companies"] = len(companies)
     counts["fresh_judgments"] = len(fresh)
-    _ = existing
 
     run.finished_at = now()
     run.status = "ok"

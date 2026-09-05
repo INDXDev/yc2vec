@@ -40,7 +40,16 @@ ARTIFACTS = (
 
 def run_pipeline(data_dir: Path) -> Path:
     result = subprocess.run(
-        [sys.executable, "-m", "pipeline.cli", "run", "--profile", "fixture", "--data-dir", str(data_dir)],
+        [
+            sys.executable,
+            "-m",
+            "pipeline.cli",
+            "run",
+            "--profile",
+            "fixture",
+            "--data-dir",
+            str(data_dir),
+        ],
         capture_output=True,
         text=True,
         timeout=600,
@@ -87,7 +96,12 @@ def test_manifest_differs_only_in_documented_timestamps(two_runs):
         "VOLATILE_MANIFEST_FIELDS with a reason."
     )
     # The version identifiers in particular must be stable, since consumers key on them.
-    for field in ("dataset_version", "embedding_space_version", "projection_version", "ontology_version"):
+    for field in (
+        "dataset_version",
+        "embedding_space_version",
+        "projection_version",
+        "ontology_version",
+    ):
         assert a[field] == b[field], f"{field} changed between identical runs"
 
 

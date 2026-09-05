@@ -35,10 +35,16 @@ NOW = datetime(2026, 1, 1, tzinfo=UTC)
 
 def tag(tag_id: str, facet: str = "industry") -> Tag:
     return Tag(
-        tag_id=tag_id, canonical_name=tag_id.replace("-", " ").title(),
-        definition=f"A definition of {tag_id} long enough to be usable.", facet=facet,
-        state="active", support_count=3, source_company_ids=[], ontology_version="1",
-        created_at=NOW, updated_at=NOW,
+        tag_id=tag_id,
+        canonical_name=tag_id.replace("-", " ").title(),
+        definition=f"A definition of {tag_id} long enough to be usable.",
+        facet=facet,
+        state="active",
+        support_count=3,
+        source_company_ids=[],
+        ontology_version="1",
+        created_at=NOW,
+        updated_at=NOW,
     )
 
 
@@ -52,44 +58,93 @@ def published(tmp_path: Path, sample_raws):
     for i, cid in enumerate(ids):
         for t in tags[: (i % 3) + 1]:
             j = CompanyTagJudgment(
-                judgment_id=f"{cid}:{t.tag_id}", company_id=cid, tag_id=t.tag_id,
-                decision="yes", confidence=0.8, rationale="matches the definition",
+                judgment_id=f"{cid}:{t.tag_id}",
+                company_id=cid,
+                tag_id=t.tag_id,
+                decision="yes",
+                confidence=0.8,
+                rationale="matches the definition",
                 evidence=[EvidenceSpan(document_id=f"{cid}#yc_one_liner", quote="a quote")],
-                shortlist_reason="retrieval", model="m", prompt_version="p",
-                ontology_version="1", pipeline_version="1", run_id="r", created_at=NOW,
+                shortlist_reason="retrieval",
+                model="m",
+                prompt_version="p",
+                ontology_version="1",
+                pipeline_version="1",
+                run_id="r",
+                created_at=NOW,
             )
             judgments.append(j)
             features.append(
                 CompanyTagFeature(
-                    company_id=cid, tag_id=t.tag_id, present=1, raw_confidence=0.8,
-                    calibrated_confidence=0.72, information_weight=0.5, feature_value=0.36,
-                    judgment_id=j.judgment_id, ontology_version="1", run_id="r",
+                    company_id=cid,
+                    tag_id=t.tag_id,
+                    present=1,
+                    raw_confidence=0.8,
+                    calibrated_confidence=0.72,
+                    information_weight=0.5,
+                    feature_value=0.36,
+                    judgment_id=j.judgment_id,
+                    ontology_version="1",
+                    run_id="r",
                 )
             )
     # One more neighbour than the browser publishes, so the trim is exercised.
     neighbors = [
-        Neighbor(company_id=ids[0], neighbor_company_id=ids[k], space="combined",
-                 rank=k - 1, similarity=0.9 - k * 0.01, embedding_space_version="v1")
+        Neighbor(
+            company_id=ids[0],
+            neighbor_company_id=ids[k],
+            space="combined",
+            rank=k - 1,
+            similarity=0.9 - k * 0.01,
+            embedding_space_version="v1",
+        )
         for k in range(1, PUBLISHED_NEIGHBORS_PER_SPACE + 2)
     ]
     points = [
-        UmapPoint(company_id=cid, x=i * 0.1, y=-i * 0.1, cluster_id=i % 2,
-                  projection_version="p1", embedding_space_version="v1")
+        UmapPoint(
+            company_id=cid,
+            x=i * 0.1,
+            y=-i * 0.1,
+            cluster_id=i % 2,
+            projection_version="p1",
+            embedding_space_version="v1",
+        )
         for i, cid in enumerate(ids)
     ]
     clusters = [
-        Cluster(cluster_id=c, label=f"Cluster {c}", size=6, top_tag_ids=["alpha"],
-                centroid_x=0.0, centroid_y=0.0, projection_version="p1")
+        Cluster(
+            cluster_id=c,
+            label=f"Cluster {c}",
+            size=6,
+            top_tag_ids=["alpha"],
+            centroid_x=0.0,
+            centroid_y=0.0,
+            projection_version="p1",
+        )
         for c in (0, 1)
     ]
     manifest = ReleaseManifest(
-        dataset_version="test", schema_version="1", public_artifact_version=PUBLIC_ARTIFACT_VERSION,
-        pipeline_version="1", ontology_version="1", embedding_space_version="v1",
-        projection_version="p1", generated_at=NOW, source_url="https://example.com",
+        dataset_version="test",
+        schema_version="1",
+        public_artifact_version=PUBLIC_ARTIFACT_VERSION,
+        pipeline_version="1",
+        ontology_version="1",
+        embedding_space_version="v1",
+        projection_version="p1",
+        generated_at=NOW,
+        source_url="https://example.com",
     )
     counts = publish_browser_artifacts(
-        tmp_path, companies=companies, tags=tags, features=features, judgments=judgments,
-        neighbors=neighbors, points=points, clusters=clusters, terms=[], mappings=[],
+        tmp_path,
+        companies=companies,
+        tags=tags,
+        features=features,
+        judgments=judgments,
+        neighbors=neighbors,
+        points=points,
+        clusters=clusters,
+        terms=[],
+        mappings=[],
         manifest=manifest,
     )
     root = tmp_path / f"v{PUBLIC_ARTIFACT_VERSION}"
@@ -102,8 +157,15 @@ def load(root: Path, name: str):
 
 def test_every_expected_artifact_is_written(published):
     root = published["root"]
-    for name in ("manifest.json", "points.json", "companies.json", "tags.json",
-                 "taxonomy.json", "clusters.json", "search/docs.json"):
+    for name in (
+        "manifest.json",
+        "points.json",
+        "companies.json",
+        "tags.json",
+        "taxonomy.json",
+        "clusters.json",
+        "search/docs.json",
+    ):
         assert (root / name).exists(), name
     assert len(list((root / "detail").glob("*.json"))) == DETAIL_SHARDS
 
@@ -203,18 +265,39 @@ def test_exports_write_csv_parquet_and_sparse_matrix(tmp_path, sample_raws):
     tags = [tag("alpha"), tag("beta", "buyer")]
     features = [
         CompanyTagFeature(
-            company_id=c.company_id, tag_id="alpha", present=1, raw_confidence=0.9,
-            calibrated_confidence=0.8, information_weight=0.5, feature_value=0.4,
-            judgment_id="j", ontology_version="1", run_id="r",
+            company_id=c.company_id,
+            tag_id="alpha",
+            present=1,
+            raw_confidence=0.9,
+            calibrated_confidence=0.8,
+            information_weight=0.5,
+            feature_value=0.4,
+            judgment_id="j",
+            ontology_version="1",
+            run_id="r",
         )
         for c in companies
     ]
     counts = write_exports(
-        tmp_path, companies=companies, tags=tags, terms=[],
-        mappings=[SourceTaxonomyTagMapping(
-            mapping_id="m", term_id="industry:b2b", tag_id="alpha", relation="narrower",
-            similarity=0.8, method="embedding", created_at=NOW)],
-        features=features, judgments=[], neighbors=[], points=[],
+        tmp_path,
+        companies=companies,
+        tags=tags,
+        terms=[],
+        mappings=[
+            SourceTaxonomyTagMapping(
+                mapping_id="m",
+                term_id="industry:b2b",
+                tag_id="alpha",
+                relation="narrower",
+                similarity=0.8,
+                method="embedding",
+                created_at=NOW,
+            )
+        ],
+        features=features,
+        judgments=[],
+        neighbors=[],
+        points=[],
     )
     assert counts["companies"] == 8
     assert (tmp_path / "companies.csv").exists()
@@ -231,8 +314,17 @@ def test_exports_write_csv_parquet_and_sparse_matrix(tmp_path, sample_raws):
 
 def test_csv_export_has_no_nested_python_reprs(tmp_path, sample_raws):
     companies = normalize_companies(sample_raws)[:5]
-    write_exports(tmp_path, companies=companies, tags=[], terms=[], mappings=[],
-                  features=[], judgments=[], neighbors=[], points=[])
+    write_exports(
+        tmp_path,
+        companies=companies,
+        tags=[],
+        terms=[],
+        mappings=[],
+        features=[],
+        judgments=[],
+        neighbors=[],
+        points=[],
+    )
     text = (tmp_path / "companies.csv").read_text()
     assert "['" not in text and "{'" not in text
 
@@ -256,17 +348,40 @@ def test_manifest_records_limitations_and_attribution(tmp_path, sample_raws):
 
     companies = normalize_companies(sample_raws)[:4]
     manifest = ReleaseManifest(
-        dataset_version="t", schema_version="1", public_artifact_version=PUBLIC_ARTIFACT_VERSION,
-        pipeline_version="1", ontology_version="1", embedding_space_version="v1",
-        projection_version="p1", generated_at=NOW, source_url="https://example.com",
-        limitations=["tags are inferred"], attribution="unofficial project",
+        dataset_version="t",
+        schema_version="1",
+        public_artifact_version=PUBLIC_ARTIFACT_VERSION,
+        pipeline_version="1",
+        ontology_version="1",
+        embedding_space_version="v1",
+        projection_version="p1",
+        generated_at=NOW,
+        source_url="https://example.com",
+        limitations=["tags are inferred"],
+        attribution="unofficial project",
     )
     publish_browser_artifacts(
-        tmp_path, companies=companies, tags=[], features=[], judgments=[], neighbors=[],
-        points=[UmapPoint(company_id=c.company_id, x=0.0, y=0.0, cluster_id=0,
-                          projection_version="p1", embedding_space_version="v1")
-                for c in companies],
-        clusters=[], terms=[], mappings=[], manifest=manifest,
+        tmp_path,
+        companies=companies,
+        tags=[],
+        features=[],
+        judgments=[],
+        neighbors=[],
+        points=[
+            UmapPoint(
+                company_id=c.company_id,
+                x=0.0,
+                y=0.0,
+                cluster_id=0,
+                projection_version="p1",
+                embedding_space_version="v1",
+            )
+            for c in companies
+        ],
+        clusters=[],
+        terms=[],
+        mappings=[],
+        manifest=manifest,
     )
     written = json.loads((tmp_path / f"v{PUBLIC_ARTIFACT_VERSION}" / "manifest.json").read_text())
     assert written["limitations"]
@@ -281,16 +396,38 @@ def test_companies_without_a_projection_are_not_published(tmp_path, sample_raws)
     companies = normalize_companies(sample_raws)[:6]
     projected = companies[:4]
     manifest = ReleaseManifest(
-        dataset_version="t", schema_version="1", public_artifact_version=PUBLIC_ARTIFACT_VERSION,
-        pipeline_version="1", ontology_version="1", embedding_space_version="v1",
-        projection_version="p1", generated_at=NOW, source_url="https://example.com",
+        dataset_version="t",
+        schema_version="1",
+        public_artifact_version=PUBLIC_ARTIFACT_VERSION,
+        pipeline_version="1",
+        ontology_version="1",
+        embedding_space_version="v1",
+        projection_version="p1",
+        generated_at=NOW,
+        source_url="https://example.com",
     )
     publish_browser_artifacts(
-        tmp_path, companies=companies, tags=[], features=[], judgments=[], neighbors=[],
-        points=[UmapPoint(company_id=c.company_id, x=0.0, y=0.0, cluster_id=0,
-                          projection_version="p1", embedding_space_version="v1")
-                for c in projected],
-        clusters=[], terms=[], mappings=[], manifest=manifest,
+        tmp_path,
+        companies=companies,
+        tags=[],
+        features=[],
+        judgments=[],
+        neighbors=[],
+        points=[
+            UmapPoint(
+                company_id=c.company_id,
+                x=0.0,
+                y=0.0,
+                cluster_id=0,
+                projection_version="p1",
+                embedding_space_version="v1",
+            )
+            for c in projected
+        ],
+        clusters=[],
+        terms=[],
+        mappings=[],
+        manifest=manifest,
     )
     root = tmp_path / f"v{PUBLIC_ARTIFACT_VERSION}"
     published_ids = {r["i"] for r in json.loads((root / "companies.json").read_text())["rows"]}

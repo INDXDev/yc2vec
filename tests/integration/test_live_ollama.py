@@ -134,7 +134,9 @@ def test_injection_in_fetched_content_does_not_steer_the_model(live_config):
 
 def test_assignment_declines_when_evidence_is_thin(live_config):
     """`uncertain` must be a real outcome, not a decoration on the schema."""
-    documents = [{"document_id": "thin#1", "kind": "yc_one_liner", "text": "We are building the future."}]
+    documents = [
+        {"document_id": "thin#1", "kind": "yc_one_liner", "text": "We are building the future."}
+    ]
     result = asyncio.run(
         _generate(
             live_config,
@@ -151,9 +153,21 @@ def test_assignment_declines_when_evidence_is_thin(live_config):
 
 def test_discovery_returns_schema_valid_reusable_attributes(live_config):
     companies = [
-        {"company_id": "c:1", "name": "Stripe", "text": "Payments infrastructure for internet businesses."},
-        {"company_id": "c:2", "name": "Airbnb", "text": "A marketplace for booking homes from local hosts."},
-        {"company_id": "c:3", "name": "Ginkgo", "text": "Organism engineering for industrial biotechnology."},
+        {
+            "company_id": "c:1",
+            "name": "Stripe",
+            "text": "Payments infrastructure for internet businesses.",
+        },
+        {
+            "company_id": "c:2",
+            "name": "Airbnb",
+            "text": "A marketplace for booking homes from local hosts.",
+        },
+        {
+            "company_id": "c:3",
+            "name": "Ginkgo",
+            "text": "Organism engineering for industrial biotechnology.",
+        },
     ]
     result = asyncio.run(
         _generate(
@@ -178,7 +192,9 @@ def test_embeddings_are_unit_length_and_semantically_ordered(live_config):
 
     async def go():
         async with OllamaClient(live_config, Store(live_config.data_dir)) as client:
-            if live_config.models.embedding_model not in {m.name for m in await client.list_models()}:
+            if live_config.models.embedding_model not in {
+                m.name for m in await client.list_models()
+            }:
                 pytest.skip(f"{live_config.models.embedding_model} is not installed")
             return await client.embed(
                 [

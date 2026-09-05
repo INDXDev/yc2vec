@@ -110,8 +110,18 @@ jobs:
       # Accessibility, deep-link routing under the Pages subpath, runtime
       # errors in the WebGL map, and both themes -- none of which a unit test
       # can see.
-      - name: Browser checks
+      #
+      # The build above targets /<repo>/, so the bundle must be served from
+      # that path too. Serving it at the root would 404 every asset and would
+      # test nothing except that a blank page renders.
+      - name: Browser checks (served from the Pages subpath)
         run: |
-          npx --yes http-server dist -p 4173 --silent &
-          for i in $(seq 1 20); do curl -sf http://127.0.0.1:4173/ >/dev/null && break; sleep 1; done
-          npm run check:browser -- http://127.0.0.1:4173/
+          repo='${{ github.event.repository.name }}'
+          mkdir -p site
+          cp -r dist "site/$repo"
+          npx --yes http-server site -p 4173 --silent &
+          for i in $(seq 1 20); do
+            curl -sf "http://127.0.0.1:4173/$repo/" >/dev/null && break
+            sleep 1
+          done
+          npm run check:browser -- "http://127.0.0.1:4173/$repo/"

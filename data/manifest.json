@@ -3,14 +3,14 @@
   "stages": {
     "fetch": {
       "counts": {
-        "changed": 6200,
-        "companies": 6200,
-        "taxonomy_terms": 612
+        "changed": 6269,
+        "companies": 6269,
+        "taxonomy_terms": 614
       },
-      "finished_at": "2026-09-04T18:35:54.487017+00:00",
+      "finished_at": "2026-10-05T12:21:20.121524+00:00",
       "key": "b7662504ce2aea4c7f16a7bf6cd0ae5841e72cb5e42035b2a628e7950cad4505",
       "outputs": {
-        "normalized/companies.jsonl": "451bee51111fc345a0b0e5b36f7dd6d18fcc9b921a1da52edda461669aebd239"
+        "normalized/companies.jsonl": "4bd1e5a64c6722286814d0aa44b8d3dbee4e86d005a074da773471c128fc29cd"
       }
     }
   }
